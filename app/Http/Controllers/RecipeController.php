@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateRecipeRequest;
 use App\Http\Requests\StoreRecipeRequest;
 use App\Http\Requests\UpdateRecipeRequest;
 use App\Models\Recipe;
@@ -19,9 +20,24 @@ class RecipeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(CreateRecipeRequest $request)
     {
-        //
+        $data = $request->all();
+        $recipe = Recipe::create($data);
+        
+        foreach ($data['ingredients'] as $ingredientData) {
+            $recipe->ingredients()->create([
+                'name' => $ingredientData['name'],
+                'quantity' => $ingredientData['quantity'],
+            ]);
+        }
+        foreach ($data['steps'] as $stepData) {
+            $recipe->steps()->create([
+                'description' => $stepData['description'],
+                'order_step' => $stepData['order_step'],
+            ]);
+        }
+        return $recipe;
     }
 
     /**

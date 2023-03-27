@@ -19,5 +19,11 @@ class Recipe extends Model
         'nutrition_facts',
         'image'
     ];
-
+    
+    public function ingredients(){
+        return $this->hasMany(RecipeIngredient::class);
+    }
+    public function steps(){
+        return $this->hasMany(RecipeSteps::class);
+    }
 }
