@@ -4,9 +4,11 @@ module.exports = {
     "./storage/framework/views/*.php",
     "./resources/views/**/*.blade.php",
     "./resources/js/**/*.vue",
+    
   ],
   theme: {
     extend: {},
   },
   plugins: [],
+  plugins: [require("daisyui")],
 };
