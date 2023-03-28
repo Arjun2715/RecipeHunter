@@ -53,8 +53,8 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-        $ingredients = $recipe->ingredients();
-        $steps = $recipe->steps();
+        $ingredients = $recipe->ingredients()->get();
+        $steps = $recipe->steps()->get();
         return ['recipe' => $recipe, 'ingredients' => $ingredients, 'steps' => $steps];
     }
 
