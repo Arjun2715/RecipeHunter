@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreSavedRecipesRequest;
 use App\Http\Requests\UpdateSavedRecipesRequest;
 use App\Models\SavedRecipes;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class SavedRecipesController extends Controller
 {
@@ -37,9 +39,15 @@ class SavedRecipesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(SavedRecipes $savedRecipes)
+    public function show(User $user)
     {
-        //
+        if ($user){
+            if ($user->recipes){
+                return $user->recipes;
+            }
+            return response()->json(['Error retrieving recipes.'], 500);
+        }
+        return response()->json(['Error retrieving recipes.'], 500);
     }
 
     /**
@@ -63,7 +71,9 @@ class SavedRecipesController extends Controller
      */
     public function destroy(SavedRecipes $savedRecipes)
     {
-        $savedRecipes->delete();
-        return response()->json(['Saved recipe deleted successfully.']);
+        if ($savedRecipes->delete()) {
+            return response()->json(['Saved recipe deleted successfully.']);
+        }
+        return response()->json(['Error deleting recipe.'], 500);
     }
 }

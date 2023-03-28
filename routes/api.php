@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\ApiAuthController;
 use App\Http\Controllers\RecipeController;
+use App\Http\Controllers\SavedRecipesController;
 use App\Models\SavedRecipes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,10 +26,11 @@ Route::middleware('auth:api')->group(function () {
     // our routes to be protected will go in here
     Route::post('/recipe/create', [RecipeController::class,'create']);
     Route::post('/recipe/delete/{recipe}', [RecipeController::class,'destroy']);
-    Route::post('/recipe/show/{recipe}', [RecipeController::class,'show']);
+    Route::get('/recipe/show/{recipe}', [RecipeController::class,'show']);
     //Saved recipes
-    Route::post('/recipe/saved/create', [SavedRecipes::class,'create']);
-    Route::post('/recipe/saved/delete/{savedRecipe}', [SavedRecipes::class,'destroy']);
+    Route::post('/recipe/saved/create', [SavedRecipesController::class,'store']);
+    Route::post('/recipe/saved/delete/{savedRecipe}', [SavedRecipesController::class,'destroy']);
+    Route::get('/user/{user}/saved-recipes', [SavedRecipesController::class,'show']);
 
 
     Route::post('/logout', [ApiAuthController::class,'logout'])->name('logout.api');
