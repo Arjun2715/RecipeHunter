@@ -20,6 +20,7 @@ class Recipe extends Model
         'image'
     ];
     
+
     public function ingredients(){
         return $this->hasMany(RecipeIngredient::class);
     }

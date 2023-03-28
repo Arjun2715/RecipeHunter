@@ -41,4 +41,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function savedRecipes()
+    {
+        return $this->hasMany(SavedRecipes::class);
+    }
+
+    public function recipes()
+    {
+        return $this->hasManyThrough(
+            Recipe::class,
+            SavedRecipes::class,
+            'user_id', // Foreign key on SavedRecipes table
+            'id', // Local key on Recipe table
+            'id', // Local key on User table
+            'recipe_id' // Foreign key on SavedRecipes table
+        );
+    }
 }

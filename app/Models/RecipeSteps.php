@@ -11,4 +11,7 @@ class RecipeSteps extends Model
     protected $fillable = [
         'recipe_id','description','order_step'
     ];
+    public function recipe(){
+        return $this->belongsTo(Recipe::class);
+    }
 }

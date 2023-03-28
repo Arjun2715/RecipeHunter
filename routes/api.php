@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\ApiAuthController;
 use App\Http\Controllers\RecipeController;
+use App\Models\SavedRecipes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,16 +17,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
-    Route::post('/login', [ApiAuthController::class,'login'])->name('login.api');
-    Route::post('/register', [ApiAuthController::class,'register'])->name('register.api');
+Route::post('/login', [ApiAuthController::class,'login'])->name('login.api');
+Route::post('/register', [ApiAuthController::class,'register'])->name('register.api');
 
 Route::middleware('auth:api')->group(function () {
     // our routes to be protected will go in here
-    Route::post('/recipe/create', [RecipeController::class,'create'])->name('recipe.create.api');
+    Route::post('/recipe/create', [RecipeController::class,'create']);
+    Route::post('/recipe/delete/{recipe}', [RecipeController::class,'destroy']);
+    Route::post('/recipe/show/{recipe}', [RecipeController::class,'show']);
+    //Saved recipes
+    Route::post('/recipe/saved/create', [SavedRecipes::class,'create']);
+    Route::post('/recipe/saved/delete/{savedRecipe}', [SavedRecipes::class,'destroy']);
+
 
     Route::post('/logout', [ApiAuthController::class,'logout'])->name('logout.api');
 });

@@ -21,7 +21,7 @@ class SavedRecipesController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -29,7 +29,9 @@ class SavedRecipesController extends Controller
      */
     public function store(StoreSavedRecipesRequest $request)
     {
-        //
+        $data = $request->all();
+        $recipe = SavedRecipes::create($data);
+        return $recipe;
     }
 
     /**
@@ -61,6 +63,7 @@ class SavedRecipesController extends Controller
      */
     public function destroy(SavedRecipes $savedRecipes)
     {
-        //
+        $savedRecipes->delete();
+        return response()->json(['Saved recipe deleted successfully.']);
     }
 }

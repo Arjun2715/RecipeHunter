@@ -53,7 +53,9 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-        //
+        $ingredients = $recipe->ingredients();
+        $steps = $recipe->steps();
+        return ['recipe' => $recipe, 'ingredients' => $ingredients, 'steps' => $steps];
     }
 
     /**
@@ -69,7 +71,21 @@ class RecipeController extends Controller
      */
     public function update(UpdateRecipeRequest $request, Recipe $recipe)
     {
-        //
+        $recipe->fill($request->only([
+            'user_id',
+            'author',
+            'title',
+            'category_id',
+            'cuisine_id',
+            'diet_id',
+            'description',
+            'nutrition_facts',
+            'image'
+        ]));
+        
+        $recipe->save();
+        
+        return response()->json(['message' => 'Recipe updated successfully']);
     }
 
     /**
@@ -77,6 +93,10 @@ class RecipeController extends Controller
      */
     public function destroy(Recipe $recipe)
     {
-        //
+        $recipe->ingredients()->delete();
+        $recipe->steps()->delete();
+        $recipe->delete();
+        $response = ['message' => 'You have been successfully deleted the recipe!'];
+        return response($response, 200);
     }
 }
