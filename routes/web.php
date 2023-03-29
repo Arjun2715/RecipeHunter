@@ -20,3 +20,9 @@ Route::get('/', function () {
         'articles' => Article::latest()->get()
     ]);
 })->name('home');
+
+Route::get('/login', function () {
+    return Inertia::render('Login', [
+        // 'articles' => Article::latest()->get()
+    ]);
+})->name('login');
