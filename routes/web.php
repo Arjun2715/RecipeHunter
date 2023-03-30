@@ -17,12 +17,9 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Index', [
-        'articles' => Article::latest()->get()
+        // 'articles' => Article::latest()->get()
     ]);
 })->name('home');
 
-Route::get('/login', function () {
-    return Inertia::render('Login', [
-        // 'articles' => Article::latest()->get()
-    ]);
-})->name('login');
+Route::get('/login', function () { return Inertia::render('Login', []);})->name('login');
+Route::get('/register', function () { return Inertia::render('Register', []);})->name('register');
