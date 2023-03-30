@@ -26,12 +26,15 @@ Route::middleware('auth:api')->group(function () {
     // our routes to be protected will go in here
     Route::post('/recipe/create', [RecipeController::class,'create']);
     Route::post('/recipe/delete/{recipe}', [RecipeController::class,'destroy']);
-    Route::get('/recipe/show/{recipe}', [RecipeController::class,'show']);
+    Route::get('/recipe/{recipe}', [RecipeController::class,'show']);
     //Saved recipes
     Route::post('/recipe/saved/create', [SavedRecipesController::class,'store']);
     Route::post('/recipe/saved/delete/{savedRecipe}', [SavedRecipesController::class,'destroy']);
     Route::get('/user/{user}/saved-recipes', [SavedRecipesController::class,'show']);
-
+    //Rating
+    Route::post('/rating/store', [RatingController::class,'store']);
+    Route::get('/recipe/best-rated/{period}', [RecipeController::class, 'bestRatedRecipes']);
+    Route::get('/users/{user_id}/recommendations', [RecipeController::class, 'recommendations']);
 
     Route::post('/logout', [ApiAuthController::class,'logout'])->name('logout.api');
 });
