@@ -16,7 +16,7 @@ defineProps({
 </script>
 
 <template >
-    <body class="mx-60">
+    <body class="">
         <Header>
             <div class="navbar bg-base-100">
                 <div class="navbar-start">
