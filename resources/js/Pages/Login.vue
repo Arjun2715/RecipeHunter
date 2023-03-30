@@ -7,7 +7,27 @@
     }
 </script>
 <template>
-    <navbar />
+    <!-- <navbar /> -->
+    <nav class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 ">
+    <div class="container px-4 mx-auto flex  items-center justify-between">
+      <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+        <a class="text-xl font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-gray-500"
+          href="#">Recipe Hunter</a>
+      </div>
+      <div class="flex px-2 ">
+          <router-link to="/login"
+            class="btn  flex-1 w-12 rounded-l-full btn-active  bg-gradient-to-r from-lemon to-green border-none shadow hover:shadow-lg " 
+            @click="goToLogin">
+            Login
+          </router-link>
+          <router-link to="register" 
+           class="btn flex-1 w-32 rounded-r-full border-none shadow  hover:shadow-lg"
+           @click="goToSignup">
+           SignUp
+          </router-link>
+        </div>
+    </div>
+  </nav>
     <main>
         
         <section class="absolute w-full h-full">
@@ -38,7 +58,7 @@
                                 </div>
                                 <div class="text-center mt-6">
                                     <button
-                                        class="bg-gradient-to-r from-lemon to-green text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
+                                        class="bg-gradient-to-r from-lemon to-green text-white active:bg-gray-700 text-sm font-bold border-none uppercase px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
                                         type="button" style="transition: all 0.15s ease 0s;">
                                         Sign In
                                     </button>
