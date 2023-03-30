@@ -19,8 +19,16 @@ class Recipe extends Model
         'nutrition_facts',
         'image'
     ];
-    
 
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
+    }
+
+    public function ratingMean()
+    {
+        return $this->ratings()->avg('rating');
+    }
     public function ingredients(){
         return $this->hasMany(RecipeIngredient::class);
     }
