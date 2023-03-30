@@ -12,7 +12,7 @@
         
         <section class="absolute w-full h-full">
             <div class="container mx-auto px-4 h-full">
-                <div class="flex content-start items-start justify-center h-full pt-40  ">
+                <div class="flex content-center items-center justify-center h-full   ">
                     <div class="w-full lg:w-4/12 px-4">
                         <div class="rounded-t mb-0 px-6 py-6">
                             <form>

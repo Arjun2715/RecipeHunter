@@ -8,7 +8,7 @@ import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
 <template>
   <RecipeHunterLayout>
     <h2 class="text-2xl font-bold py-10">Read our latest articles</h2>
-
+<!-- 
     <section class="space-y-5 border-b-2 pb-10">
       <article
         v-for="article in articles"
@@ -38,6 +38,6 @@ import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
           >
         </div>
       </article>
-    </section>
+    </section> -->
   </RecipeHunterLayout>
  </template>
