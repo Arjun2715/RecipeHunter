@@ -17,6 +17,7 @@
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@vitejs/plugin-vue": "^4.1.0",
         "daisyui": "^2.51.5",
+        "flowbite": "^1.6.4",
         "vue": "^3.2.36"
     }
 }

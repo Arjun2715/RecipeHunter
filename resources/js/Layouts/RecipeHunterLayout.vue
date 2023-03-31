@@ -33,7 +33,7 @@ defineProps({
                         <ul tabindex="0"
                             class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li><a>Home</a></li>
-                            <li><a>Search</a></li>
+                            <!-- <li><a>Search</a></li> -->
                             <li><a>Categories</a></li>
                             <li><a>Top Recipes</a></li>
                             <li><a>My Recipes</a></li>
@@ -42,7 +42,7 @@ defineProps({
                         </ul>
                     </div>
                     <a class="btn btn-ghost normal-case text-xl">Recipe Hunter</a>
-
+                    
                 </div>
                 <!--windowed-->
                 <div class="navbar-center hidden lg:flex px-4">
@@ -71,7 +71,7 @@ defineProps({
                     <div class="form-control hidden lg:flex mr-2">
                         <!-- <button class="border border-2 bg-gradient-to-r from-blue-400 to-green-400 text-white font-bold py-2 px-4 rounded-full">Click me</button> -->
                         <input type="text" placeholder="Search"
-                            class="input input-bordered border-2  input-accent bg-gradient-to-r from-lemon-20 to-green-20 rounded-full" />
+                            class="input  border-2 input-accent placeholder-green bg-gradient-to-r from-lemon-20 to-green-20 rounded-full" />
                     </div>
                     <div class="dropdown dropdown-end">
                         <label tabindex="0" class="btn btn-ghost btn-circle avatar ">
