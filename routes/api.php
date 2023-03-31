@@ -3,6 +3,8 @@
 use App\Http\Controllers\Auth\ApiAuthController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\SavedRecipesController;
+use App\Http\Controllers\RatingController;
+
 use App\Models\SavedRecipes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
