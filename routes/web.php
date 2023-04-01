@@ -20,8 +20,16 @@ use Inertia\Inertia;
 //         // 'articles' => Article::latest()->get()
 //     ]);
 // })->name('home');
+
 Route::get('/', function () { return Inertia::render('Landing', []);});
 Route::get('/home', function () { return Inertia::render('Home', []);})->name('home');
 
 Route::get('/login', function () { return Inertia::render('Login', []);})->name('login');
+
 Route::get('/register', function () { return Inertia::render('Register', []);})->name('register');
+
+
+
+Route::middleware('auth:web')->group(function () {
+    Route::get('/', function () { return Inertia::render('Show', []);});
+});
