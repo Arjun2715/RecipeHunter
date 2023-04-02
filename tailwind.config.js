@@ -8,6 +8,18 @@ module.exports = {
     
   ],
   theme: {
+    // screens: {
+    //   'mobile': '400px',
+
+    //   'tablet': '640px',
+    //   // => @media (min-width: 640px) { ... }
+
+    //   'laptop': '1024px',
+    //   // => @media (min-width: 1024px) { ... }
+
+    //   'desktop': '1580px',
+    //   // => @media (min-width: 1280px) { ... }
+    // },
     extend: {
       colors: {
         'lemon' : '#CAE00D',

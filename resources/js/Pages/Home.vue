@@ -1,30 +1,39 @@
 <script scope>
 import mainCarousel from "../Layouts/components/MainCard.vue";
-import footer from "../Layouts/components/Footer.vue";
+import mostViewed from "../Layouts/components/MostViewed.vue";
+import recentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
+import recentlyUpdatedCarousel from "../Layouts/components/RecentlyUpdatedCarousel.vue";
+import Footer from "../Layouts/components/Footer.vue";
+
 import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
 export default {
     components: {
         RecipeHunterLayout,
         mainCarousel,
-        footer,
+        Footer,
+        mostViewed,
+        recentlyUpdated,
+        recentlyUpdatedCarousel,
     }
 }
 </script>
 <template>
+    <RecipeHunterLayout />
     <div class="flex flex-col">
+            
         <div>
-            <RecipeHunterLayout />
-        </div>
-        <div>
-            <section class=" w-full h-[2000px]">
-                <div class="container mx-auto px-4 w-full h-full mt-10">
+            <section class=" flex flex-col w-full ">
+                <div class="container mx-auto px-4 w-full h-full ">
                     <mainCarousel />
+                    <mostViewed />
+                    <recentlyUpdated />
+                    <recentlyUpdatedCarousel />
                 </div>
+
             </section>
         </div>
-        <div>
-           <footer />
-         </div>
-
-</div></template>
+    </div>
+    <Footer />  
+    
+</template>
 
