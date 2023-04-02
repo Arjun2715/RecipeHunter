@@ -21,7 +21,6 @@ use Inertia\Inertia;
 //     ]);
 // })->name('home');
 
-Route::get('/', function () { return Inertia::render('Landing', []);});
 Route::get('/home', function () { return Inertia::render('Home', []);})->name('home');
 
 Route::get('/login', function () { return Inertia::render('Login', []);})->name('login');
