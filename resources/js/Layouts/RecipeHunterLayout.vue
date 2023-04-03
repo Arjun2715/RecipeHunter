@@ -1,12 +1,20 @@
-
+<script scope>
+import Menu from "../Layouts/components/Menu.vue";
+export default {
+    components: {
+        Menu,
+    }
+}
+</script>
 <template >
     <body class="bg-white dark:bg-gray-800">
         <Header class="mt-4">
 
-            <div class=" flex container mx-auto px-4 h-full">
+            <div class=" flex container mx-auto  h-full">
                 <div class="navbar-start flex">
-                    <!--mobile-->
-                    <div class="dropdown">
+
+                    <a class="btn btn-ghost normal-case text-xl dark:text-white border-none outline-none">Recipe Hunter</a>
+                <!-- <div class="dropdown">
                         <label tabindex="0" class="btn btn-ghost lg:hidden border-none outline-none ">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 " fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -17,16 +25,13 @@
                         <ul tabindex="0"
                             class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-white dark:bg-gray-800  rounded-box w-52">
                             <li class="text-gray dark:text-white"><a>Home</a></li>
-                            <!-- <li><a>Search</a></li> -->
                             <li class="text-gray dark:text-white"><a>Categories</a></li>
                             <li class="text-gray dark:text-white"><a>Top Recipes</a></li>
                             <li class="text-gray dark:text-white"><a>My Recipes</a></li>
                             <li class="text-gray dark:text-white" ><a>Saved Recipes</a></li>
                             <li class="text-gray dark:text-white"><a>About Us</a></li>
                         </ul>
-                    </div>
-                    <a class="btn btn-ghost normal-case text-xl dark:text-white border-none outline-none">Recipe Hunter</a>
-                    
+                                    </div> -->
                 </div>
                 <!--windowed-->
                 <div class="navbar-center hidden lg:flex px-4">
@@ -36,7 +41,7 @@
                         </li>
                         <li class="text-gray dark:text-white">
                             <Link href="#">Categories</Link>
-                        </li >
+                        </li>
                         <li class="text-gray dark:text-white">
                             <Link href="#">Top Recipes</Link>
                         </li>
@@ -57,11 +62,11 @@
 
                         <div class="relative">
                             <input type="text" placeholder="Search..."
-                            class="input input-bordered border-2 border-transparent bg-green-20 rounded-full placeholder-gray-600 rounded-full text-gray-600 dark:text-white">
-                    
+                                class="input input-bordered border-2 border-transparent bg-green-20 rounded-full placeholder-gray-600 rounded-full text-gray-600 dark:text-white">
+
                         </div>
                     </div>
-                    <div class="dropdown dropdown-end">
+                    <div class="dropdown dropdown-end hidden lg:flex">
                         <label tabindex="0" class="btn btn-ghost btn-circle avatar ">
                             <div class="w-10 rounded-full ">
                                 <img class="w-10 h-10 rounded-full  " src="assets/images/avatar.jpg" alt="">
@@ -69,38 +74,45 @@
                             </div>
                         </label>
                         <ul tabindex="0"
-                            class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 bg-white dark:bg-gray-800 text">
-                            <li>
-                                <a class="justify-between text-gray-800 dark:text-white">
-                                Profile
-                                <span class="badge bg-gray-800 dark:bg-white text-white dark:text-gray-800 border-none outline-none">New</span>
-                            </a>
-                        </li>
-                        <li class="text-gray dark:text-white"><a>Settings</a></li>
-                        <li class="text-gray dark:text-white"><a>Logout</a></li>
-                    </ul>
+                            class="mt-12 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 bg-white dark:bg-gray-800 text">
+                            <li class="text-gray-800 dark:text-white hover:bg-gray-300  hover:text-gray-800 rounded-full">
+                                <a class="justify-between ">
+                                    Profile
+                                    <span
+                                        class="badge bg-gray-800 dark:bg-white text-white dark:text-gray-800 border-none outline-none">New</span>
+                                </a>
+                            </li>
+                            <li class="text-gray dark:text-white hover:bg-gray-300 rounded-full hover:text-gray-800">
+                                <a>Settings</a>
+                            </li>
+                            <li class="text-gray dark:text-white hover:bg-gray-300 rounded-full hover:text-gray-800">
+                                <a>Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class=" lg:hidden  md:flex sm:flex">
+                        <Menu/>
+                    </div>
                 </div>
             </div>
-        </div>
-    </Header>
+        </Header>
 
-    <main>
+        <main>
 
-    </main>
+        </main>
 
     </body>
-    <footer />  
+    <footer />
 </template>
 <style>
-    .relative:before {
-      content: "";
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      z-index: -1;
-      background: linear-gradient(to right, bg-lemon, bg-green);
-      border-radius: 9999px;
-    }
-  </style>
+.relative:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(to right, bg-lemon, bg-green);
+    border-radius: 9999px;
+}</style>
