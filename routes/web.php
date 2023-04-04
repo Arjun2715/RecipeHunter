@@ -22,6 +22,7 @@ use Inertia\Inertia;
 // })->name('home');
 
 Route::get('/home', function () { return Inertia::render('Home', []);})->name('home');
+Route::get('/filter', function () { return Inertia::render('FilterSearch', []);})->name('FilterSearch');
 
 Route::get('/login', function () { return Inertia::render('Login', []);})->name('login');
 
