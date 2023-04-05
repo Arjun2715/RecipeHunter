@@ -76,7 +76,7 @@
                     </Link>
                 </li>
                 <li>
-                    <Link herf="#"
+                    <Link herf="/myrecipes"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                     <svg class="h-[24px] w-[24px]" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -88,7 +88,7 @@
                     </Link>
                 </li>
                 <li>
-                    <Link href="#"
+                    <Link href="/categories"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                     <svg class="h-[24px] w-[24px]" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +101,7 @@
                     </Link>
                 </li>
                 <li>
-                    <Link href="#"
+                    <Link href="/savedrecipes"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
 
                     <svg class="h-[24px] w-[24px]" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -131,7 +131,7 @@
                     <div class="w-full h-[2px] bg-gray-100 rounded-full"></div>
                 </li>
                 <li>
-                    <Link href="#"
+                    <Link href="/aboutus"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                     <svg class="h-[24px] w-[24px]" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

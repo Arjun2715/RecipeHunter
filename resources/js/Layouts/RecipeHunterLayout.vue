@@ -40,19 +40,16 @@ export default {
                             <Link href="/home">Home</Link>
                         </li>
                         <li class="text-gray dark:text-white">
-                            <Link href="#">Categories</Link>
+                            <Link href="/categories">Categories</Link>
                         </li>
                         <li class="text-gray dark:text-white">
-                            <Link href="#">Top Recipes</Link>
+                            <Link href="/myrecipes">My Recipes</Link>
                         </li>
                         <li class="text-gray dark:text-white">
-                            <Link href="#">My Recipes</Link>
+                            <Link href="/savedrecipes">Saved Recipes</Link>
                         </li>
                         <li class="text-gray dark:text-white">
-                            <Link href="#">Saved Recipes</Link>
-                        </li>
-                        <li class="text-gray dark:text-white">
-                            <Link href="#">About Us</Link>
+                            <Link href="/aboutus">About Us</Link>
                         </li>
                     </ul>
                 </div>

@@ -7,6 +7,48 @@ export default {
         RecipeHunterLayout,
         Footer,
         RecentlyUpdated,
+    },
+    data() {
+        return {
+            items: [
+                {
+                    title: 'Item 1',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                    link: 'https://example.com/item1',
+                    image: 'assets/images/mostviewed/image-14.png'
+                },
+                {
+                    title: 'Item 2',
+                    description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    link: 'https://example.com/item2',
+                    image: 'assets/images/mostviewed/image-13.png'
+                },
+                {
+                    title: 'Item 3',
+                    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                    link: 'https://example.com/item3',
+                    image: 'assets/images/mostviewed/image-12.png'
+                },
+                {
+                    title: 'Item 1',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                    link: 'https://example.com/item1',
+                    image: 'assets/images/mostviewed/image-14.png'
+                },
+                {
+                    title: 'Item 2',
+                    description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    link: 'https://example.com/item2',
+                    image: 'assets/images/mostviewed/image-13.png'
+                },
+                {
+                    title: 'Item 3',
+                    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                    link: 'https://example.com/item3',
+                    image: 'assets/images/mostviewed/image-12.png'
+                }
+            ]
+        }
     }
 }
 </script>
@@ -24,10 +66,9 @@ export default {
                     </div>
                     <form>
                         <div class="py-2 
-                                        lg:flex lg:flex-wrap lg:space-x-2 lg:items-center
-                                        md:flex md:grid md:space-x-2 md:grid-cols-4 md:items-center
-                                        flex grid space-x-2 grid-cols-2 items-center
-                                        ">
+                                                                    lg:flex lg:flex-wrap lg:space-x-2 lg:items-center
+                                                                    md:flex md:grid md:space-x-2 md:grid-cols-4 md:items-center
+                                                                    flex grid space-x-2 grid-cols-2 items-center">
                             <div class="grow flex-1  h-auto ml-2 lg:ml-0">
                                 <div class="relative w-full">
                                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -38,17 +79,17 @@ export default {
                                                 clip-rule="evenodd"></path>
                                         </svg>
                                     </div>
-                                    <input type="text" id="voice-search"
-                                        class="bg-gradient-to-r from-lemon-20 to-green-20 border-2 border-gray-300 text-gray-900 text-sm rounded-full 
-                                                                        focus:ring-lemon focus:border-lemon rounded-full w-full pl-10 p-2.5  
-                                                                        dark:bg-gray-700 dark:border-gray-600 dark:placeholder-white dark:text-white dark:focus:ring-lemon dark:focus:ring-lemon"
+                                    <input type="text" id="voice-search" class="bg-gradient-to-r from-lemon-20 to-green-20 border-2 border-gray-300 text-gray-900 text-sm rounded-full 
+                                                                               focus:ring-lemon focus:border-lemon rounded-full w-full pl-10 p-2.5  
+                                                                               dark:bg-gray-700 dark:border-gray-600 dark:placeholder-white dark:text-white dark:focus:ring-lemon 
+                                                                               dark:focus:ring-lemon"
                                         placeholder="Search... " required>
                                 </div>
                             </div>
                             <div class="grow flex-1 dropdown dropdown-end  py-1">
                                 <label tabindex="0"
                                     class="btn w-full inline-flex items-center py-2.5 px-3 text-sm font-medium text-white 
-                                                                                bg-green-60  border-none  rounded-full bo  border-lemon hover:bg-green-80"><span></span>Cuisine</label>
+                                                                                                                                        bg-green-60  border-none  rounded-full bo  border-lemon hover:bg-green-80"><span></span>Cuisine</label>
                                 <ul tabindex="0"
                                     class="dropdown-content menu p-2 shadow bg-white dark:bg-gray-600 dark:text-white rounded-box w-52 ">
                                     <li class="flex flex-row mb-2">
@@ -65,7 +106,7 @@ export default {
                             <div class="grow flex-1 dropdown dropdown-end  py-1">
                                 <label tabindex="0"
                                     class="btn w-full inline-flex items-center py-2.5 px-3  text-sm font-medium text-white 
-                                                                                bg-green-60  border-none  rounded-full bo  border-lemon hover:bg-green-80"><span></span>Diet</label>
+                                                                                                                                        bg-green-60  border-none  rounded-full bo  border-lemon hover:bg-green-80"><span></span>Diet</label>
                                 <ul tabindex="0"
                                     class="dropdown-content menu p-2 shadow bg-white dark:bg-gray-600 dark:text-white rounded-box w-52 ">
                                     <li class="flex flex-row mb-2">
@@ -82,7 +123,7 @@ export default {
                             <div class=" grow flex-1 dropdown dropdown-end  py-1">
                                 <label tabindex="0"
                                     class="btn w-full inline-flex items-center py-2.5 px-3 text-sm font-medium text-white 
-                                                                                bg-green-60  border-none  rounded-full bo  border-lemon hover:bg-green-80">
+                                                                                                                                        bg-green-60  border-none  rounded-full bo  border-lemon hover:bg-green-80">
                                     <span></span>
                                     Ingredients
                                 </label>
@@ -102,7 +143,7 @@ export default {
                             <div class="grow flex-1 dropdown dropdown-end  py-1">
                                 <label tabindex="0"
                                     class="btn w-full inline-flex items-center py-2.5 px-3  text-sm font-medium text-white 
-                                                                                bg-green-60  border-none  rounded-full bo  border-lemon hover:bg-green-80">
+                                                                                                                                        bg-green-60  border-none  rounded-full bo  border-lemon hover:bg-green-80">
                                     <span></span>
                                     Prep. Time
                                 </label>
@@ -122,7 +163,7 @@ export default {
                             <div class="grow flex-1 dropdown dropdown-end  py-1">
                                 <label tabindex="0"
                                     class="btn w-full inline-flex items-center py-2.5 px-3 text-sm font-medium text-white 
-                                                                                bg-green-60  border-none  rounded-full bo  border-lemon hover:bg-green-80"><span></span>Tags</label>
+                                                                                                                                        bg-green-60  border-none  rounded-full bo  border-lemon hover:bg-green-80"><span></span>Tags</label>
                                 <ul tabindex="0"
                                     class="dropdown-content menu p-2 shadow bg-white dark:bg-gray-600 dark:text-white rounded-box w-52 ">
                                     <li class="flex flex-row mb-2">
@@ -139,7 +180,7 @@ export default {
                             <div class="grow flex-1 dropdown dropdown-end  py-1">
                                 <label tabindex="0"
                                     class="btn w-full inline-flex items-center py-2.5 px-3  text-sm font-medium text-white 
-                                                                                bg-green-60  border-none  rounded-full  border-lemon hover:bg-green-80"><span></span>Sort</label>
+                                                                                                                        bg-green-60  border-none  rounded-full  border-lemon hover:bg-green-80"><span></span>Sort</label>
                                 <ul tabindex="0"
                                     class="dropdown-content menu p-2 shadow bg-white dark:bg-gray-600 dark:text-white rounded-box w-52 ">
                                     <li class="flex flex-row mb-2">
@@ -154,9 +195,10 @@ export default {
                                 </ul>
                             </div>
                             <div class="grow flex-1 h-full py-1">
-                                <Link type="submit" class="btn w-full h-full inline-flex items-center py-2.5 px-3   text-sm font-medium text-white bg-gradient-to-r from-lemon to-green 
-                                                        border-none  rounded-full border border-lemon hover:bg-lemon focus:ring-4 focus:outline-none focus:ring-lemon-60 
-                                                        dark:hover: dark:focus:ring-lemon-60">
+                                <Link type="submit"
+                                    class="btn w-full h-full inline-flex items-center py-2.5 px-3   text-sm font-medium text-white bg-gradient-to-r from-lemon to-green 
+                                                                                                border-none  rounded-full border border-lemon hover:bg-lemon focus:ring-4 focus:outline-none focus:ring-lemon-60 
+                                                                                                dark:hover: dark:focus:ring-lemon-60">
                                 <svg aria-hidden="true" class="w-5 h-5 mr-2 -ml-1" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -166,9 +208,26 @@ export default {
                             </div>
                         </div>
                     </form>
-                    <div class="h-[1000px]">
-                        <!--search info cards here-->
-                        
+                    <div class="h-auto">
+                        <!--search info cards here -->
+                        <!--fix uneven cards -->
+
+                        <div
+                            class="py-2 flex grid lg:grid-cols-3 lg:space-x-2 lg:items-center flex md:grid md:space-x-2 md:grid-cols-2 md:items-center flex grid space-x-4 grid-cols-1 items-center w-full h-full">
+                            <div v-for="(item, index) in items" :key="index" class=" flex-1 ">
+                                <div class="card card-side bg-base-100 shadow-xl">
+                                    <figure> <img :src="item.image" alt="{{ item.title  }}" />
+                                    </figure>
+                                    <div class="card-body">
+                                        <h2 class="card-title text-gray-800 dark:text-white  ">{{ item.title }}</h2>
+                                        <p class="text-gray-800 dark:text-white ">{{ item.description }}</p>
+                                        <div class="bg-gradient-to-r from-lemon to-green rounded-full w-full h-[3px]">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>

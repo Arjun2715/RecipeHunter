@@ -22,7 +22,11 @@ use Inertia\Inertia;
 // })->name('home');
 
 Route::get('/home', function () { return Inertia::render('Home', []);})->name('home');
-Route::get('/filter', function () { return Inertia::render('FilterSearch', []);})->name('FilterSearch');
+Route::get('/filter', function () { return Inertia::render('FilterSearch', []);})->name('filter');
+Route::get('/categories', function () { return Inertia::render('Categories', []);})->name('categories');
+Route::get('/myrecipes', function () { return Inertia::render('MyRecipes', []);})->name('myrecipes');
+Route::get('/savedrecipes', function () { return Inertia::render('SavedRecipes', []);})->name('savedrecipes');
+Route::get('/aboutus', function () { return Inertia::render('AboutUs', []);})->name('aboutus');
 
 Route::get('/login', function () { return Inertia::render('Login', []);})->name('login');
 
