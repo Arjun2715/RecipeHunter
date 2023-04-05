@@ -8,7 +8,8 @@
 
     @inertiaHead
     <title inertia>{{ config('app.name', 'Laravel') }}</title>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 
     @vite('resources/js/app.js') @inertiaHead
 </head>
@@ -18,7 +19,5 @@
     @inertia
 
 </body>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 
 </html>

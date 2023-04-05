@@ -43,9 +43,13 @@
                                 <li class="mb-4">
                                     <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
                                 </li>
-                                <li>
+                                <li class="mb-4">
                                     <a href="https://daisyui.com/" class="hover:underline">Daisy UI</a>
                                 </li>
+                                <li>
+                                    <a href="https://heroicons.dev" class="hover:underline">hero Icons</a>
+                                </li>
+                                <!--https://heroicons.dev-->
                             </ul>
                         </div>
                     </div>
