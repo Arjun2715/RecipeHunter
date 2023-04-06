@@ -27,6 +27,7 @@ Route::get('/categories', function () { return Inertia::render('Categories', [])
 Route::get('/myrecipes', function () { return Inertia::render('MyRecipes', []);})->name('myrecipes');
 Route::get('/savedrecipes', function () { return Inertia::render('SavedRecipes', []);})->name('savedrecipes');
 Route::get('/aboutus', function () { return Inertia::render('AboutUs', []);})->name('aboutus');
+Route::get('/dashboard', function () { return Inertia::render('Dashboard', []);})->name('dashboard');
 
 Route::get('/login', function () { return Inertia::render('Login', []);})->name('login');
 

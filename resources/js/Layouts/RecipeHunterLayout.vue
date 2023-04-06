@@ -77,7 +77,7 @@ export default {
                             </div>
                         </div>
                     </div>
-                    <div class="dropdown dropdown-end hidden lg:flex">
+                    <Link href="/dashboard" class="dropdown dropdown-end hidden lg:flex">
                         <label tabindex="0" class="btn btn-ghost btn-circle avatar ">
                             <div class="w-10 rounded-full ">
                                 <img class="w-10 h-10 rounded-full  " src="assets/images/avatar.jpg" alt="">
@@ -102,7 +102,7 @@ export default {
                                 </Link>
                             </li>
                         </ul>
-                    </div>
+                    </Link>
                     <div class=" lg:hidden  md:flex sm:flex">
                         <Menu />
                     </div>
