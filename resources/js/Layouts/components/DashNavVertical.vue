@@ -1,28 +1,28 @@
 <template>
-    <div class="flex flex-col h-full w-[300px] shadow-2xl w-full rounded-2xl px-8 py-4 justify-start items-center">
+    <div class="flex flex-col dark:bg-gray-700 dark:text-white h-auto w-[300px] shadow-2xl  rounded-2xl px-8 py-4 justify-start items-center ">
         <div class="font-bold text-xl">Settings</div>
         <div
-            class="flex flex-row w-[200px] h-[80px] justify-start items-center px-8 rounded-2xl hover:shadow-xl active:shadow-xl">
+            class="flex flex-row w-full h-[80px] justify-start items-center px-8 rounded-2xl hover:shadow-xl active:shadow-xl cursor-pointer">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
                     stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
-            My Details
+            Profile
         </div>
         <div
-            class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl">
+            class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl cursor-pointer hover:shadow-xl">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
                     stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
-            Profile
+            Account
         </div>
         <div
-            class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl">
+            class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl cursor-pointer">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -32,7 +32,7 @@
             Password
         </div>
         <div
-            class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl">
+            class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl cursor-pointer">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -42,7 +42,7 @@
             Email
         </div>
         <div
-            class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl">
+            class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl cursor-pointer">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -53,15 +53,15 @@
             Notifications
         </div>
         <div
-            class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl">
+            class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl cursor-pointer">
             <svg class="w-[24px] h-[24px] mr-2" aaria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
-                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
-                stroke-linecap="round" stroke-linejoin="round"></path>
+                    d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
+                    stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            Sigh Out
+        </div>
 
-        </svg>
-        Sigh Out
     </div>
-
-</div></template>
+</template>

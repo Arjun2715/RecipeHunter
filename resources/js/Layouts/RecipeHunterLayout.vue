@@ -63,9 +63,9 @@ export default {
                                 Filter
                         </Link>
                             <input type="text" id=""
-                                class=" bg-gradient-to-r from-lemon-20 to-green-20 border-2 border-gray-300 text-gray-900 text-sm rounded-full 
+                                class=" bg-gradient-to-r from-lemon-20 to-green-20 border-2 border-gray-300 text-gray-900 text-sm  
                                            focus:ring-green focus:border-green rounded-full w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                           dark:placeholder-gray-200 dark:text-white  dark:focus:ring-green dark:focus:ring-green dark:text-gray-00 "
+                                           dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00 "
                                 placeholder="Search... ">
                             <div class="absolute inset-y-0 left-0 flex items-center pl-3 cursor-pointer ">
                                 <svg aria-hidden="true" class=" w-5 h-5 text-gray-600 dark:text-gray-400"
@@ -77,7 +77,7 @@ export default {
                             </div>
                         </div>
                     </div>
-                    <Link href="/dashboard" class="dropdown dropdown-end hidden lg:flex">
+                    <div class="dropdown dropdown-end hidden lg:flex">
                         <label tabindex="0" class="btn btn-ghost btn-circle avatar ">
                             <div class="w-10 rounded-full ">
                                 <img class="w-10 h-10 rounded-full  " src="assets/images/avatar.jpg" alt="">
@@ -85,13 +85,13 @@ export default {
                             </div>
                         </label>
                         <ul tabindex="0"
-                            class="mt-12 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52 bg-white dark:bg-gray-800 text">
+                            class="mt-12 p-2 shadow menu menu-compact dropdown-content rounded-box w-52 bg-white dark:bg-gray-800 text">
                             <li class="text-gray-800 dark:text-white hover:bg-gray-300  hover:text-gray-800 rounded-full">
-                                <a class="justify-between ">
+                                <Link href="/dashboard"
+                                    class="justify-between ">
                                     Profile
-                                    <span
-                                        class="badge bg-gray-800 dark:bg-white text-white dark:text-gray-800 border-none outline-none">New</span>
-                                </a>
+                                    <!-- <span class="badge bg-gray-800 dark:bg-white text-white dark:text-gray-800 border-none outline-none">New</span> -->
+                            </Link>
                             </li>
                             <li class="text-gray dark:text-white hover:bg-gray-300 rounded-full hover:text-gray-800">
                                 <a>Settings</a>
@@ -102,7 +102,7 @@ export default {
                                 </Link>
                             </li>
                         </ul>
-                    </Link>
+                    </div>
                     <div class=" lg:hidden  md:flex sm:flex">
                         <Menu />
                     </div>
