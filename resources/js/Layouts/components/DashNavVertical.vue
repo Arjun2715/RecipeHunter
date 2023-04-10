@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col dark:bg-gray-700 dark:text-white h-auto w-[300px] shadow-2xl  rounded-2xl px-8 py-4 justify-start items-center ">
         <div class="font-bold text-xl">Settings</div>
-        <div
+        <Link href="/dashboard"
             class="flex flex-row w-full h-[80px] justify-start items-center px-8 rounded-2xl hover:shadow-xl active:shadow-xl cursor-pointer">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -10,8 +10,8 @@
                     stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
             Profile
-        </div>
-        <div
+        </Link>
+        <Link href="/dashboard/account"
             class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl cursor-pointer hover:shadow-xl">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -20,8 +20,8 @@
                     stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
             Account
-        </div>
-        <div
+        </Link>
+        <Link href="/dashboard/password"
             class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl cursor-pointer">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -30,8 +30,8 @@
                     stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
             Password
-        </div>
-        <div
+        </Link>
+        <Link href="/dashboard/email"
             class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl cursor-pointer">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -40,8 +40,8 @@
                     stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
             Email
-        </div>
-        <div
+        </Link>
+        <Link href="/dashboard/notifications" 
             class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl cursor-pointer">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -51,8 +51,8 @@
 
             </svg>
             Notifications
-        </div>
-        <div
+        </Link>
+        <Link 
             class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl cursor-pointer">
             <svg class="w-[24px] h-[24px] mr-2" aaria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +61,7 @@
                     stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
             Sigh Out
-        </div>
+        </Link>
 
     </div>
 </template>
