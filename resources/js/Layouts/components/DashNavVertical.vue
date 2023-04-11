@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col dark:bg-gray-700 dark:text-white h-auto w-[300px] shadow-2xl  rounded-2xl px-8 py-4 justify-start items-center ">
+    <div class="flex flex-col dark:bg-gray-700 dark:text-white h-auto w-[250px] shadow-2xl  rounded-2xl px-8 py-4 justify-start items-center ">
         <div class="font-bold text-xl">Settings</div>
         <Link href="/dashboard"
             class="flex flex-row w-full h-[80px] justify-start items-center px-8 rounded-2xl hover:shadow-xl active:shadow-xl cursor-pointer">
@@ -11,7 +11,7 @@
             </svg>
             Profile
         </Link>
-        <Link href="/dashboard/account"
+        <Link href="/account"
             class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl cursor-pointer hover:shadow-xl">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +21,7 @@
             </svg>
             Account
         </Link>
-        <Link href="/dashboard/password"
+        <Link href="/password"
             class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl cursor-pointer">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@
             </svg>
             Password
         </Link>
-        <Link href="/dashboard/email"
+        <Link href="/email"
             class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl cursor-pointer">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +41,7 @@
             </svg>
             Email
         </Link>
-        <Link href="/dashboard/notifications" 
+        <Link href="/notifications" 
             class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl cursor-pointer">
             <svg class="w-[24px] h-[24px] mr-2" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

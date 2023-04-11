@@ -31,7 +31,7 @@ export default {
                                     <!-- 20% dashboard nav here -->
                                     <DashNavVertical />
                                 </div>
-                                <div class="flex flex-col ">
+                                <div class="flex flex-col w-full h-full">
                                     <div class="w-full mx-6 dark:bg-gray-700 my-4 rounded-2xl shadow-2xl">
                                         <!-- 70% dashboard panel here -->
                                         <!-- <Notifications /> -->
@@ -63,57 +63,8 @@ export default {
 
                                         </div>
                                    
-                                        <div class="px-16 py-4 ">
-                                            <div
-                                                class=" ">
-                                                <h3
-                                                    class="dark:text-white font-bold text-2xl ">
-                                                    General information</h3>
-                                                <dl >
-                                                    <div class="py-4">
-                                                        <dt
-                                                            class="text-gray-400">
-                                                            About me</dt>
-                                                        <dd
-                                                            class="dark:text-white">
-                                                            <p>Tincidunt quam neque in cursus viverra orci, dapibus nec
-                                                                tristique. Nullam ut sit dolor consectetur urna, dui cras
-                                                                nec sed. Cursus risus congue arcu aenean posuere aliquam.
-                                                            </p>
-                                                            <p>Et vivamus lorem pulvinar nascetur non. Pulvinar a sed platea
-                                                                rhoncus ac mauris amet. Urna, sem pretium sit pretium urna,
-                                                                senectus vitae. Scelerisque fermentum, cursus felis dui
-                                                                suspendisse velit pharetra. Augue et duis cursus maecenas
-                                                                eget quam lectus. Accumsan vitae nascetur pharetra rhoncus
-                                                                praesent dictum risus suspendisse.</p>
-                                                        </dd>
-                                                    </div>
-                                                    <div class="py-4">
-                                                        <dt
-                                                            class="text-gray-400">
-                                                            Join Date</dt>
-                                                        <dd
-                                                            class="dark:text-white">
-                                                            12-09-2021 </dd>
-                                                    </div>
-                                                    <div class="py-4">
-                                                        <dt
-                                                            class="text-gray-400">
-                                                            Languages</dt>
-                                                        <dd
-                                                            class="dark:text-white">
-                                                            English, Spanish </dd>
-                                                    </div>
-                                                    <div class="py-4">
-                                                        <dt
-                                                            class="text-gray-400">
-                                                            Birthday</dt>
-                                                        <dd
-                                                        class="dark:text-white">
-                                                        15-08-1990 </dd>
-                                                </div>
-                                            </dl>
-                                        </div>
+                                        <div class="px-16 py-4  ">
+                                            
                                     </div>
                                 </div>
                             </div>

@@ -94,7 +94,7 @@ export default {
                             </Link>
                             </li>
                             <li class="text-gray dark:text-white hover:bg-gray-300 rounded-full hover:text-gray-800">
-                                <a>Settings</a>
+                                <Link href="/dashboard/account">Settings</Link>
                             </li>
                             <li class="text-gray dark:text-white hover:bg-gray-300 rounded-full hover:text-gray-800">
                                 <Link href="/login">
@@ -117,3 +117,6 @@ export default {
     </body>
     <footer />
 </template>
+<style>
+
+</style>
