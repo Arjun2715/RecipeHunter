@@ -48,37 +48,64 @@ export default {
                                                                 alt=""></label>
                                                         <input id="file-input" type="file" />
                                                     </div>
-
+                                                </div>
+                                                <div class="absolute   top-28 left-56">
+                                                    <div class="mt-28 mb-4 px-16 font-medium text-2xl text-gray-600  
+                                                                dark:text-white">
+                                                        Account Details
+                                                    </div>
                                                 </div>
                                             </div>
 
                                         </div>
-                                        <div class="mt-28 mb-4 px-16 font-medium text-2xl text-gray-600  
-                                                            dark:text-white">
-                                            Juan Vidal
+                                        <div class="mt-28 mb-4 px-16 flex flex-row justify-between space-x-4">
+                                            <div class="flex flex-col w-full  ">
+                                                <div class=" font-medium text-lg text-gray-600 dark:text-white">First Name </div>
+                                            <input type="text" class=" bg-gradient-to-r from-lemon-20 to-green-20 border-1 border-gray-300 text-gray-900 text-sm  
+                                               focus:ring-green focus:border-green rounded-xl w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
+                                               dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  placeholder:Joan">
+                                            </div>
+                                            <div class="flex flex-col w-full">
+                                                <div class=" font-medium text-lg text-gray-600 dark:text-white">Last Name </div>
+                                            <input type="text" class=" bg-gradient-to-r from-lemon-20 to-green-20 border-1 border-gray-300 text-gray-900 text-sm  
+                                               focus:ring-green focus:border-green rounded-xl w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
+                                               dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">
+                                            </div>
                                         </div>
-                                        <div class=" flex flex-row px-16 font-medium text-sm text-gray-600  
-                                                            dark:text-white">
-                                            <img class="w-[30px] mr-4" src="assets/images/flag.png" alt="">Barcelona, Spain
+                                        <div class="mt-8 mb-4 px-16 flex flex-row justify-between space-x-4">
+                                            <div class="flex flex-col w-full  ">
+                                                <div class=" font-medium text-lg text-gray-600 dark:text-white">Email </div>
+                                            <input type="email" class=" bg-gradient-to-r from-lemon-20 to-green-20 border-1 border-gray-300 text-gray-900 text-sm  
+                                               focus:ring-green focus:border-green rounded-xl w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
+                                               dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">
+                                            </div>
+                                            <div class="flex flex-col w-full">
+                                                <div class=" font-medium text-lg text-gray-600 dark:text-white">BirthDay </div>
+                                            <input type="Date" class=" bg-gradient-to-r from-lemon-20 to-green-20 border-1 border-gray-300 text-gray-900 text-sm  
+                                               focus:ring-green focus:border-green rounded-xl w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
+                                               dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">
+                                            </div>
+                                        </div>
+                                        
+
+                                        <div class="px-16 py-4  ">
 
                                         </div>
-                                   
-                                        <div class="px-16 py-4  ">
-                                            
                                     </div>
                                 </div>
+
+
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<Footer /></template>
+    <Footer />
+</template>
 
-<style>.image-upload>input {
+<style>
+.image-upload>input {
     display: none;
 }</style>
