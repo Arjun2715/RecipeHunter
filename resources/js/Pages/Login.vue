@@ -1,9 +1,7 @@
 <script scope>
-import navbar from "../Layouts/components/AuthNav.vue";
 import { Link } from "@inertiajs/vue3";
 export default {
     components: {
-        navbar,
     },
     data() {
         return {
@@ -29,21 +27,21 @@ export default {
                 >
             </div>
             <div class="flex px-2">
-                <router-link
-                    to="/login"
+                <Link
+                    href="/login"
                     class="btn flex-1 w-12 rounded-l-full btn-active bg-gradient-to-r from-lemon to-green border-none shadow hover:shadow-lg"
-                    @click="goToLogin"
+                    
                 >
                     Login
-                </router-link>
+                </Link>
 
-                <router-link
-                    to="register"
+                <Link
+                    href="/register"
                     class="btn flex-1 w-32 rounded-r-full border-none shadow hover:shadow-lg"
-                    @click="goToSignup"
+                    
                 >
                     SignUp
-                </router-link>
+                </Link>
             </div>
         </div>
     </nav>
