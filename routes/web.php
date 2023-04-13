@@ -32,6 +32,7 @@ Route::get('/account', function () { return Inertia::render('Account', []);})->n
 Route::get('/password', function () { return Inertia::render('Password', []);})->name('password');
 Route::get('/email', function () { return Inertia::render('Email', []);})->name('email');
 Route::get('/notifications', function () { return Inertia::render('Notifications', []);})->name('notifications');
+Route::get('/logoutdash', function () { return Inertia::render('Logoutdash', []);})->name('logoutdsah');
 
 Route::get('/login', function () { return Inertia::render('Login', []);})->name('login');
 

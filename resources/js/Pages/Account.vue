@@ -36,7 +36,7 @@ export default {
                                         <!-- 70% dashboard panel here -->
                                         <!-- <Notifications /> -->
                                         <div id="bg-profile" name="bg-profile"
-                                            class="flex flex-col   rounded-t-2xl  h-[200px] bg-gradient-to-r from-lemon-20 to-green-20">
+                                            class="flex flex-col   rounded-t-2xl  h-[200px] bg-gradient-to-r from-lemon-20 to-green-20 mb-[120px]">
                                             <div class="relative">
                                                 <div
                                                     class="absolute rounded-full w-42 h-42 bg-white dark:bg-gray-600 top-28 left-24 shadow-lg">
@@ -58,16 +58,16 @@ export default {
                                             </div>
 
                                         </div>
-                                        <div class="mt-28 mb-4 px-16 flex flex-row justify-between space-x-4">
+                                        <div class=" mb-4 px-16 flex flex-row justify-between space-x-4">
                                             <div class="flex flex-col w-full  ">
                                                 <div class=" font-medium text-lg text-gray-600 dark:text-white">First Name </div>
-                                            <input type="text" class=" bg-gradient-to-r from-lemon-20 to-green-20 border-1 border-gray-300 text-gray-900 text-sm  
+                                            <input type="text" class="  border-1 border-gray-300 text-gray-900 text-sm  
                                                focus:ring-green focus:border-green rounded-xl w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  placeholder:Joan">
                                             </div>
                                             <div class="flex flex-col w-full">
                                                 <div class=" font-medium text-lg text-gray-600 dark:text-white">Last Name </div>
-                                            <input type="text" class=" bg-gradient-to-r from-lemon-20 to-green-20 border-1 border-gray-300 text-gray-900 text-sm  
+                                            <input type="text" class="  border-1 border-gray-300 text-gray-900 text-sm  
                                                focus:ring-green focus:border-green rounded-xl w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">
                                             </div>
@@ -75,13 +75,13 @@ export default {
                                         <div class="mt-8 mb-4 px-16 flex flex-row justify-between space-x-4">
                                             <div class="flex flex-col w-full  ">
                                                 <div class=" font-medium text-lg text-gray-600 dark:text-white">Email </div>
-                                            <input type="email" class=" bg-gradient-to-r from-lemon-20 to-green-20 border-1 border-gray-300 text-gray-900 text-sm  
+                                            <input type="email" class="  border-1 border-gray-300 text-gray-900 text-sm  
                                                focus:ring-green focus:border-green rounded-xl w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">
                                             </div>
                                             <div class="flex flex-col w-full">
                                                 <div class=" font-medium text-lg text-gray-600 dark:text-white">BirthDay </div>
-                                            <input type="Date" class=" bg-gradient-to-r from-lemon-20 to-green-20 border-1 border-gray-300 text-gray-900 text-sm  
+                                            <input type="Date" class=" border-1 border-gray-300 text-gray-900 text-sm  
                                                focus:ring-green focus:border-green rounded-xl w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">
                                             </div>

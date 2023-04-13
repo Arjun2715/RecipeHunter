@@ -52,8 +52,9 @@
             </svg>
             Notifications
         </Link>
-        <Link 
-            class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl cursor-pointer">
+        
+        <Link href="/logoutdash" class="flex flex-row w-full h-[80px] justify-start items-center px-8 active:shadow-xl rounded-2xl hover:shadow-xl cursor-pointer">
+            
             <svg class="w-[24px] h-[24px] mr-2" aaria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
