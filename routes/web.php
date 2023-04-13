@@ -33,6 +33,7 @@ Route::get('/password', function () { return Inertia::render('Password', []);})-
 Route::get('/email', function () { return Inertia::render('Email', []);})->name('email');
 Route::get('/notifications', function () { return Inertia::render('Notifications', []);})->name('notifications');
 Route::get('/logoutdash', function () { return Inertia::render('Logoutdash', []);})->name('logoutdsah');
+Route::get('/addrecipe', function () { return Inertia::render('AddNewRecipe', []);})->name('addrecipe');
 
 Route::get('/login', function () { return Inertia::render('Login', []);})->name('login');
 

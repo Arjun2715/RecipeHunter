@@ -5,21 +5,10 @@ module.exports = {
     "./storage/framework/views/*.php",
     "./resources/views/**/*.blade.php",
     "./resources/js/**/*.vue",
+    "./node_modules/flowbite/**/*.js"
     
   ],
   theme: {
-    // screens: {
-    //   'mobile': '400px',
-
-    //   'tablet': '640px',
-    //   // => @media (min-width: 640px) { ... }
-
-    //   'laptop': '1024px',
-    //   // => @media (min-width: 1024px) { ... }
-
-    //   'desktop': '1580px',
-    //   // => @media (min-width: 1280px) { ... }
-    // },
     extend: {
       colors: {
         'lemon' : '#CAE00D',
@@ -37,7 +26,7 @@ module.exports = {
       }
     },
   },
-  plugins: [require("daisyui"),require('tailwind-scrollbar'),
+  plugins: [require("daisyui"),('tailwind-scrollbar'),('flowbite/plugin')
 ],
   
   

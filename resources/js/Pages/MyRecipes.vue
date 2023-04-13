@@ -9,48 +9,7 @@ export default {
         RecentlyUpdated,
     },
     //example test data
-    data() {
-        return {
-            items: [
-                {
-                    title: 'Item 1',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    link: 'https://example.com/item1',
-                    image: 'assets/images/mostviewed/image-14.png'
-                },
-                {
-                    title: 'Item 2',
-                    description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                    link: 'https://example.com/item2',
-                    image: 'assets/images/mostviewed/image-13.png'
-                },
-                {
-                    title: 'Item 3',
-                    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                    link: 'https://example.com/item3',
-                    image: 'assets/images/mostviewed/image-12.png'
-                },
-                {
-                    title: 'Item 1',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    link: 'https://example.com/item1',
-                    image: 'assets/images/mostviewed/image-14.png'
-                },
-                {
-                    title: 'Item 2',
-                    description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                    link: 'https://example.com/item2',
-                    image: 'assets/images/mostviewed/image-13.png'
-                },
-                {
-                    title: 'Item 3',
-                    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                    link: 'https://example.com/item3',
-                    image: 'assets/images/mostviewed/image-12.png'
-                }
-            ]
-        }
-    }
+    
 }
 </script>
 <template>
@@ -73,10 +32,10 @@ export default {
                             <div class="flex flex-col items-center justify-center">
                                 <h2 class="font-bold">No items Here</h2>
                                 <p>On adding your created recipes will be saved here.</p>
-                                <button
-                                    class="bg-gradient-to-r from-lemon to-green rounded-full p-2 text-gray-600 dark:text-white shadow-md hover:shadow-xl">
+                                <Link href="/addrecipe"
+                                    class="btn border-none bg-gradient-to-r from-lemon to-green rounded-full p-2 text-gray-600 dark:text-white shadow-md hover:shadow-xl">
                                     Add Recipes Here
-                                </button>
+                            </Link>
                             </div>
                         </div>
                     </div>

@@ -4,8 +4,15 @@ import mostViewed from "../Layouts/components/MostViewed.vue";
 import recentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
 import recentlyUpdatedCarousel from "../Layouts/components/RecentlyUpdatedCarousel.vue";
 import Footer from "../Layouts/components/Footer.vue";
-
 import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+
+// initialize components based on data attribute selectors
+onMounted(() => {
+    initFlowbite();
+})
+
 export default {
     components: {
         RecipeHunterLayout,
