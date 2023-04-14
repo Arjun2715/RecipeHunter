@@ -2,11 +2,20 @@
 import Footer from "../Layouts/components/Footer.vue";
 import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
 import RecentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
+import MainCarousel from "../Layouts/components/MainCard.vue";
+import { onMounted } from 'vue'
+import { initFlowbite } from 'flowbite'
+
+// initialize components based on data attribute selectors
+onMounted(() => {
+    initFlowbite();
+})
 export default {
     components: {
         RecipeHunterLayout,
         Footer,
         RecentlyUpdated,
+        MainCarousel,
     },
     //example test data
 
@@ -24,25 +33,18 @@ export default {
                                 Add New Recipes</div>
                             <div class="flex flex-row w-auto  ">
 
-                             <Link href="/viewrecipe"
-                             class="lg:h-[50px]  md:h-[40px] h-[30px] w-auto font-medium  rounded-full bg-gradient-to-r from-lemon to-green border-none lg:text-xl px-4  cursor-pointer text-white dark:text-white hover:shadow-xl">
+                             <button class="lg:h-[50px]  md:h-[40px] h-[30px] w-auto font-medium items-center rounded-full bg-gradient-to-r from-lemon to-green border-none lg:text-xl px-4  cursor-pointer text-white dark:text-white hover:shadow-xl">
                                             Save Recipe
-                             </Link>
+                                        </button>
                             </div>
                         </div>
                         <div class="lg:flex flex-row  mt-14  ">
                             <div class="flex-1  mx-4 ">
                                 <div class="flex flex-col ">
-                                    <img class="h-auto max-w-full rounded-t-lg" src="assets/images/image-101.png"
-                                        alt="image description">
+                                    <MainCarousel />
 
                                 </div>
-                                <div class="flex flex-col justify-center w-auto ">
-                                    <button
-                                        class="btn border-none rounded-b-lg bg-gradient-to-r from-lemon to-green rounded-none dark:text-white">add
-                                        more images</button>
-
-                                </div>
+                                
                                 <div class=" mt-2 flex flex-row justify-between space-x-4  ">
                                     <div class="flex flex-col w-full  ">
                                         <div class=" font-medium text-lg text-gray-600 dark:text-white">Nutrition Facts

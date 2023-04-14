@@ -6,7 +6,7 @@ import 'flowbite';
 export default defineConfig({
   plugins: [
     laravel({
-      input: ["resources/css/app.css", "resources/js/app.js","../path/to/flowbite/dist/flowbite.min.js"],
+      input: ["resources/css/app.css", "resources/js/app.js",],//"../path/to/flowbite/dist/flowbite.min.js"
       refresh: true,
     }),
     vue({

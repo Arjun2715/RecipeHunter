@@ -1,49 +1,28 @@
-<script scope>
-
-</script>
 <template>
-    <!-- <div class="static">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent"></div>
-        
-        <div class="absolute  flex flex:lg bottom-10 left-10 ">
-
-            <div class="flex flex-row  px-10 ">
-                <div class="rounded-[10px]">
-                    <img src="assets/images/taco.png" alt="Your Image" class="rounded-xl">
-
-                </div>
-                <div>
-                    <h1 class="text-white text-4xl font-bold px-4">Title </h1>
-                </div>
-
-            </div>
-        </div>
-        <img src="assets/images/image-101.png" alt="Your Image" class="object-contain">
-    </div> -->
-    
-
-<div id="default-carousel" class="relative w-full lg:mt-[50px] md:mt-[30px] mt-[20px] " data-carousel="slide">
+   
+<div id="default-carousel" class="relative w-full  " data-carousel="slide">
+    <!-- lg:mt-[50px] md:mt-[30px] mt-[20px] -->
     <!-- Carousel wrapper -->
     <div class="relative h-56 overflow-hidden rounded-[20px] md:h-[400px]">
          <!-- Item 1 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="assets/images/image-101.png" class="w-full h-full object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="hidden duration-2000 ease-in-out" data-carousel-item>
+            <img src="assets/images/image-101.png" class="w-full h-full object-cover absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="assets/images/image-102.png" class=" w-full h-full object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="hidden duration-2000 ease-in-out" data-carousel-item>
+            <img src="assets/images/image-102.png" class=" w-full h-full object-cover absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="assets/images/image-103.png" class="w-full h-full object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="hidden duration-2000 ease-in-out" data-carousel-item>
+            <img src="assets/images/image-103.png" class="w-full h-full object-cover absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="assets/images/image-104.png" class="w-full h-full object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="hidden duration-2000 ease-in-out" data-carousel-item>
+            <img src="assets/images/image-104.png" class="w-full h-full object-cover absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 5 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="assets/images/image-101.png" class="w-full h-full object-cover absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="hidden duration-2000 ease-in-out" data-carousel-item>
+            <img src="assets/images/image-101.png" class="w-full h-full object-cover absolute block  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
     </div>
     <!-- Slider indicators -->

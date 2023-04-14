@@ -30,7 +30,7 @@ export default {
             
         <div>
             <section class=" flex flex-col w-full ">
-                <div class="container mx-auto px-4 w-full h-full ">
+                <div class="container mx-auto px-4 w-full h-full mt-10 ">
                     <mainCarousel />
                     <mostViewed />
                     <recentlyUpdated />
