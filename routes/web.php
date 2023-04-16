@@ -21,6 +21,9 @@ use Inertia\Inertia;
 //     ]);
 // })->name('home');
 
+Route::get('/login',         function () { return Inertia::render('Login', []);})->name('login');
+Route::get('/register',      function () { return Inertia::render('Register', []);})->name('register');
+
 Route::get('/home',          function () { return Inertia::render('Home', []);})->name('home');
 Route::get('/filter',        function () { return Inertia::render('FilterSearch', []);})->name('filter');
 Route::get('/categories',    function () { return Inertia::render('Categories', []);})->name('categories');
@@ -33,10 +36,13 @@ Route::get('/password',      function () { return Inertia::render('Password', []
 Route::get('/email',         function () { return Inertia::render('Email', []);})->name('email');
 Route::get('/notifications', function () { return Inertia::render('Notifications', []);})->name('notifications');
 Route::get('/logoutdash',    function () { return Inertia::render('Logoutdash', []);})->name('logoutdsah');
+
 Route::get('/addrecipe',     function () { return Inertia::render('AddNewRecipe', []);})->name('addrecipe');
 Route::get('/viewrecipe',    function () { return Inertia::render('ViewRecipe', []);})->name('viewrecipe');
-Route::get('/login',         function () { return Inertia::render('Login', []);})->name('login');
-Route::get('/register',      function () { return Inertia::render('Register', []);})->name('register');
+Route::get('/editrecipe',     function () { return Inertia::render('editrecipe', []);})->name('editrecipe');
+
+
+
 
 
 Route::middleware('auth:web')->group(function () {

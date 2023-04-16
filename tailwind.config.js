@@ -5,7 +5,7 @@ module.exports = {
     "./storage/framework/views/*.php",
     "./resources/views/**/*.blade.php",
     "./resources/js/**/*.vue",
-    "./node_modules/flowbite/**/*.js"
+    // "./node_modules/flowbite/**/*.js"
     
   ],
   theme: {
@@ -26,7 +26,9 @@ module.exports = {
       }
     },
   },
-  plugins: [require("daisyui"),('tailwind-scrollbar'),('flowbite/plugin')
+  plugins: [require("daisyui"),
+                    ('tailwind-scrollbar'),
+                    // ('flowbite/plugin')
 ],
   
   
