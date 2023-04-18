@@ -16,9 +16,13 @@ return new class extends Migration
             $table->bigInteger('user_id')->nullable();
             $table->string('author')->nullable();
             $table->string('title');
+
             $table->bigInteger('category_id')->references('id')->on('categories')->nullable();
             $table->bigInteger('cuisine_id')->references('id')->on('cuisines')->nullable();
             $table->bigInteger('diet_id')->references('id')->on('diets')->nullable();
+
+
+            
             $table->string('description')->nullable();
             $table->string('nutrition_facts')->nullable();
             $table->string('image')->nullable();
