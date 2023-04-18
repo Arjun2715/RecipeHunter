@@ -86,7 +86,9 @@ export default {
                             </div>
                         </div>
                     </div>
+                    
                     <div class="dropdown dropdown-end hidden lg:flex">
+                        
                         <label tabindex="0" class="btn btn-ghost btn-circle avatar outline-none border-none">
                             <div class="w-10 rounded-full ">
                                 <img class="w-10 h-10 rounded-full  " src="assets/images/avatar.jpg" alt="">
@@ -118,27 +120,11 @@ export default {
             </div>
         </Header>
 
-        <main>
-
-        </main>
-
     </body>
+    
     <footer />
 </template>
 <style>
 /* Define the custom utility */
-.underline-left:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 1px;
-    background-color: currentColor;
-    transition: width 0.3s ease-in-out;
-}
 
-.underline-left:hover:before {
-    width: 100%;
-}
 </style>
