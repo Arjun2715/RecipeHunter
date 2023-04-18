@@ -1,5 +1,11 @@
 <script scope>
 import { Link } from "@inertiajs/vue3";
+import { router } from '@inertiajs/vue3'
+router.on('invalid', (event) => {
+  event.preventDefault()
+    console.log(event.detail.response.data);
+
+})
 export default {
     components: {
     },
@@ -7,6 +13,7 @@ export default {
         return {
             emailValue: "",
             passwordValue: "",
+            errors: Object,
         };
     },
 };
@@ -30,7 +37,7 @@ export default {
                 <Link
                     href="/login"
                     class="btn flex-1 w-12 rounded-l-full btn-active bg-gradient-to-r from-lemon to-green border-none shadow hover:shadow-lg"
-                    
+
                 >
                     Login
                 </Link>
@@ -38,7 +45,7 @@ export default {
                 <Link
                     href="/register"
                     class="btn flex-1 w-32 rounded-r-full border-none shadow hover:shadow-lg"
-                    
+
                 >
                     SignUp
                 </Link>
@@ -59,7 +66,10 @@ export default {
                                         class="block uppercase text-gray-700 text-xs font-bold mb-2"
                                         for="grid-password"
                                         >Email</label
-                                    ><input v-model="emailValue"
+                                    >
+
+
+                                    <input v-model="emailValue"
                                         type="email"
                                         id="email"
                                         class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
@@ -67,6 +77,7 @@ export default {
                                         style="transition: all 0.15s ease 0s"
                                     />
                                 </div>
+                                <div v-if="errors.email">{{ errors.email }}</div>
                                 <div class="relative w-full mb-3">
                                     <label
                                         class="block uppercase text-gray-700 text-xs font-bold mb-2"
@@ -88,7 +99,7 @@ export default {
                                             type="checkbox"
                                             class="form-checkbox border-0 rounded text-gray-800 ml-1 w-5 h-5"
                                             style="
-                                                transition: all 0.15s ease 0s;
+                                                transition: all 0.15s ease 0s
                                             "
                                         /><span
                                             class="ml-2 text-sm font-semibold text-gray-700"
