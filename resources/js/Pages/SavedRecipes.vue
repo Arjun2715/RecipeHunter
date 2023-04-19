@@ -9,48 +9,7 @@ export default {
         RecentlyUpdated,
     },
     //example test data
-    data() {
-        return {
-            items: [
-                {
-                    title: 'Item 1',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    link: 'https://example.com/item1',
-                    image: 'assets/images/mostviewed/image-14.png'
-                },
-                {
-                    title: 'Item 2',
-                    description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                    link: 'https://example.com/item2',
-                    image: 'assets/images/mostviewed/image-13.png'
-                },
-                {
-                    title: 'Item 3',
-                    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                    link: 'https://example.com/item3',
-                    image: 'assets/images/mostviewed/image-12.png'
-                },
-                {
-                    title: 'Item 1',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    link: 'https://example.com/item1',
-                    image: 'assets/images/mostviewed/image-14.png'
-                },
-                {
-                    title: 'Item 2',
-                    description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                    link: 'https://example.com/item2',
-                    image: 'assets/images/mostviewed/image-13.png'
-                },
-                {
-                    title: 'Item 3',
-                    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                    link: 'https://example.com/item3',
-                    image: 'assets/images/mostviewed/image-12.png'
-                }
-            ]
-        }
-    }
+    
 }
 </script>
 <template>

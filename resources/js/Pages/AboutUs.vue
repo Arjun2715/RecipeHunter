@@ -25,7 +25,7 @@ export default {
                             <div class="flex flex-row w-auto  ">
                             </div>
                         </div>
-                        <div><br>
+                        <div class="dark:text-white"><br>
                             Recipe Hunter is a powerful and intuitive recipe search and discovery app that aims to help you
                             find the perfect meal for any occasion. Whether you are a seasoned cook or a newbie in the
                             kitchen, this app is perfect for anyone who loves to explore new recipes and experiment with
