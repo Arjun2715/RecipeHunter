@@ -39,4 +39,6 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/users/{user_id}/recommendations', [RecipeController::class, 'recommendations']);
 
     Route::post('/logout', [ApiAuthController::class,'logout'])->name('logout.api');
+
 });
+Route::get('/test', [RecipeController::class,'storeSpoonacularRecipes'])->name('storeSpoonacularRecipes');

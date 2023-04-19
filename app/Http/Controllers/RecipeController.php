@@ -128,14 +128,25 @@ class RecipeController extends Controller
   
 
 
-    public function storeSpoonacularRecipes(Request $request){
-        $url = "https://api.spoonacular.com/recipes/complexSearch?cuisine=italian&number=1&apiKey=f5750ea5b4604d01bbb15645a66fcf45&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true";
+    public function storeSpoonacularRecipes(){
+        $cuisine = "italian";
+        $apiKey = "f5750ea5b4604d01bbb15645a66fcf45";
+        $url = "https://api.spoonacular.com/recipes/complexSearch?cuisine=".$cuisine."&number=1&apiKey=".$apiKey."&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&addRecipeNutrition=true";
         $response = Http::get($url);
         if ($response->ok()) {
             $data = $response->json();
             $data = $data['results'][0];
             $title = $data['title'];
             $description = $data['summary'];
+            $author = $data['creditsText'];
+            $image = $data['image'];
+            $prepTime= $data['readyInMinutes'];
+            $servings = $data['servings'];
+            $provisional = $data['nutrition']['nutrients'];
+            $nutriFacts = $provisional[0]['name'].': '.$provisional[0]['amount']." ".$provisional[0]['unit']."\r\n".$provisional[1]['name'].': '.$provisional[1]['amount']." ".$provisional[1]['unit']."\r\n".$provisional[2]['name'].': '.$provisional[2]['amount']." ".$provisional[2]['unit']."\r\n".$provisional[3]['name'].': '.$provisional[3]['amount']." ".$provisional[3]['unit']."\r\n".$provisional[4]['name'].': '.$provisional[4]['amount']." ".$provisional[4]['unit']."\r\n".$provisional[5]['name'].': '.$provisional[5]['amount']." ".$provisional[5]['unit']."\r\n".$provisional[6]['name'].': '.$provisional[6]['amount']." ".$provisional[6]['unit']."\r\n".$provisional[7]['name'].': '.$provisional[7]['amount']." ".$provisional[7]['unit']."\r\n".$provisional[8]['name'].': '.$provisional[8]['amount']." ".$provisional[8]['unit'];
+            $cuisines = $data['cuisines'];
+            $categories = $data['dishTypes'];
+            $instructions = $data['analyzedInstructions'];
             
         } else {
             // Handle the error

@@ -10,7 +10,7 @@
         "inertiajs/inertia-laravel": "^0.6.9",
         "laravel/fortify": "^1.16",
         "laravel/framework": "^10.0",
-        "laravel/passport": "*",
+        "laravel/passport": "^11.8",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8"
     },
