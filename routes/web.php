@@ -66,9 +66,11 @@ Route::get('/register', function () {
     return Inertia::render('Register', []);
 })->name('register');
 
-Route::group(['middleware' => ['auth:web']], function () {
+
+
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/', function () {
-        return Inertia::render('Show', []);
+        return Inertia::render('Home', []);
     });
 
 });
