@@ -68,7 +68,7 @@ Route::get('/register', function () {
 
 
 
-Route::group(['middleware' => ['auth:sanctum']], function () {
+Route::group(['middleware' => ['auth:web']], function () {
     Route::get('/', function () {
         return Inertia::render('Show', []);
     });
