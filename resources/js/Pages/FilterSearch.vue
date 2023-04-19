@@ -19,13 +19,13 @@ export default {
                 },
                 {
                     title: 'Item 2',
-                    description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                     link: 'https://example.com/item2',
                     image: 'assets/images/mostviewed/image-13.png'
                 },
                 {
                     title: 'Item 3',
-                    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                     link: 'https://example.com/item3',
                     image: 'assets/images/mostviewed/image-12.png'
                 },
@@ -37,13 +37,13 @@ export default {
                 },
                 {
                     title: 'Item 2',
-                    description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                     link: 'https://example.com/item2',
                     image: 'assets/images/mostviewed/image-13.png'
                 },
                 {
                     title: 'Item 3',
-                    description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                     link: 'https://example.com/item3',
                     image: 'assets/images/mostviewed/image-12.png'
                 }
@@ -65,10 +65,7 @@ export default {
                         </div>
                     </div>
                     <form>
-                        <div class="py-2 
-                                                                    lg:flex lg:flex-wrap lg:space-x-2 lg:items-center
-                                                                    md:flex md:grid md:space-x-2 md:grid-cols-4 md:items-center
-                                                                    flex grid space-x-2 grid-cols-2 items-center">
+                        <div class="py-2 lg:flex lg:flex-wrap lg:space-x-2 lg:items-center md:grid md:space-x-2 md:grid-cols-4 md:items-center grid space-x-2 grid-cols-2 items-center">
                             <div class="grow flex-1  h-auto ml-2 lg:ml-0">
                                 <div class="relative w-full">
                                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -213,7 +210,7 @@ export default {
                         <!--fix uneven cards -->
 
                         <div
-                            class="py-2 flex grid lg:grid-cols-3 lg:space-x-2 lg:items-center flex md:grid md:space-x-2 md:grid-cols-2 md:items-center flex grid space-x-4 grid-cols-1 items-center w-full h-full">
+                            class="py-2 flex grid lg:grid-cols-3  lg:items-center flex md:grid  md:grid-cols-2 md:items-center flex grid  grid-cols-1 items-center w-full h-full">
                             <div v-for="(item, index) in items" :key="index" class=" flex-1 ">
                                 <div class="card card-side bg-base-100 shadow-xl">
                                     <figure> <img :src="item.image" alt="{{ item.title  }}" />
@@ -221,8 +218,8 @@ export default {
                                     <div class="card-body">
                                         <h2 class="card-title text-gray-800 dark:text-white  ">{{ item.title }}</h2>
                                         <p class="text-gray-800 dark:text-white ">{{ item.description }}</p>
-                                        <div class="bg-gradient-to-r from-lemon to-green rounded-full w-full h-[3px]">
-                                        </div>
+                                        
+                                        <hr class="bg-gradient-to-r from-lemon to-green rounded-full w-full h-[3px]">
                                     </div>
                                 </div>
                             </div>

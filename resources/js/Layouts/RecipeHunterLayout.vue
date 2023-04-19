@@ -52,6 +52,12 @@ export default {
                                     before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
                                     before:transition before:ease-in-out before:duration-300">
+                            <Link href="/contactus">Contact Us</Link>
+                        </li><li class="text-gray dark:text-white p-0
+                                    relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
+                                    before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
+                                    before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
+                                    before:transition before:ease-in-out before:duration-300">
                             <Link href="/aboutus">About Us</Link>
                         </li>
                     </ul>
@@ -80,7 +86,9 @@ export default {
                             </div>
                         </div>
                     </div>
+                    
                     <div class="dropdown dropdown-end hidden lg:flex">
+                        
                         <label tabindex="0" class="btn btn-ghost btn-circle avatar outline-none border-none">
                             <div class="w-10 rounded-full ">
                                 <img class="w-10 h-10 rounded-full  " src="assets/images/avatar.jpg" alt="">
@@ -112,27 +120,11 @@ export default {
             </div>
         </Header>
 
-        <main>
-
-        </main>
-
     </body>
+    
     <footer />
 </template>
 <style>
 /* Define the custom utility */
-.underline-left:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 1px;
-    background-color: currentColor;
-    transition: width 0.3s ease-in-out;
-}
 
-.underline-left:hover:before {
-    width: 100%;
-}
 </style>
