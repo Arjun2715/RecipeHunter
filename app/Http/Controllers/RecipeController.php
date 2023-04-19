@@ -9,7 +9,7 @@ use App\Models\Recipe;
 use App\Models\SavedRecipes;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Http;
 class RecipeController extends Controller
 {
     /**
@@ -121,6 +121,25 @@ class RecipeController extends Controller
         $recipe->delete();
         $response = ['message' => 'You have been successfully deleted the recipe!'];
         return response($response, 200);
+    }
+
+
+
+  
+
+
+    public function storeSpoonacularRecipes(Request $request){
+        $url = "https://api.spoonacular.com/recipes/complexSearch?cuisine=italian&number=1&apiKey=f5750ea5b4604d01bbb15645a66fcf45&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true";
+        $response = Http::get($url);
+        if ($response->ok()) {
+            $data = $response->json();
+            $data = $data['results'][0];
+            $title = $data['title'];
+            $description = $data['summary'];
+            
+        } else {
+            // Handle the error
+        }
     }
 
     public function recommendations(Request $request)
