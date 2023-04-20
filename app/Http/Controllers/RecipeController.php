@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateRecipeRequest;
 use App\Http\Requests\StoreRecipeRequest;
 use App\Http\Requests\UpdateRecipeRequest;
+use App\Models\Category;
+use App\Models\Cuisine;
 use App\Models\Recipe;
 use App\Models\SavedRecipes;
 use Illuminate\Http\Client\Request;
@@ -28,12 +30,39 @@ class RecipeController extends Controller
         $data = $request->all();
         $recipe = Recipe::create($data);
 
+        foreach ($data['categories'] as $category) {
+            $category_id = Category::where('name','=', $category)->first();
+            if (!$category_id){
+                $category_id = Category::create([
+                    'name' => $category
+                ]);
+            }
+            $recipe->categories()->create([
+                'category_id' => $category_id->id,
+            ]);
+        }
+
+        foreach ($data['cuisines'] as $cuisine) {
+            $cuisine_id = Cuisine::where('name','=', $cuisine)->first();
+            if (!$cuisine_id){
+                $cuisine_id = Cuisine::create([
+                    'name' => $cuisine
+                ]);
+            }
+
+            $recipe->cuisines()->create([
+                'cuisine_id' => $cuisine_id->id,
+            ]);
+        }
+
+
         foreach ($data['ingredients'] as $ingredientData) {
             $recipe->ingredients()->create([
                 'name' => $ingredientData['name'],
                 'quantity' => $ingredientData['quantity'],
             ]);
         }
+
         foreach ($data['steps'] as $stepData) {
             $recipe->steps()->create([
                 'description' => $stepData['description'],
@@ -129,28 +158,89 @@ class RecipeController extends Controller
 
 
     public function storeSpoonacularRecipes(){
-        $cuisine = "italian";
+        $cuisine = "peru";
         $apiKey = "f5750ea5b4604d01bbb15645a66fcf45";
-        $url = "https://api.spoonacular.com/recipes/complexSearch?cuisine=".$cuisine."&number=1&apiKey=".$apiKey."&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&addRecipeNutrition=true";
+        $url = "https://api.spoonacular.com/recipes/complexSearch?cuisine=".$cuisine."&number=100&apiKey=".$apiKey."&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&addRecipeNutrition=true";
         $response = Http::get($url);
         if ($response->ok()) {
             $data = $response->json();
-            $data = $data['results'][0];
-            $title = $data['title'];
-            $description = $data['summary'];
-            $author = $data['creditsText'];
-            $image = $data['image'];
-            $prepTime= $data['readyInMinutes'];
-            $servings = $data['servings'];
-            $provisional = $data['nutrition']['nutrients'];
-            $nutriFacts = $provisional[0]['name'].': '.$provisional[0]['amount']." ".$provisional[0]['unit']."\r\n".$provisional[1]['name'].': '.$provisional[1]['amount']." ".$provisional[1]['unit']."\r\n".$provisional[2]['name'].': '.$provisional[2]['amount']." ".$provisional[2]['unit']."\r\n".$provisional[3]['name'].': '.$provisional[3]['amount']." ".$provisional[3]['unit']."\r\n".$provisional[4]['name'].': '.$provisional[4]['amount']." ".$provisional[4]['unit']."\r\n".$provisional[5]['name'].': '.$provisional[5]['amount']." ".$provisional[5]['unit']."\r\n".$provisional[6]['name'].': '.$provisional[6]['amount']." ".$provisional[6]['unit']."\r\n".$provisional[7]['name'].': '.$provisional[7]['amount']." ".$provisional[7]['unit']."\r\n".$provisional[8]['name'].': '.$provisional[8]['amount']." ".$provisional[8]['unit'];
-            $cuisines = $data['cuisines'];
-            $categories = $data['dishTypes'];
-            $instructions = $data['analyzedInstructions'];
+            foreach ($data['results'] as $data){
+                $title = $data['title'];
+                $description = $data['summary'];
+                $author = $data['creditsText'];
+                $image = $data['image'];
+                $prepTime= $data['readyInMinutes'];
+                $cookTime= $data['cookingMinutes'];
+                $servings = $data['servings'];
+                $provisional = $data['nutrition']['nutrients'];
+                $nutriFacts = $provisional[0]['name'].': '.$provisional[0]['amount']." ".$provisional[0]['unit']."\r\n".$provisional[1]['name'].': '.$provisional[1]['amount']." ".$provisional[1]['unit']."\r\n".$provisional[2]['name'].': '.$provisional[2]['amount']." ".$provisional[2]['unit']."\r\n".$provisional[3]['name'].': '.$provisional[3]['amount']." ".$provisional[3]['unit']."\r\n".$provisional[4]['name'].': '.$provisional[4]['amount']." ".$provisional[4]['unit']."\r\n".$provisional[5]['name'].': '.$provisional[5]['amount']." ".$provisional[5]['unit']."\r\n".$provisional[6]['name'].': '.$provisional[6]['amount']." ".$provisional[6]['unit']."\r\n".$provisional[7]['name'].': '.$provisional[7]['amount']." ".$provisional[7]['unit']."\r\n".$provisional[8]['name'].': '.$provisional[8]['amount']." ".$provisional[8]['unit'];
+                $cuisines = $data['cuisines'];
+                $categories = $data['dishTypes'];
+                if (!$data['analyzedInstructions'][0]){
+                }else{
+                    $instructions = $data['analyzedInstructions'][0]['steps'];
+                    $ingredients = $data['extendedIngredients'];
+                    $recipe = Recipe::create(
+                        [
+                            'title' => $title,
+                            'description' => $description,
+                            'author' => $author,
+                            'image' => $image,
+                            'prep_time' => $prepTime,
+                            'cook_time' => $cookTime,
+                            'nutrition_facts' => $nutriFacts,
+                            'user_id' => 1,
+                            'servings' => $servings,
+                        ]
+                    );
+        
+                    foreach ($categories as $category) {
+                        $category_id = Category::where('name','=', $category)->first();
+                        if (!$category_id){
+                            $category_id = Category::create([
+                                'name' => $category
+                            ]);
+                        }
+                        $recipe->categories()->create([
+                            'category_id' => $category_id->id,
+                        ]);
+                    }
             
-        } else {
-            // Handle the error
-        }
+                    foreach ($cuisines as $cuisine) {
+                        $cuisine_id = Cuisine::where('name','=', $cuisine)->first();
+                        if (!$cuisine_id){
+                            $cuisine_id = Cuisine::create([
+                                'name' => $cuisine
+                            ]);
+                        }
+            
+                        $recipe->cuisines()->create([
+                            'cuisine_id' => $cuisine_id->id,
+                        ]);
+                    }
+            
+            
+                    foreach ($ingredients as $ingredientData) {
+                        $recipe->ingredients()->create([
+                            'name' => $ingredientData['original'],
+                            'quantity' => $ingredientData['amount']." ".$ingredientData['unit'],
+                        ]);
+                    }
+            
+                    foreach ($instructions as $stepData) {
+                        $recipe->steps()->create([
+                            'description' => $stepData['step'],
+                            'order_step' => $stepData['number'],
+                        ]);
+                    }
+    
+                }
+                
+            }
+
+            }
+            return "todo ok jose mari";
+            
     }
 
     public function recommendations(Request $request)
