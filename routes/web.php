@@ -39,6 +39,12 @@ Route::get('/savedrecipes', function () {
 Route::get('/aboutus', function () {
     return Inertia::render('AboutUs', []);
 })->name('aboutus');
+Route::get('/contactus', function () {
+    return Inertia::render('ContactUs', []);
+})->name('contactus');
+Route::get('/newrecipe', function () {
+    return Inertia::render('AddNewRecipe', []);
+})->name('newrecipe');
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard', []);
 })->name('dashboard');
@@ -72,5 +78,4 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/', function () {
         return Inertia::render('Home', []);
     });
-
 });
