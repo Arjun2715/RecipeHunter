@@ -32,32 +32,53 @@ export default {
         Pagination,
         Navigation,
     },
+    data: () => ({
+        // carousel settings
+        settings: {
+            itemsToShow: 1,
+            snapAlign: 'center',
+        },
+        // breakpoints are mobile first
+        // any settings not specified will fallback to the carousel settings
+        breakpoints: {
+            // 700px and up
+            700: {
+                itemsToShow: 3.5,
+                snapAlign: 'center',
+            },
+            // 1024 and up
+            1024: {
+                itemsToShow: 5,
+                snapAlign: 'start',
+            },
+        },
+    }),
     data() {
         return {
             items: [
                 {
-                    title: 'Item 1',
+                    title: 'Tacos',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                     link: 'https://example.com/item1',
                     image1: 'assets/images/image-101.png',
                     image2: 'assets/images/taco.png'
                 },
                 {
-                    title: 'Item 1',
+                    title: 'Burger',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                     link: 'https://example.com/item1',
                     image1: 'assets/images/image-102.png',
                     image2: 'assets/images/recentlyupdated/image-21.png'
                 },
                 {
-                    title: 'Item 1',
+                    title: 'Soup',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                     link: 'https://example.com/item1',
                     image1: 'assets/images/image-103.png',
                     image2: 'assets/images/recentlyupdated/image-22.png'
                 },
                 {
-                    title: 'Item 1',
+                    title: 'Pasta',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                     link: 'https://example.com/item1',
                     image1: 'assets/images/image-104.png',
@@ -74,27 +95,30 @@ export default {
         <section class=" flex flex-col w-full  ">
             <div class="container mx-auto px-4  mt-10 ">
                 <!-- <mainCarousel /> -->
-                
-                <carousel :items-to-show="1" :wrap-around="true" :autoplay="20000" class="  rounded-[30px] ">
-                    <Slide v-for="(item, index) in items" :key="index" class="relative">
+
+                <carousel :items-to-show="1" :wrap-around="true" :autoplay="60000" class="  rounded-[30px] ">
+                    <Slide v-for="(item, index) in items" :key="index" class="relative ">
                         <img class="" :src="item.image1" alt="{{ item.title  }}"
                             style="width: 100%;height: 100%;object-fit: cover;" />
-                        
-                        <div class=" absolute bottom-4 left-8">
-                            <div class="max-w-full">
-                                <div class="flex flex-row justify-between w-full">
-                                    <div class="flex flex-row">
-                                        <div class="mx-5">
-                                            <img class="rounded-lg" :src="item.image2" alt=""
+                        <div class=" absolute bottom-0 w-full ">
+                            <div class="flex flex-col  ">
+                                <div
+                                    class="flex flex-row lg:justify-between md:justify-end px-8 pt-20 pb-6 bg-gradient-to-t from-slate-900 to-transparent">
+                                    <h1 class="lg:hidden  md:hidden flex justify-start text-white  text-4xl font-semibold ">{{ item.title }}</h1>
+
+                                    <div class="hidden flex-row lg:flex">
+                                        <div class="ml-6">
+                                            <img class="rounded-lg mb-4 " :src="item.image2" alt=""
+
                                                 style="width: auto; height: 250px; ">
                                         </div>
-                                        <div class="flex-col justify-start dark:text-white">
+                                        <div class="flex-col justify-start text-white px-4">
                                             <p class="flex justify-start">Tag1 Tag2 Tag3</p>
                                             <h1 class="flex justify-start   text-4xl font-semibold ">{{ item.title }}</h1>
                                             <br>
-                                            <div class="flex flex-row justify-start">
+                                            <div class="flex flex-row justify-start ">
                                                 <a class="flex flex-row mr-5" href="#">
-                                                    <svg width="28px" height="28px" viewBox="0 0 26 26" fill="none"
+                                                    <svg width="28px" height="28px" viewBox="0 0 26 26" fill="none" 
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M15.75 5H8.25C7.55964 5 7 5.58763 7 6.3125V19L12 15.5L17 19V6.3125C17 5.58763 16.4404 5 15.75 5Z"
@@ -119,28 +143,32 @@ export default {
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="hidden md:flex flex-row justify-end">
+                                        <div class=" p-2 flex flex-col justify-end text-white">
+                                            <Pagination
+                                                class="bg-gradient-to-r from-lemon to-green rounded-lg w-auto flex flex-row justify-between " />
+                                        </div>
+                                        <div class=" p-2 flex flex-col justify-end">
+                                            <Link class="align-bottom" href="#">
+                                            <div
+                                                class=" font-bold text-transparent text-xl lg:text-4xl md:text-xl bg-clip-text bg-gradient-to-r from-lemon to-green">
+                                                Cook </div>
+                                            <div
+                                                class="font-bold text-transparent text-xl lg:text-4xl md:text-xl bg-clip-text bg-gradient-to-t from-gray-400 to-gray-600">
+                                                Now</div>
+                                            </link>
+
+                                        </div>
+                                    </div>
 
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
-                        <div class="absolute bottom-8 right-40">
-                        <Pagination/>
-                        </div>
-                        <div class="absolute bottom-4 right-8"><Link href="#">
-                            <div
-                                class=" font-bold text-transparent text-xl lg:text-4xl md:text-xl bg-clip-text bg-gradient-to-r from-lemon to-green">
-                                Cook </div>
-                            <div
-                                class="font-bold text-transparent text-xl lg:text-4xl md:text-xl bg-clip-text bg-gradient-to-r from-gray-600 to-gray-600">
-                                Now</div>
-                        </link>
-                            
-                        </div>
+
                     </Slide>
                     <template #addons>
-                        <navigation />
-                        <!-- <Pagination/> -->
+                        <navigation class="h-20 dark:bg-gray-200 rounded-full"/>
                     </template>
                 </carousel>
                 <mostViewed />
@@ -151,6 +179,9 @@ export default {
     </div>
     <Footer />
 </template>
+<style>
+
+</style>
 
 
 
