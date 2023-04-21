@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WebController;
 use App\Models\Article;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -21,9 +22,9 @@ use Inertia\Inertia;
 //     ]);
 // })->name('home');
 
-Route::get('/home', function () {
-    return Inertia::render('Home', []);
-})->name('home');
+Route::get('/home', [WebController::class,'home'])->name('home');
+
+
 Route::get('/filter', function () {
     return Inertia::render('FilterSearch', []);
 })->name('filter');
@@ -76,6 +77,6 @@ Route::get('/register', function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', function () {
-        return Inertia::render('Home', []);
+        return redirect()->to('home');
     });
 });

@@ -31,8 +31,6 @@ export default {
         Slide,
         Pagination,
         Navigation,
-
-
     },
     data() {
         return {
@@ -65,7 +63,7 @@ export default {
                     image1: 'assets/images/image-104.png',
                     image2: 'assets/images/recentlyupdated/image-23.png'
                 },
-            ]
+            ],
         }
     }
 }
@@ -76,12 +74,12 @@ export default {
         <section class=" flex flex-col w-full  ">
             <div class="container mx-auto px-4  mt-10 ">
                 <!-- <mainCarousel /> -->
-
+                
                 <carousel :items-to-show="1" :wrap-around="true" :autoplay="20000" class="  rounded-[30px] ">
                     <Slide v-for="(item, index) in items" :key="index" class="relative">
                         <img class="" :src="item.image1" alt="{{ item.title  }}"
                             style="width: 100%;height: 100%;object-fit: cover;" />
-
+                        
                         <div class=" absolute bottom-4 left-8">
                             <div class="max-w-full">
                                 <div class="flex flex-row justify-between w-full">

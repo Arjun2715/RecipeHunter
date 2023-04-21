@@ -13,4 +13,6 @@ class RecipeCategory extends Model
         'recipe_id',
         'category_id'
     ];
+
+    
 }

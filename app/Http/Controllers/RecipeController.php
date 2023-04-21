@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateRecipeRequest;
 use App\Http\Requests\StoreRecipeRequest;
 use App\Http\Requests\UpdateRecipeRequest;
+use App\Http\Resources\MostViewedResource;
 use App\Models\Category;
 use App\Models\Cuisine;
 use App\Models\Recipe;
@@ -12,6 +13,7 @@ use App\Models\SavedRecipes;
 use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+
 class RecipeController extends Controller
 {
     /**
@@ -31,8 +33,8 @@ class RecipeController extends Controller
         $recipe = Recipe::create($data);
 
         foreach ($data['categories'] as $category) {
-            $category_id = Category::where('name','=', $category)->first();
-            if (!$category_id){
+            $category_id = Category::where('name', '=', $category)->first();
+            if (!$category_id) {
                 $category_id = Category::create([
                     'name' => $category
                 ]);
@@ -43,8 +45,8 @@ class RecipeController extends Controller
         }
 
         foreach ($data['cuisines'] as $cuisine) {
-            $cuisine_id = Cuisine::where('name','=', $cuisine)->first();
-            if (!$cuisine_id){
+            $cuisine_id = Cuisine::where('name', '=', $cuisine)->first();
+            if (!$cuisine_id) {
                 $cuisine_id = Cuisine::create([
                     'name' => $cuisine
                 ]);
@@ -154,30 +156,31 @@ class RecipeController extends Controller
 
 
 
-  
 
 
-    public function storeSpoonacularRecipes(){
+
+    public function storeSpoonacularRecipes()
+    {
         $cuisine = "peru";
         $apiKey = "f5750ea5b4604d01bbb15645a66fcf45";
-        $url = "https://api.spoonacular.com/recipes/complexSearch?cuisine=".$cuisine."&number=100&apiKey=".$apiKey."&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&addRecipeNutrition=true";
+        $url = "https://api.spoonacular.com/recipes/complexSearch?cuisine=" . $cuisine . "&number=100&apiKey=" . $apiKey . "&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&addRecipeNutrition=true";
         $response = Http::get($url);
         if ($response->ok()) {
             $data = $response->json();
-            foreach ($data['results'] as $data){
+            foreach ($data['results'] as $data) {
                 $title = $data['title'];
                 $description = $data['summary'];
                 $author = $data['creditsText'];
                 $image = $data['image'];
-                $prepTime= $data['readyInMinutes'];
-                $cookTime= $data['cookingMinutes'];
+                $prepTime = $data['readyInMinutes'];
+                $cookTime = $data['cookingMinutes'];
                 $servings = $data['servings'];
                 $provisional = $data['nutrition']['nutrients'];
-                $nutriFacts = $provisional[0]['name'].': '.$provisional[0]['amount']." ".$provisional[0]['unit']."\r\n".$provisional[1]['name'].': '.$provisional[1]['amount']." ".$provisional[1]['unit']."\r\n".$provisional[2]['name'].': '.$provisional[2]['amount']." ".$provisional[2]['unit']."\r\n".$provisional[3]['name'].': '.$provisional[3]['amount']." ".$provisional[3]['unit']."\r\n".$provisional[4]['name'].': '.$provisional[4]['amount']." ".$provisional[4]['unit']."\r\n".$provisional[5]['name'].': '.$provisional[5]['amount']." ".$provisional[5]['unit']."\r\n".$provisional[6]['name'].': '.$provisional[6]['amount']." ".$provisional[6]['unit']."\r\n".$provisional[7]['name'].': '.$provisional[7]['amount']." ".$provisional[7]['unit']."\r\n".$provisional[8]['name'].': '.$provisional[8]['amount']." ".$provisional[8]['unit'];
+                $nutriFacts = $provisional[0]['name'] . ': ' . $provisional[0]['amount'] . " " . $provisional[0]['unit'] . "\r\n" . $provisional[1]['name'] . ': ' . $provisional[1]['amount'] . " " . $provisional[1]['unit'] . "\r\n" . $provisional[2]['name'] . ': ' . $provisional[2]['amount'] . " " . $provisional[2]['unit'] . "\r\n" . $provisional[3]['name'] . ': ' . $provisional[3]['amount'] . " " . $provisional[3]['unit'] . "\r\n" . $provisional[4]['name'] . ': ' . $provisional[4]['amount'] . " " . $provisional[4]['unit'] . "\r\n" . $provisional[5]['name'] . ': ' . $provisional[5]['amount'] . " " . $provisional[5]['unit'] . "\r\n" . $provisional[6]['name'] . ': ' . $provisional[6]['amount'] . " " . $provisional[6]['unit'] . "\r\n" . $provisional[7]['name'] . ': ' . $provisional[7]['amount'] . " " . $provisional[7]['unit'] . "\r\n" . $provisional[8]['name'] . ': ' . $provisional[8]['amount'] . " " . $provisional[8]['unit'];
                 $cuisines = $data['cuisines'];
                 $categories = $data['dishTypes'];
-                if (!$data['analyzedInstructions'][0]){
-                }else{
+                if (!$data['analyzedInstructions'][0]) {
+                } else {
                     $instructions = $data['analyzedInstructions'][0]['steps'];
                     $ingredients = $data['extendedIngredients'];
                     $recipe = Recipe::create(
@@ -193,10 +196,10 @@ class RecipeController extends Controller
                             'servings' => $servings,
                         ]
                     );
-        
+
                     foreach ($categories as $category) {
-                        $category_id = Category::where('name','=', $category)->first();
-                        if (!$category_id){
+                        $category_id = Category::where('name', '=', $category)->first();
+                        if (!$category_id) {
                             $category_id = Category::create([
                                 'name' => $category
                             ]);
@@ -205,46 +208,43 @@ class RecipeController extends Controller
                             'category_id' => $category_id->id,
                         ]);
                     }
-            
+
                     foreach ($cuisines as $cuisine) {
-                        $cuisine_id = Cuisine::where('name','=', $cuisine)->first();
-                        if (!$cuisine_id){
+                        $cuisine_id = Cuisine::where('name', '=', $cuisine)->first();
+                        if (!$cuisine_id) {
                             $cuisine_id = Cuisine::create([
                                 'name' => $cuisine
                             ]);
                         }
-            
+
                         $recipe->cuisines()->create([
                             'cuisine_id' => $cuisine_id->id,
                         ]);
                     }
-            
-            
+
+
                     foreach ($ingredients as $ingredientData) {
                         $recipe->ingredients()->create([
                             'name' => $ingredientData['original'],
-                            'quantity' => $ingredientData['amount']." ".$ingredientData['unit'],
+                            'quantity' => $ingredientData['amount'] . " " . $ingredientData['unit'],
                         ]);
                     }
-            
+
                     foreach ($instructions as $stepData) {
                         $recipe->steps()->create([
                             'description' => $stepData['step'],
                             'order_step' => $stepData['number'],
                         ]);
                     }
-    
                 }
-                
             }
-
-            }
-            return "todo ok jose mari";
-            
+        }
+        return "todo ok jose mari";
     }
 
-    public function recommendations(Request $request)
+    public function recommendations()
     {
+        /* 
         $data = $request->all();
         $userId = $data['user_id'];
         $savedRecipes = SavedRecipes::where('user_id', $userId)->pluck('recipe_id');
@@ -260,21 +260,34 @@ class RecipeController extends Controller
             ->orderByDesc('total')
             ->first();
 
-        $mostSavedDiet = Recipe::whereIn('id', $savedRecipes)
-            ->groupBy('diet_id')
-            ->selectRaw('diet_id, COUNT(*) as total')
-            ->orderByDesc('total')
-            ->first();
 
         $recommendedRecipes = Recipe::where('category_id', $mostSavedCategory->category_id)
             ->orWhere('cuisine_id', $mostSavedCuisine->cuisine_id)
-            ->orWhere('diet_id', $mostSavedDiet->diet_id)
             ->orderByDesc('created_at')
             ->limit(5)
             ->get();
+        */
 
-        return response()->json([
-            'data' => $recommendedRecipes,
-        ]);
+        $recipes = Recipe::inRandomOrder()->limit(15)->get();
+        return $recipes;
+    }
+
+
+    public function recentlyUpdatedRecipes()
+    {
+        $recipes = Recipe::orderBy('created_at', 'desc')->take(6)->get();
+        return $recipes;
+    }
+
+    public function mostViewed(){
+        $recipesDay = Recipe::inRandomOrder()->limit(15)->get();
+        $recipesWeek = Recipe::inRandomOrder()->limit(15)->get();
+        $recipesMonth = Recipe::inRandomOrder()->limit(15)->get();
+
+        return [
+                'day' => MostViewedResource::collection($recipesDay), 
+                'week' => MostViewedResource::collection($recipesWeek), 
+                'month' => MostViewedResource::collection($recipesMonth)
+               ];
     }
 }
