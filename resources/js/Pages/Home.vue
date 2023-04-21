@@ -68,17 +68,18 @@ export default {
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                     link: 'https://example.com/item1',
                     image1: 'assets/images/image-102.png',
-                    image2: 'assets/images/recentlyupdated/image-21.png'
-                },
-                {
-                    title: 'Soup',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    link: 'https://example.com/item1',
-                    image1: 'assets/images/image-103.png',
-                    image2: 'assets/images/recentlyupdated/image-22.png'
+                    image2: 'assets/images/mostviewed/image-3.png'
                 },
                 {
                     title: 'Pasta',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                    link: 'https://example.com/item1',
+                    image1: 'assets/images/image-103.png',
+                    image2: 'assets/images/image-108.png',
+
+                },
+                {
+                    title: 'Soup',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                     link: 'https://example.com/item1',
                     image1: 'assets/images/image-104.png',
@@ -98,8 +99,8 @@ export default {
 
                 <carousel :items-to-show="1" :wrap-around="true" :autoplay="60000" class="  rounded-[30px] ">
                     <Slide v-for="(item, index) in items" :key="index" class="relative ">
-                        <img class="" :src="item.image1" alt="{{ item.title  }}"
-                            style="width: 100%;height: 100%;object-fit: cover;" />
+                        <img class="object-contain w-full h-full" :src="item.image1" alt="{{ item.title  }}"
+                             />
                         <div class=" absolute bottom-0 w-full ">
                             <div class="flex flex-col  ">
                                 <div

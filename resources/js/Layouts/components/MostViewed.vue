@@ -1,3 +1,68 @@
+<script>
+export default {
+    data() {
+        return {
+            items: [
+                {
+                    id: 1,
+                    title: 'title1',
+                    link: '#',
+                    image1: 'assets/images/recentlyupdated/image-21.png',
+                },
+                {
+                    id: 2,
+                    title: 'title2',
+                    link: '#',
+                    image1: 'assets/images/recentlyupdated/image-22.png',
+                },
+                {
+                    id: 3,
+                    title: 'title3',
+                    link: '#',
+                    image1: 'assets/images/recentlyupdated/image-23.png',
+                },
+                {
+                    id: 4,
+                    title: 'title4',
+                    link: '#',
+                    image1: 'assets/images/recentlyupdated/image-24.png',
+                },
+                {
+                    id: 5,
+                    title: 'title5',
+                    link: '#',
+                    image1: 'assets/images/recentlyupdated/image-25.png',
+                },
+                {
+                    id: 6,
+                    title: 'title6',
+                    link: '#',
+                    image1: 'assets/images/recentlyupdated/image-26.png',
+                },
+                {
+                    id: 7,
+                    title: 'title7',
+                    link: '#',
+                    image1: 'assets/images/recentlyupdated/image-27.png',
+                },
+                {
+                    id: 8,
+                    title: 'title8',
+                    link: '#',
+                    image1: 'assets/images/recentlyupdated/image-28.png',
+                },
+                {
+                    id: 9,
+                    title: 'title9',
+                    link: '#',
+                    image1: 'assets/images/recentlyupdated/image-29.png',
+                },
+                
+            ],
+        }
+    }
+}
+</script>
 <template>
     <div class="flex flex-col lg:mt-[50px] md:mt-[30px] mt-[20px]">
         <div class="flex flex-row justify-between">
@@ -13,151 +78,31 @@
             </div>
         </div>
         <div class="overflow-x-auto scrollbar  ">
-            
-            <div class="flex space-x-4  py-4">
-                <div class="carousel-item">
+
+            <div  class="flex space-x-4  py-4">
+                <div v-for="(item, index) in items" :key="index" class="carousel-item">
                     <div class="card bg-white dark:bg-gray-600">
-                        <div class="container">
-                            <img src="assets/images/mostviewed/image-1.png" class="rounded-t-2xl w-full h-auto" />
-                            <div class="bg-green dark:bg-gray-600  w-l h-l absolute top-2 right-2 rounded-full py-3 px-3 ">
-                                <h2 class="text-gray-800 dark:text-white justify-center">1</h2>
+                        <div id="cards" class="container">
+                            <img :src="item.image1" class="rounded-t-2xl w-[170px] h-[250px]" />
+                            <div id="top_id" class="bg-green-60 dark:bg-gray-600  w-l h-l absolute top-2 right-2 rounded-full py-3 px-3 
+                            transition duration-300 transform transition-height hover:h-14 overflow-hidden ease-out">
+                                <h2 class="text-gray-900 dark:text-white justify-center">{{ item.id }}</h2>
                             </div>
 
                         </div>
                         <div class="bg-green dark:bg-gray-600 rounded-b-2xl py-2">
-                            <h2 class="card-title  text-gray-800 dark:text-white justify-center ">Beef Roast</h2>
+                            <h2 class="card-title  text-gray-800 dark:text-white justify-center ">{{item.title}}</h2>
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="card bg-white dark:bg-gray-600">
-                        <div class="container">
-                            <img src="assets/images/mostviewed/image-2.png" class="rounded-t-2xl w-full h-auto" />
-                            <div class="bg-green dark:bg-gray-600  w-l h-l absolute top-2 right-2 rounded-full py-3 px-3 ">
-                                <h2 class="text-gray-800 dark:text-white justify-center">2</h2>
-                            </div>
+               
 
-                        </div>
-                        <div class="bg-green dark:bg-gray-600 rounded-b-2xl py-2">
-                            <h2 class="card-title  text-gray-800 dark:text-white justify-center ">Beef Roast</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card bg-white dark:bg-gray-600">
-                        <div class="container">
-                            <img src="assets/images/mostviewed/image-3.png" class="rounded-t-2xl w-full h-auto" />
-                            <div class="bg-green dark:bg-gray-600  w-l h-l absolute top-2 right-2 rounded-full py-3 px-3 ">
-                                <h2 class="text-gray-800 dark:text-white justify-center">3</h2>
-                            </div>
-
-                        </div>
-                        <div class="bg-green dark:bg-gray-600 rounded-b-2xl py-2">
-                            <h2 class="card-title  text-gray-800 dark:text-white justify-center ">Beef Roast</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card bg-white dark:bg-gray-600">
-                        <div class="container">
-                            <img src="assets/images/mostviewed/image-4.png" class="rounded-t-2xl w-full h-auto" />
-                            <div class="bg-green dark:bg-gray-600  w-l h-l absolute top-2 right-2 rounded-full py-3 px-3 ">
-                                <h2 class="text-gray-800 dark:text-white justify-center">4</h2>
-                            </div>
-
-                        </div>
-                        <div class="bg-green dark:bg-gray-600 rounded-b-2xl py-2">
-                            <h2 class="card-title  text-gray-800 dark:text-white justify-center ">Beef Roast</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card bg-white dark:bg-gray-600">
-                        <div class="container">
-                            <img src="assets/images/mostviewed/image-5.png" class="rounded-t-2xl w-full h-auto" />
-                            <div class="bg-green dark:bg-gray-600  w-l h-l absolute top-2 right-2 rounded-full py-3 px-3 ">
-                                <h2 class="text-gray-800 dark:text-white justify-center">5</h2>
-                            </div>
-
-                        </div>
-                        <div class="bg-green dark:bg-gray-600 rounded-b-2xl py-2">
-                            <h2 class="card-title  text-gray-800 dark:text-white justify-center ">Beef Roast</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card bg-white dark:bg-gray-600">
-                        <div class="container">
-                            <img src="assets/images/mostviewed/image-6.png" class="rounded-t-2xl w-full h-auto" />
-                            <div class="bg-green dark:bg-gray-600  w-l h-l absolute top-2 right-2 rounded-full py-3 px-3 ">
-                                <h2 class="text-gray-800 dark:text-white justify-center">6</h2>
-                            </div>
-
-                        </div>
-                        <div class="bg-green dark:bg-gray-600 rounded-b-2xl py-2">
-                            <h2 class="card-title  text-gray-800 dark:text-white justify-center ">Beef Roast</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card bg-white dark:bg-gray-600">
-                        <div class="container">
-                            <img src="assets/images/mostviewed/image-7.png" class="rounded-t-2xl w-full h-auto" />
-                            <div class="bg-green dark:bg-gray-600  w-l h-l absolute top-2 right-2 rounded-full py-3 px-3 ">
-                                <h2 class="text-gray-800 dark:text-white justify-center">7</h2>
-                            </div>
-
-                        </div>
-                        <div class="bg-green dark:bg-gray-600 rounded-b-2xl py-2">
-                            <h2 class="card-title  text-gray-800 dark:text-white justify-center ">Beef Roast</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card bg-white dark:bg-gray-600">
-                        <div class="container">
-                            <img src="assets/images/mostviewed/image-8.png" class="rounded-t-2xl w-full h-auto" />
-                            <div class="bg-green dark:bg-gray-600  w-l h-l absolute top-2 right-2 rounded-full py-3 px-3 ">
-                                <h2 class="text-gray-800 dark:text-white justify-center">8</h2>
-                            </div>
-                        </div>
-                        <div class="bg-green dark:bg-gray-600 rounded-b-2xl py-2">
-                            <h2 class="card-title  text-gray-800 dark:text-white justify-center ">Beef Roast</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card bg-white dark:bg-gray-600">
-                        <div class="container">
-                            <img src="assets/images/mostviewed/image-9.png" class="rounded-t-2xl w-full h-auto" />
-                            <div class="bg-green dark:bg-gray-600  w-l h-l absolute top-2 right-2 rounded-full py-3 px-3 ">
-                                <h2 class="text-gray-800 dark:text-white justify-center">9</h2>
-                            </div>
-
-                        </div>
-                        <div class="bg-green dark:bg-gray-600 rounded-b-2xl py-2">
-                            <h2 class="card-title  text-gray-800 dark:text-white justify-center ">Beef Roast</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card bg-white dark:bg-gray-600">
-                        <div class="container">
-                            <img src="assets/images/mostviewed/image-10.png" class="rounded-t-2xl w-full h-auto" />
-                            <div class="bg-green dark:bg-gray-600  w-l h-l absolute top-2 right-2 rounded-full py-3 px-3 ">
-                                <h2 class="text-gray-800 dark:text-white justify-center">10</h2>
-                            </div>
-
-                        </div>
-                        <div class="bg-green dark:bg-gray-600 rounded-b-2xl py-2">
-                            <h2 class="card-title  text-gray-800 dark:text-white justify-center ">Beef Roast</h2>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
-            
+
         </div>
 
     </div>
 </template>
+<style>
+
+</style>
