@@ -31,8 +31,6 @@ export default {
         Slide,
         Pagination,
         Navigation,
-
-
     },
     data: () => ({
         // carousel settings
@@ -86,7 +84,7 @@ export default {
                     image1: 'assets/images/image-104.png',
                     image2: 'assets/images/recentlyupdated/image-23.png'
                 },
-            ]
+            ],
         }
     }
 }
@@ -111,6 +109,7 @@ export default {
                                     <div class="hidden flex-row lg:flex">
                                         <div class="ml-6">
                                             <img class="rounded-lg mb-4 " :src="item.image2" alt=""
+
                                                 style="width: auto; height: 250px; ">
                                         </div>
                                         <div class="flex-col justify-start text-white px-4">
