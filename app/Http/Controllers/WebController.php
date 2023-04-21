@@ -26,4 +26,7 @@ class WebController extends Controller
     public function categories(){
         
     }
+
+
+    
 }
