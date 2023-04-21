@@ -4,11 +4,11 @@
             <div
                 class="font-bold text-transparent lg:text-4xl md:text-xl bg-clip-text bg-gradient-to-r from-lemon to-green">
                 Most Viewed</div>
-            <div class="flex flex-row w-auto ">
+            <div class="hidden md:flex flex-row w-auto  ">
                 <div class="lg:text-xl pr-4  cursor-pointer text-gray-800 dark:text-white ">Day</div>
-                <div class="lg:text-xl text-gray-500 hover:underline cursor-pointer text-gray-800 dark:text-gray-400 ">Week
+                <div class="lg:text-xl text-gray-500 hover:underline cursor-pointer  dark:text-gray-400 ">Week
                 </div>
-                <div class="lg:text-xl pl-4 text-gray-500 hover:underline cursor-pointer text-gray-800 dark:text-gray-400 ">
+                <div class="lg:text-xl pl-4 text-gray-500 hover:underline cursor-pointer  dark:text-gray-400 ">
                     Month</div>
             </div>
         </div>
