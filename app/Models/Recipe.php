@@ -31,18 +31,34 @@ class Recipe extends Model
     {
         return $this->ratings()->avg('rating');
     }
-    public function ingredients(){
+    public function ingredients()
+    {
         return $this->hasMany(RecipeIngredient::class);
     }
-    public function steps(){
+    public function steps()
+    {
         return $this->hasMany(RecipeSteps::class);
     }
 
-    public function categories(){
+
+    public function cuisines()
+    {
+        return $this->hasMany(RecipeCuisine::class);
+    }
+
+
+    public function recipeCategories()
+    {
         return $this->hasMany(RecipeCategory::class);
     }
 
-    public function cuisines(){
-        return $this->hasMany(RecipeCuisine::class);
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'recipe_categories');
+    }
+
+    public function getTagsAttribute()
+    {
+        return $this->categories()->limit(3)->pluck('name')->toArray();
     }
 }
