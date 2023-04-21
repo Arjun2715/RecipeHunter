@@ -8,16 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Recipe extends Model
 {
     use HasFactory;
+
+
     protected $fillable = [
         'user_id',
         'author',
         'title',
-        'category_id',
-        'cuisine_id',
-        'diet_id',
         'description',
         'nutrition_facts',
-        'image'
+        'image',
+        'prep_time',
+        'cook_time',
+        'servings'
     ];
 
     public function ratings()
@@ -34,5 +36,13 @@ class Recipe extends Model
     }
     public function steps(){
         return $this->hasMany(RecipeSteps::class);
+    }
+
+    public function categories(){
+        return $this->hasMany(RecipeCategory::class);
+    }
+
+    public function cuisines(){
+        return $this->hasMany(RecipeCuisine::class);
     }
 }

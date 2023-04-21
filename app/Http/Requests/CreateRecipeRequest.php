@@ -25,12 +25,13 @@ class CreateRecipeRequest extends FormRequest
             'user_id' => 'required|integer',
             'author' => 'nullable|string|max:255',
             'title' => 'required|string|max:255',
-            'category_id' => 'nullable|integer',
-            'cuisine_id' => 'nullable|integer',
-            'diet_id' => 'nullable|integer',
+            'categories' => 'array',
+            'cuisines' => 'array',
             'description' => 'required|string',
             'nutrition_facts' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'prep_time' => 'integer',
+            'cook_time' => 'integer',
         ];
     }
 }
