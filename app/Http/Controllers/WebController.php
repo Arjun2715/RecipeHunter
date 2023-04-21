@@ -15,7 +15,7 @@ class WebController extends Controller
         $recentlyUpdatedRecipes = RecentlyUpdatedResource::collection($recipeController->recentlyUpdatedRecipes());
         $recommendedRecipes = RecentlyUpdatedResource::collection($recipeController->recommendations());
         $mostViewed = $recipeController->mostViewed();
-
+        // dd($recentlyUpdatedRecipes, $recommendedRecipes,$mostViewed);
         return Inertia::render('Home', [
             'recentlyUpdated' => $recentlyUpdatedRecipes,
             'recommended' => $recommendedRecipes,
