@@ -20,6 +20,7 @@
         "@vitejs/plugin-vue": "^4.1.0",
         "daisyui": "^2.51.5",
         "flowbite": "^1.6.5",
-        "vue": "^3.2.36"
+        "vue": "^3.2.36",
+        "vue3-carousel": "^0.3.0"
     }
 }

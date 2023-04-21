@@ -3042,6 +3042,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/Nyholm/psr7/zipball/ed7cf98f6562831dbc3c962406b5e49dc8179c8c",
                 "reference": "ed7cf98f6562831dbc3c962406b5e49dc8179c8c",
+
                 "shasum": ""
             },
             "require": {
@@ -3065,6 +3066,7 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.7-dev"
+
                 }
             },
             "autoload": {
@@ -3094,7 +3096,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Nyholm/psr7/issues",
+
                 "source": "https://github.com/Nyholm/psr7/tree/1.7.0"
+
             },
             "funding": [
                 {

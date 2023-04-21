@@ -5,6 +5,7 @@ export default {
         Menu,
     }
 }
+
 </script>
 <template >
     <body class="bg-white dark:bg-gray-800 ">
@@ -104,7 +105,7 @@ export default {
                                 </Link>
                             </li>
                             <li class="text-gray dark:text-white hover:bg-gray-300 rounded-full hover:text-gray-800">
-                                <Link href="/dashboard/account">Settings</Link>
+                                <Link href="/account">Settings</Link>
                             </li>
                             <li class="text-gray dark:text-white hover:bg-gray-300 rounded-full hover:text-gray-800">
                                 <Link href="/login">
@@ -119,12 +120,9 @@ export default {
                 </div>
             </div>
         </Header>
-
+         <footer />
+         
     </body>
     
-    <footer />
+   
 </template>
-<style>
-/* Define the custom utility */
-
-</style>

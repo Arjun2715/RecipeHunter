@@ -11,6 +11,7 @@
         "laravel/fortify": "^1.16",
         "laravel/framework": "^10.0",
         "laravel/passport": "^11.8",
+
         "laravel/tinker": "^2.8"
     },
     "require-dev": {

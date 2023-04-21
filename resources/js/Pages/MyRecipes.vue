@@ -32,7 +32,7 @@ export default {
                             <div class="flex flex-col items-center justify-center">
                                 <h2 class="font-bold">No items Here</h2>
                                 <p>On adding your created recipes will be saved here.</p>
-                                <Link href="/addrecipe"
+                                <Link href="/newrecipe"
                                     class="btn border-none bg-gradient-to-r from-lemon to-green rounded-full p-2 text-gray-600 dark:text-white shadow-md hover:shadow-xl">
                                     Add Recipes Here
                             </Link>
