@@ -9,8 +9,6 @@ export default {
 </script>
 <template >
     <body class="bg-white dark:bg-gray-800 ">
-        <Header class="mt-4">
-
             <div class=" flex container mx-auto  h-full ">
                 <div class="navbar-start flex">
 
@@ -119,7 +117,6 @@ export default {
                     </div>
                 </div>
             </div>
-        </Header>
          <footer />
          
     </body>

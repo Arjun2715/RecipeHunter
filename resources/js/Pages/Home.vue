@@ -1,5 +1,7 @@
 <script scope>
 import mainCarousel from "../Layouts/components/MainCard.vue";
+import card from "../Layouts/components/cardHorizontal.vue";
+import SectionTitle from "../Layouts/components/SectionTitle.vue";
 import mostViewed from "../Layouts/components/MostViewed.vue";
 import recentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
 import recentlyUpdatedCarousel from "../Layouts/components/RecentlyUpdatedCarousel.vue";
@@ -8,16 +10,18 @@ import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
 import { onMounted } from 'vue'
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-
+// import axios from 'axios';
 
 
 
 // initialize components based on data attribute selectors
 onMounted(() => {
-    initFlowbite();
+    // initFlowbite();
 })
-
-
+// setup(() {
+//     console.log(this.recentlyUpdatedData);
+    
+// })
 export default {
     components: {
         RecipeHunterLayout,
@@ -30,10 +34,22 @@ export default {
         Slide,
         Pagination,
         Navigation,
+        card,
+        SectionTitle,
     },
-    
+    props: {
+        recentlyUpdated: {
+            type: Array,
+            // required: true
+    }
+
+    },
+
     data() {
         return {
+            recentlyUpdatedData: [],
+            recommended: [],
+            mostViewed: [],
             items: [
                 {
                     title: 'Tacos',
@@ -65,8 +81,21 @@ export default {
                     image2: 'assets/images/recentlyupdated/image-23.png'
                 },
             ],
+
         }
-    }
+    },
+    // created() {
+    //     axios.get('/recommendations')
+    //         .then(response => {
+    //             this.recentlyUpdated = response.data.recentlyUpdated;
+    //             this.recommended = response.data.recommended;
+    //             this.mostViewed = response.data.mostViewed;
+    //             console.log(response.data.recentlyUpdated);
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         });
+    // },
 }
 </script>
 <template>
@@ -78,18 +107,17 @@ export default {
 
                 <carousel :items-to-show="1" :wrap-around="true" :autoplay="60000" class="  rounded-[30px] ">
                     <Slide v-for="(item, index) in items" :key="index" class="relative ">
-                        <img class="object-contain w-full h-full" :src="item.image1" alt="{{ item.title  }}"
-                             />
+                        <img class="object-contain w-full h-full" :src="item.image1" alt="{{ item.title  }}" />
                         <div class=" absolute bottom-0 w-full ">
                             <div class="flex flex-col  ">
                                 <div
                                     class="flex flex-row lg:justify-between md:justify-end px-8 pt-20 pb-6 bg-gradient-to-t from-slate-900 to-transparent">
-                                    <h1 class="lg:hidden  md:hidden flex justify-start text-white  text-4xl font-semibold ">{{ item.title }}</h1>
+                                    <h1 class="lg:hidden  md:hidden flex justify-start text-white  text-4xl font-semibold ">
+                                        {{ item.title }}</h1>
 
                                     <div class="hidden flex-row lg:flex">
                                         <div class="ml-6">
                                             <img class="rounded-lg mb-4 " :src="item.image2" alt=""
-
                                                 style="width: auto; height: 250px; ">
                                         </div>
                                         <div class="flex-col justify-start text-white px-4">
@@ -98,7 +126,7 @@ export default {
                                             <br>
                                             <div class="flex flex-row justify-start ">
                                                 <a class="flex flex-row mr-5" href="#">
-                                                    <svg width="28px" height="28px" viewBox="0 0 26 26" fill="none" 
+                                                    <svg width="28px" height="28px" viewBox="0 0 26 26" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M15.75 5H8.25C7.55964 5 7 5.58763 7 6.3125V19L12 15.5L17 19V6.3125C17 5.58763 16.4404 5 15.75 5Z"
@@ -148,21 +176,27 @@ export default {
 
                     </Slide>
                     <template #addons>
-                        <navigation class="h-20 dark:bg-gray-200 rounded-full"/>
+                        <navigation class="h-20 dark:bg-gray-200 rounded-full" />
                     </template>
                 </carousel>
                 <mostViewed />
                 <!-- <recentlyUpdated /> -->
-                
+                <div class="lg:flex flex-col hidden  lg:mt-[50px] md:mt-[30px] mt-[20px]">
+                    <SectionTitle title="Reciently Updated" />
+                    <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                        <!-- <card :recently-updated="recentlyUpdated" /> -->
+                        <!-- <p>{{ recentlyUpdatedData.Object.data[0].Object }}</p> -->
+                    </div>
+                </div>
+
                 <recentlyUpdatedCarousel />
             </div>
+            
         </section>
     </div>
     <Footer />
 </template>
-<style>
-
-</style>
+<style></style>
 
 
 

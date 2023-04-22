@@ -1,5 +1,10 @@
 <script>
+import SectionTitle from "../components/SectionTitle.vue";
+
 export default {
+    components: {
+        SectionTitle,
+    },
     data() {
         return {
             items: [
@@ -57,7 +62,7 @@ export default {
                     link: '#',
                     image1: 'assets/images/recentlyupdated/image-29.png',
                 },
-                
+
             ],
         }
     }
@@ -66,9 +71,8 @@ export default {
 <template>
     <div class="flex flex-col lg:mt-[50px] md:mt-[30px] mt-[20px]">
         <div class="flex flex-row justify-between">
-            <div
-                class="font-bold text-transparent lg:text-4xl md:text-xl bg-clip-text bg-gradient-to-r from-lemon to-green">
-                Most Viewed</div>
+            <SectionTitle title="Most Viewed" />
+
             <div class="hidden md:flex flex-row w-auto  ">
                 <div class="lg:text-xl pr-4  cursor-pointer text-gray-800 dark:text-white ">Day</div>
                 <div class="lg:text-xl text-gray-500 hover:underline cursor-pointer  dark:text-gray-400 ">Week
@@ -79,7 +83,7 @@ export default {
         </div>
         <div class="overflow-x-auto scrollbar  ">
 
-            <div  class="flex space-x-4  py-4">
+            <div class="flex space-x-4  py-4">
                 <div v-for="(item, index) in items" :key="index" class="carousel-item">
                     <div class="card bg-white dark:bg-gray-600">
                         <div id="cards" class="container">
@@ -91,11 +95,11 @@ export default {
 
                         </div>
                         <div class="bg-green dark:bg-gray-600 rounded-b-2xl py-2">
-                            <h2 class="card-title  text-gray-800 dark:text-white justify-center ">{{item.title}}</h2>
+                            <h2 class="card-title  text-gray-800 dark:text-white justify-center ">{{ item.title }}</h2>
                         </div>
                     </div>
                 </div>
-               
+
 
             </div>
 
@@ -103,6 +107,4 @@ export default {
 
     </div>
 </template>
-<style>
-
-</style>
+<style></style>

@@ -1,3 +1,6 @@
+<script>
+
+</script>
 <template>
     <div class="lg:flex flex-col hidden  lg:mt-[50px] md:mt-[30px] mt-[20px]">
         <div class="flex flex-row justify-between">
