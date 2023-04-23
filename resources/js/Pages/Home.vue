@@ -1,12 +1,12 @@
 <script scope>
 import mainCarousel from "../Layouts/components/MainCard.vue";
+import card from "../Layouts/components/cardHorizontal.vue";
+import SectionTitle from "../Layouts/components/SectionTitle.vue";
 import mostViewed from "../Layouts/components/MostViewed.vue";
 import recentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
 import recentlyUpdatedCarousel from "../Layouts/components/RecentlyUpdatedCarousel.vue";
 import Footer from "../Layouts/components/Footer.vue";
 import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
-import { onMounted } from 'vue'
-import { initFlowbite } from 'flowbite'
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
@@ -18,8 +18,6 @@ onMounted(() => {
     initFlowbite();
     console.log(this.data);
 })
-
-
 export default {
     props: {
         data: Object,
@@ -35,30 +33,19 @@ export default {
         Slide,
         Pagination,
         Navigation,
+        card,
+        SectionTitle,
     },
-    data: () => ({
-        // carousel settings
-        settings: {
-            itemsToShow: 1,
-            snapAlign: 'center',
-        },
-        // breakpoints are mobile first
-        // any settings not specified will fallback to the carousel settings
-        breakpoints: {
-            // 700px and up
-            700: {
-                itemsToShow: 3.5,
-                snapAlign: 'center',
-            },
-            // 1024 and up
-            1024: {
-                itemsToShow: 5,
-                snapAlign: 'start',
-            },
-        },
-    }),
+    //props: {
+      //  recentlyUpdatedData: Array,
+       // recommended: Array,
+      //  mostViewed: Array
+    //},
     data() {
         return {
+            // recentlyUpdatedData: [],
+            // recommended: [],
+            // mostViewed: [],
             items: [
                 {
                     title: 'Tacos',
@@ -72,27 +59,36 @@ export default {
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                     link: 'https://example.com/item1',
                     image1: 'assets/images/image-102.png',
-                    image2: 'assets/images/recentlyupdated/image-21.png'
-                },
-                {
-                    title: 'Soup',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    link: 'https://example.com/item1',
-                    image1: 'assets/images/image-103.png',
-                    image2: 'assets/images/recentlyupdated/image-22.png'
+                    image2: 'assets/images/mostviewed/image-3.png'
                 },
                 {
                     title: 'Pasta',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                    link: 'https://example.com/item1',
+                    image1: 'assets/images/image-103.png',
+                    image2: 'assets/images/image-108.png',
+
+                },
+                {
+                    title: 'Soup',
                     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                     link: 'https://example.com/item1',
                     image1: 'assets/images/image-104.png',
                     image2: 'assets/images/recentlyupdated/image-23.png'
                 },
             ],
+
         }
-    }
+    },
 }
 
+</script>
+<script setup>
+// defineProps({ users: String },
+//     { recentlyUpdatedData: Object },
+//     { recommended: Object },
+//     { mostViewed: Object });
+// console.log(defineProps);
 </script>
 <template>
     <RecipeHunterLayout />
@@ -103,18 +99,17 @@ export default {
                 <h1>{{ data.recommended }}</h1>
                 <carousel :items-to-show="1" :wrap-around="true" :autoplay="60000" class="  rounded-[30px] ">
                     <Slide v-for="(item, index) in items" :key="index" class="relative ">
-                        <img class="" :src="item.image1" alt="{{ item.title  }}"
-                            style="width: 100%;height: 100%;object-fit: cover;" />
+                        <img class="object-contain w-full h-full" :src="item.image1" alt="{{ item.title  }}" />
                         <div class=" absolute bottom-0 w-full ">
                             <div class="flex flex-col  ">
                                 <div
                                     class="flex flex-row lg:justify-between md:justify-end px-8 pt-20 pb-6 bg-gradient-to-t from-slate-900 to-transparent">
-                                    <h1 class="lg:hidden  md:hidden flex justify-start text-white  text-4xl font-semibold ">{{ item.title }}</h1>
+                                    <h1 class="lg:hidden  md:hidden flex justify-start text-white  text-4xl font-semibold ">
+                                        {{ item.title }}</h1>
 
                                     <div class="hidden flex-row lg:flex">
                                         <div class="ml-6">
                                             <img class="rounded-lg mb-4 " :src="item.image2" alt=""
-
                                                 style="width: auto; height: 250px; ">
                                         </div>
                                         <div class="flex-col justify-start text-white px-4">
@@ -173,13 +168,34 @@ export default {
 
                     </Slide>
                     <template #addons>
-                        <navigation class="h-20 dark:bg-gray-200 rounded-full"/>
+                        <navigation class="h-20 dark:bg-gray-200 rounded-full" />
                     </template>
                 </carousel>
                 <mostViewed />
-                <recentlyUpdated />
+                <!-- <recentlyUpdated /> -->
+                <div class="lg:flex flex-col hidden  lg:mt-[50px] md:mt-[30px] mt-[20px]">
+                    <SectionTitle title="Reciently Updated" />
+                    <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                        <li class="dark:text-white" v-for="reco in recommended.data">
+                            <img :src=reco.image alt="{{ reco.title }}" srcset="">
+                            Title: <br>{{ reco.title }} <br>
+                            <!-- {{ item.description }} -->
+                            Tags: <label class="dark:text-white" v-for="tag in reco.tags">
+                            {{  tag }} ,
+                            </label>
+                        </li>
+                    </div>
+                </div>
+
                 <recentlyUpdatedCarousel />
 
+            </div>
+            <div class="mt-96">
+                <ul>
+                    <li class="dark:text-white" v-for="item in recommended.data">
+                        {{ item }}
+                    </li>
+                </ul>
             </div>
         </section>
 
