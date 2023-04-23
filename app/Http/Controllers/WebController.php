@@ -17,9 +17,11 @@ class WebController extends Controller
         $mostViewed = $recipeController->mostViewed();
         //  dd($recentlyUpdatedRecipes);
         return Inertia::render('Home', [
+            'users' => "Arjun",
             'recentlyUpdatedData' => $recentlyUpdatedRecipes,
             'recommended' => $recommendedRecipes,
             'mostViewed' => $mostViewed
+
         ]);
     }
 

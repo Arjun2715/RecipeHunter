@@ -7,21 +7,9 @@ import recentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
 import recentlyUpdatedCarousel from "../Layouts/components/RecentlyUpdatedCarousel.vue";
 import Footer from "../Layouts/components/Footer.vue";
 import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
-import { onMounted } from 'vue'
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
-// import axios from 'axios';
 
-
-
-// initialize components based on data attribute selectors
-onMounted(() => {
-    // initFlowbite();
-})
-// setup(() {
-//     console.log(this.recentlyUpdatedData);
-    
-// })
 export default {
     components: {
         RecipeHunterLayout,
@@ -38,18 +26,15 @@ export default {
         SectionTitle,
     },
     props: {
-        recentlyUpdated: {
-            type: Array,
-            // required: true
-    }
-
+        recentlyUpdatedData: Array,
+        recommended: Array,
+        mostViewed: Array
     },
-
     data() {
         return {
-            recentlyUpdatedData: [],
-            recommended: [],
-            mostViewed: [],
+            // recentlyUpdatedData: [],
+            // recommended: [],
+            // mostViewed: [],
             items: [
                 {
                     title: 'Tacos',
@@ -84,19 +69,14 @@ export default {
 
         }
     },
-    // created() {
-    //     axios.get('/recommendations')
-    //         .then(response => {
-    //             this.recentlyUpdated = response.data.recentlyUpdated;
-    //             this.recommended = response.data.recommended;
-    //             this.mostViewed = response.data.mostViewed;
-    //             console.log(response.data.recentlyUpdated);
-    //         })
-    //         .catch(error => {
-    //             console.log(error);
-    //         });
-    // },
 }
+</script>
+<script setup>
+// defineProps({ users: String },
+//     { recentlyUpdatedData: Object },
+//     { recommended: Object },
+//     { mostViewed: Object });
+// console.log(defineProps);
 </script>
 <template>
     <RecipeHunterLayout />
@@ -104,7 +84,6 @@ export default {
         <section class=" flex flex-col w-full  ">
             <div class="container mx-auto px-4  mt-10 ">
                 <!-- <mainCarousel /> -->
-
                 <carousel :items-to-show="1" :wrap-around="true" :autoplay="60000" class="  rounded-[30px] ">
                     <Slide v-for="(item, index) in items" :key="index" class="relative ">
                         <img class="object-contain w-full h-full" :src="item.image1" alt="{{ item.title  }}" />
@@ -184,14 +163,26 @@ export default {
                 <div class="lg:flex flex-col hidden  lg:mt-[50px] md:mt-[30px] mt-[20px]">
                     <SectionTitle title="Reciently Updated" />
                     <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                        <!-- <card :recently-updated="recentlyUpdated" /> -->
-                        <!-- <p>{{ recentlyUpdatedData.Object.data[0].Object }}</p> -->
+                        <li class="dark:text-white" v-for="reco in recommended.data">
+                            <img :src=reco.image alt="{{ reco.title }}" srcset="">
+                            Title: <br>{{ reco.title }} <br>
+                            <!-- {{ item.description }} -->
+                            Tags: <label class="dark:text-white" v-for="tag in reco.tags">
+                            {{  tag }} ,
+                            </label>
+                        </li>
                     </div>
                 </div>
 
                 <recentlyUpdatedCarousel />
             </div>
-            
+            <div class="mt-96">
+                <ul>
+                    <li class="dark:text-white" v-for="item in recommended.data">
+                        {{ item }}
+                    </li>
+                </ul>
+            </div>
         </section>
     </div>
     <Footer />
