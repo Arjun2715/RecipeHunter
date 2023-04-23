@@ -8,8 +8,8 @@ use Inertia\Inertia;
 
 class WebController extends Controller
 {
-    
-    
+
+
     public function home(){
         $recipeController = new RecipeController();
         $recentlyUpdatedRecipes = RecentlyUpdatedResource::collection($recipeController->recentlyUpdatedRecipes());
@@ -17,14 +17,17 @@ class WebController extends Controller
         $mostViewed = $recipeController->mostViewed();
 
         return Inertia::render('Home', [
-            'recentlyUpdated' => $recentlyUpdatedRecipes,
-            'recommended' => $recommendedRecipes,
-            'mostViewed' => $mostViewed
+
+            'data' => [
+                'recentlyUpdated' => $recentlyUpdatedRecipes,
+                'recommended' => $recommendedRecipes,
+                'mostViewed' => $mostViewed
+            ]
         ]);
     }
 
     public function categories(){
-        
+
     }
 
 
