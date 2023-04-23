@@ -14,10 +14,10 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 
 // initialize components based on data attribute selectors
-onMounted(() => {
-    initFlowbite();
-    console.log(this.data);
-})
+// onMounted(() => {
+//     // initFlowbite();
+//     console.log(this.data);
+// })
 export default {
     props: {
         data: Object,
@@ -83,20 +83,12 @@ export default {
 }
 
 </script>
-<script setup>
-// defineProps({ users: String },
-//     { recentlyUpdatedData: Object },
-//     { recommended: Object },
-//     { mostViewed: Object });
-// console.log(defineProps);
-</script>
 <template>
     <RecipeHunterLayout />
     <div class="flex flex-col">
         <section class=" flex flex-col w-full  ">
             <div class="container mx-auto px-4  mt-10 ">
                 <!-- <mainCarousel /> -->
-                <h1>{{ data.recommended }}</h1>
                 <carousel :items-to-show="1" :wrap-around="true" :autoplay="60000" class="  rounded-[30px] ">
                     <Slide v-for="(item, index) in items" :key="index" class="relative ">
                         <img class="object-contain w-full h-full" :src="item.image1" alt="{{ item.title  }}" />
@@ -176,13 +168,15 @@ export default {
                 <div class="lg:flex flex-col hidden  lg:mt-[50px] md:mt-[30px] mt-[20px]">
                     <SectionTitle title="Reciently Updated" />
                     <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                        <li class="dark:text-white" v-for="reco in recommended.data">
-                            <img :src=reco.image alt="{{ reco.title }}" srcset="">
-                            Title: <br>{{ reco.title }} <br>
+                <!-- <h1>{{ data.recommended }}</h1> -->
+
+                        <li class="dark:text-white" v-for="reco in data.recentlyUpdated">
+                            <!-- <img :src=reco.image alt="{{ reco.title }}" srcset="">
+                            Title: <br>{{ reco.title }} <br> -->
                             <!-- {{ item.description }} -->
-                            Tags: <label class="dark:text-white" v-for="tag in reco.tags">
+                            <!-- Tags: <label class="dark:text-white" v-for="tag in reco.tags">
                             {{  tag }} ,
-                            </label>
+                            </label> -->
                         </li>
                     </div>
                 </div>
@@ -192,7 +186,7 @@ export default {
             </div>
             <div class="mt-96">
                 <ul>
-                    <li class="dark:text-white" v-for="item in recommended.data">
+                    <li class="dark:text-white" v-for="item in data">
                         {{ item }}
                     </li>
                 </ul>
