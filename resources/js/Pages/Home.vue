@@ -10,7 +10,18 @@ import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
+
+
+
+// initialize components based on data attribute selectors
+onMounted(() => {
+    initFlowbite();
+    console.log(this.data);
+})
 export default {
+    props: {
+        data: Object,
+    },
     components: {
         RecipeHunterLayout,
         mainCarousel,
@@ -25,11 +36,11 @@ export default {
         card,
         SectionTitle,
     },
-    props: {
-        recentlyUpdatedData: Array,
-        recommended: Array,
-        mostViewed: Array
-    },
+    //props: {
+      //  recentlyUpdatedData: Array,
+       // recommended: Array,
+      //  mostViewed: Array
+    //},
     data() {
         return {
             // recentlyUpdatedData: [],
@@ -70,6 +81,7 @@ export default {
         }
     },
 }
+
 </script>
 <script setup>
 // defineProps({ users: String },
@@ -84,6 +96,7 @@ export default {
         <section class=" flex flex-col w-full  ">
             <div class="container mx-auto px-4  mt-10 ">
                 <!-- <mainCarousel /> -->
+                <h1>{{ data.recommended }}</h1>
                 <carousel :items-to-show="1" :wrap-around="true" :autoplay="60000" class="  rounded-[30px] ">
                     <Slide v-for="(item, index) in items" :key="index" class="relative ">
                         <img class="object-contain w-full h-full" :src="item.image1" alt="{{ item.title  }}" />
@@ -175,6 +188,7 @@ export default {
                 </div>
 
                 <recentlyUpdatedCarousel />
+
             </div>
             <div class="mt-96">
                 <ul>
@@ -184,14 +198,12 @@ export default {
                 </ul>
             </div>
         </section>
+
     </div>
+
+
     <Footer />
 </template>
-<style></style>
+<style>
 
-
-
-
-
-
-
+</style>
