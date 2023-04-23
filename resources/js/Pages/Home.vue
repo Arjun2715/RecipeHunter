@@ -16,10 +16,14 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 // initialize components based on data attribute selectors
 onMounted(() => {
     initFlowbite();
+    console.log(this.data);
 })
 
 
 export default {
+    props: {
+        data: Object,
+    },
     components: {
         RecipeHunterLayout,
         mainCarousel,
@@ -88,6 +92,7 @@ export default {
         }
     }
 }
+
 </script>
 <template>
     <RecipeHunterLayout />
@@ -95,7 +100,7 @@ export default {
         <section class=" flex flex-col w-full  ">
             <div class="container mx-auto px-4  mt-10 ">
                 <!-- <mainCarousel /> -->
-
+                <h1>{{ data.recommended }}</h1>
                 <carousel :items-to-show="1" :wrap-around="true" :autoplay="60000" class="  rounded-[30px] ">
                     <Slide v-for="(item, index) in items" :key="index" class="relative ">
                         <img class="" :src="item.image1" alt="{{ item.title  }}"
@@ -118,7 +123,7 @@ export default {
                                             <br>
                                             <div class="flex flex-row justify-start ">
                                                 <a class="flex flex-row mr-5" href="#">
-                                                    <svg width="28px" height="28px" viewBox="0 0 26 26" fill="none" 
+                                                    <svg width="28px" height="28px" viewBox="0 0 26 26" fill="none"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M15.75 5H8.25C7.55964 5 7 5.58763 7 6.3125V19L12 15.5L17 19V6.3125C17 5.58763 16.4404 5 15.75 5Z"
@@ -174,18 +179,15 @@ export default {
                 <mostViewed />
                 <recentlyUpdated />
                 <recentlyUpdatedCarousel />
+
             </div>
         </section>
+
     </div>
+
+
     <Footer />
 </template>
 <style>
 
 </style>
-
-
-
-
-
-
-
