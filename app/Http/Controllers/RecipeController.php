@@ -9,8 +9,9 @@ use App\Http\Resources\MostViewedResource;
 use App\Models\Category;
 use App\Models\Cuisine;
 use App\Models\Recipe;
+use App\Models\RecipeIngredient;
 use App\Models\SavedRecipes;
-use Illuminate\Http\Client\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 
@@ -39,7 +40,7 @@ class RecipeController extends Controller
                     'name' => $category
                 ]);
             }
-            $recipe->categories()->create([
+            $recipe->recipeCategories()->create([
                 'category_id' => $category_id->id,
             ]);
         }
@@ -292,23 +293,23 @@ class RecipeController extends Controller
     }
 
     public function search(Request $request){
-        $data = $request->all();
+        return $ingredients = RecipeIngredient::nameDoesNotIncludeNumber()->get()->pluck('name');
+
+          $data = $request->all();
         $apiKey = "f5750ea5b4604d01bbb15645a66fcf45";
         $url = "https://api.spoonacular.com/recipes/complexSearch?&number=6&apiKey=" . $apiKey . "&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&addRecipeNutrition=true";
-        $cuisines = $data['cuisines'];
+        $cuisine = $data['cuisine'];
         $diet = $data['diet'];
         $ingredients = $data['ingredients'];
         $maxReadyTime = $data['maxReadyTime'];
         $sort = $data['sort'];
         $query = $data['query'];
-        if ($cuisines){
-            $url = $url . "&cuisines=";
-            foreach ($cuisines as $cuisine){
-                $url.= $cuisine.",";
-            }
+        if ($cuisine){
+            $url = $url . "&cuisine=";
+                $url.= $cuisine;
         }
         if ($ingredients){
-            $url = $url . "&cuisines=";
+            $url = $url . "&ingredients=";
             foreach ($ingredients as $ingredient){
                 $url.= $ingredient.",";
             }
@@ -325,7 +326,6 @@ class RecipeController extends Controller
         if($sort){
             $url = $url . "&sort=".$sort;
         }
-
         $response = Http::get($url);
         if ($response->ok()) {
             $data = $response->json();
