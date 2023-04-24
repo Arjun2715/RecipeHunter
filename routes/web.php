@@ -23,14 +23,12 @@ use Inertia\Inertia;
 // })->name('home');
 
 Route::get('/home', [WebController::class,'home'])->name('home');
-
+Route::get('/categories', [WebController::class,'categories'])->name('categories');
 
 Route::get('/filter', function () {
     return Inertia::render('FilterSearch', []);
 })->name('filter');
-Route::get('/categories', function () {
-    return Inertia::render('Categories', []);
-})->name('categories');
+
 Route::get('/myrecipes', function () {
     return Inertia::render('MyRecipes', []);
 })->name('myrecipes');

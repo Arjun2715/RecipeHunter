@@ -5,7 +5,7 @@
                             <img class=" "  :src="item.image" alt="Recipe Image here :(" style="width: 150px; height: 100%;"/>
                         <div class="card-body p-2">
                             <h2 class="card-title text-gray-800 dark:text-white text-[16px] ">{{ item.title }}</h2>
-                            <p class="text-gray-800 dark:text-white ">Description</p>
+                            <p class="text-gray-800 dark:text-white "></p>
                             <div class="bg-gradient-to-r from-lemon to-green rounded-full w-full h-[4px]"></div>
                             <div class="card-actions justify-start">
                                 <div class="flex flex-row  ">

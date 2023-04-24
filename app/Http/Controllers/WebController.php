@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\RecentlyUpdatedResource;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -26,9 +27,12 @@ class WebController extends Controller
     }
 
     public function categories(){
-
-    }
-
-
-    
+        $Categories = Category::all();
+        // dd($Categories);
+        return Inertia::render('Categories', [
+            'data' => [
+                'categories' => $Categories,
+            ]
+        ]);
+    }    
 }

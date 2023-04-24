@@ -24,7 +24,6 @@
             </div>
         </div>
         <div class="overflow-x-auto scrollbar  ">
-
             <div class="flex space-x-4  py-4">
                 <div v-for="(item, index) in items" :key="index" class="carousel-item">
                     <div class="card bg-white dark:bg-gray-600">
@@ -41,8 +40,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
 
         </div>
@@ -64,7 +61,7 @@ export default {
 
                 {
                     id: 4,
-                    title: 'title4',
+                    title: 'Pasta',
                     link: '#',
                     image1: 'assets/images/recentlyupdated/image-24.png',
                 },
