@@ -32,6 +32,7 @@ class CreateRecipeRequest extends FormRequest
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'prep_time' => 'integer',
             'cook_time' => 'integer',
+            'servings' => 'integer',
         ];
     }
 }

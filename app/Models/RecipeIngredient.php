@@ -12,4 +12,9 @@ class RecipeIngredient extends Model
     public function recipe(){
         return $this->belongsTo(Recipe::class);
     }
+
+    public function scopeNameDoesNotIncludeNumber($query)
+    {
+        return $query->whereRaw('REGEXP_REPLACE(name, "[^0-9½]", "") REGEXP "^[^0-9]*$"');
+    }
 }
