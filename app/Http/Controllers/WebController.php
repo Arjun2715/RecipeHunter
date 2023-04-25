@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\RecentlyUpdatedResource;
+use App\Models\Category;
+use App\Models\Recipe;
+use App\Models\RecipeCategory;
 use App\Models\Cuisine;
 use App\Models\RecipeIngredient;
 use Illuminate\Http\Request;
@@ -28,24 +31,29 @@ class WebController extends Controller
     }
 
     public function categories(){
-
-    }
-
-    public function search(){
-        $cuisines = Cuisine::all()->pluck('name');
-        return $ingredients = RecipeIngredient::nameDoesNotIncludeNumber()->count();
-
-        return Inertia::render('FilterSearch', [
+        $Categories = Category::all();
+        // dd($Categories);
+        return Inertia::render('Categories', [
             'data' => [
-                
+                'categories' => $Categories,
             ]
         ]);
-    }
+    }    
 
-
-    public function searchRecipes(Request $request){
+    public function searchRandom(){
+        $randrecipes = Recipe::inRandomOrder()->limit(15)->get();
+        $cuisines = Cuisine::all()->pluck('name');
         $recipes = RecipeController::search($request);
-        
-    }
+        return $ingredients = RecipeIngredient::nameDoesNotIncludeNumber()->count();
+        // dd($Recipes);
+        return Inertia::render('FilterSearch', [
+            'data' => [
+                'randrecipes' => $Recipes,
+                'crusines' => $curisines,
+                'searchrecipes' => $recipes,
+            ]
+        ]);
+    }    
     
+
 }

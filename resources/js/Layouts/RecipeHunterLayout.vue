@@ -8,7 +8,7 @@ export default {
 
 </script>
 <template >
-    <body class="bg-white dark:bg-gray-800 ">
+    <body class="bg-white dark:bg-gray-800  mt-4">
             <div class=" flex container mx-auto  h-full ">
                 <div class="navbar-start flex">
 
@@ -20,41 +20,41 @@ export default {
                     <ul class="menu menu-horizontal">
                         <li class="text-gray dark:text-white p-0
                                     relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
-                                    before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
+                                    before:bottom-2 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
                                     before:transition before:ease-in-out before:duration-300">
                             <Link href="/home">Home</Link>
                         </li>
                         <li class="text-gray dark:text-white p-0
                                     relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
-                                    before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
+                                    before:bottom-2 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
                                     before:transition before:ease-in-out before:duration-300">
                             <Link href="/categories">Categories</Link>
                         </li>
                         <li class="text-gray dark:text-white p-0
                                     relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
-                                    before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
+                                    before:bottom-2 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
                                     before:transition before:ease-in-out before:duration-300">
                             <Link href="/myrecipes">My Recipes</Link>
                         </li>
                         <li class="text-gray dark:text-white p-0
                                     relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
-                                    before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
+                                    before:bottom-2 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
                                     before:transition before:ease-in-out before:duration-300">
                             <Link href="/savedrecipes">Saved Recipes</Link>
                         </li>
                         <li class="text-gray dark:text-white p-0
                                     relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
-                                    before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
+                                    before:bottom-2 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
                                     before:transition before:ease-in-out before:duration-300">
                             <Link href="/contactus">Contact Us</Link>
                         </li><li class="text-gray dark:text-white p-0
                                     relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
-                                    before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
+                                    before:bottom-2 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
                                     before:transition before:ease-in-out before:duration-300">
                             <Link href="/aboutus">About Us</Link>
