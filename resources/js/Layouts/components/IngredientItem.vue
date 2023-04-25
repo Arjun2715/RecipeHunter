@@ -1,7 +1,7 @@
 <template>
     <li class="flex flex-row ">
         <label class="containercheck">
-            <input :checked="checked" type="checkbox">
+            <input :checked="isChecked" type="checkbox">
             <div class="checkmark"></div>
         </label>
         <lable class="p-0" for="Item1">
@@ -17,7 +17,7 @@ export default {
             type: String,
             requried: true,
         },
-        checked: {
+        isChecked: {
             type :Boolean,
             default: false,
         }

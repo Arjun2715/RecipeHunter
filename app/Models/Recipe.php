@@ -9,7 +9,6 @@ class Recipe extends Model
 {
     use HasFactory;
 
-
     protected $fillable = [
         'user_id',
         'author',
@@ -21,6 +20,7 @@ class Recipe extends Model
         'cook_time',
         'servings'
     ];
+    protected $appends = ['tags'];
 
     public function ratings()
     {
