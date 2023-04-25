@@ -40,17 +40,28 @@ class WebController extends Controller
         ]);
     }    
 
-    public function searchRandom(){
-        $randrecipes = Recipe::inRandomOrder()->limit(15)->get();
+    public function search(){
         $cuisines = Cuisine::all()->pluck('name');
-        $recipes = RecipeController::search($request);
         return $ingredients = RecipeIngredient::nameDoesNotIncludeNumber()->count();
+
+        return Inertia::render('FilterSearch', [
+            'data' => [
+                
+            ]
+        ]);
+    }
+
+
+    public function searchRecipes(Request $request){
+        $recipes = RecipeController::search($request);
+        
+    }
+    public function searchRand(Request $request){
+        $randrecipes = Recipe::inRandomOrder()->limit(15)->get();
         // dd($Recipes);
         return Inertia::render('FilterSearch', [
             'data' => [
-                'randrecipes' => $Recipes,
-                'crusines' => $curisines,
-                'searchrecipes' => $recipes,
+                'recipes' => $randrecipes,
             ]
         ]);
     }    
