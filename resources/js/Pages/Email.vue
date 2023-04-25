@@ -140,6 +140,10 @@ export default {
     <Footer />
 </template>
 
-<style>.image-upload>input {
+<style>
+.image-upload>input {
     display: none;
-}</style>
+
+}
+
+</style>

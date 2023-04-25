@@ -25,9 +25,7 @@ use Inertia\Inertia;
 Route::get('/home', [WebController::class,'home'])->name('home');
 Route::get('/categories', [WebController::class,'categories'])->name('categories');
 
-Route::get('/filter', function () {
-    return Inertia::render('FilterSearch', []);
-})->name('filter');
+Route::get('/filter', [WebController::class,'searchRandom'])->name('filter');
 
 Route::get('/myrecipes', function () {
     return Inertia::render('MyRecipes', []);

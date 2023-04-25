@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\RecentlyUpdatedResource;
 use App\Models\Category;
+use App\Models\Recipe;
+use App\Models\RecipeCategory;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -34,5 +36,18 @@ class WebController extends Controller
                 'categories' => $Categories,
             ]
         ]);
+    }    
+
+    public function searchRandom(){
+        $Recipes = Recipe::inRandomOrder()->limit(15)->get();
+        // dd($Recipes);
+        return Inertia::render('FilterSearch', [
+            'data' => [
+                'recipes' => $Recipes,
+            ]
+
+        ]);
+
+        
     }    
 }
