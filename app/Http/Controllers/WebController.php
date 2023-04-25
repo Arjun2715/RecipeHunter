@@ -35,12 +35,17 @@ class WebController extends Controller
         $cuisines = Cuisine::all()->pluck('name');
         return $ingredients = RecipeIngredient::nameDoesNotIncludeNumber()->count();
 
-
         return Inertia::render('FilterSearch', [
             'data' => [
-
+                
             ]
         ]);
+    }
+
+
+    public function searchRecipes(Request $request){
+        $recipes = RecipeController::search($request);
+        
     }
     
 }

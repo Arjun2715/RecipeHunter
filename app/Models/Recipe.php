@@ -61,4 +61,52 @@ class Recipe extends Model
     {
         return $this->categories()->limit(3)->pluck('name')->toArray();
     }
+
+
+
+    public static function createRecipe($data){
+
+        $recipe = Recipe::create($data);
+
+        foreach ($data['categories'] as $category) {
+            $category_id = Category::where('name', '=', $category)->first();
+            if (!$category_id) {
+                $category_id = Category::create([
+                    'name' => $category
+                ]);
+            }
+            $recipe->recipeCategories()->create([
+                'category_id' => $category_id->id,
+            ]);
+        }
+
+        foreach ($data['cuisines'] as $cuisine) {
+            $cuisine_id = Cuisine::where('name', '=', $cuisine)->first();
+            if (!$cuisine_id) {
+                $cuisine_id = Cuisine::create([
+                    'name' => $cuisine
+                ]);
+            }
+
+            $recipe->cuisines()->create([
+                'cuisine_id' => $cuisine_id->id,
+            ]);
+        }
+
+
+        foreach ($data['ingredients'] as $ingredientData) {
+            $recipe->ingredients()->create([
+                'name' => $ingredientData['name'],
+                'quantity' => $ingredientData['quantity'],
+            ]);
+        }
+
+        foreach ($data['steps'] as $stepData) {
+            $recipe->steps()->create([
+                'description' => $stepData['description'],
+                'order_step' => $stepData['order_step'],
+            ]);
+        }
+        return $recipe;
+    }
 }
