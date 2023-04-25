@@ -86,7 +86,7 @@ export default {
                             <div class="w-1/2">
                                 <a href="#" class="text-gray-300"><small>Forgot password?</small></a>
                             </div>
-                            <div class="w-1/2 text-right">
+                            <div class="w-1/2 text-right">+*
                                 <a href="#" class="text-gray-300"><small>Create new account</small></a>
                             </div>
                         </div>
