@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\RandomRecipesResource;
 use App\Http\Resources\RecentlyUpdatedResource;
 use App\Models\Category;
 use App\Models\Recipe;
@@ -58,7 +59,7 @@ class WebController extends Controller
     }
     public function searchRand(Request $request){
         $randrecipes = Recipe::inRandomOrder()->limit(15)->get();
-        dd($randrecipes);
+        return $recipes = RandomRecipesResource::collection($randrecipes);
         return Inertia::render('FilterSearch', [
             'data' => [
                 'recipes' => $randrecipes,
