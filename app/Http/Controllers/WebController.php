@@ -6,6 +6,8 @@ use App\Http\Resources\RecentlyUpdatedResource;
 use App\Models\Category;
 use App\Models\Recipe;
 use App\Models\RecipeCategory;
+use App\Models\Cuisine;
+use App\Models\RecipeIngredient;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -39,15 +41,19 @@ class WebController extends Controller
     }    
 
     public function searchRandom(){
-        $Recipes = Recipe::inRandomOrder()->limit(15)->get();
+        $randrecipes = Recipe::inRandomOrder()->limit(15)->get();
+        $cuisines = Cuisine::all()->pluck('name');
+        $recipes = RecipeController::search($request);
+        return $ingredients = RecipeIngredient::nameDoesNotIncludeNumber()->count();
         // dd($Recipes);
         return Inertia::render('FilterSearch', [
             'data' => [
-                'recipes' => $Recipes,
+                'randrecipes' => $Recipes,
+                'crusines' => $curisines,
+                'searchrecipes' => $recipes,
             ]
-
         ]);
-
-        
     }    
+    
+
 }
