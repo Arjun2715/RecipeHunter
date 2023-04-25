@@ -179,19 +179,19 @@ export default {
 
                         <div
                             class="py-2 grid lg:grid-cols-3 lg:items-center md:grid md:grid-cols-2 md:items-center grid-cols-1 items-center w-full h-full">
-                            <div v-for="item in data.recipes" class="flex-1 m-4">
+                            <div v-for="item in data.recipes.data" class="flex-1 m-2">
                                 <div
                                     class="w-full h-full rounded-[18px] bg-gradient-to-r from-lemon to-green p-1 shadow-md hover:shadow-xl">
-                                    <div class="card card-side bg-white dark:bg-gray-600 h-48 overflow-hidden">
+                                    <div class="card card-side bg-white dark:bg-gray-600 overflow-hidden">
                                         <img class=" " :src="item.image" alt="Recipe Image here :("
                                             style="width: 200px; height: 100%" />
-                                        <div class="card-body p-2">
-                                            <h2 class="card-title text-gray-800 dark:text-white text-xl">
+                                        <div class="card-body p-2 overflow-visible ">
+                                            <h2 class="card-title text-gray-800 dark:text-white text-lg "> 
                                                 {{ item.title }}
                                             </h2>
-                                            <!-- <p class="text-gray-800 dark:text-white h-auto">{{ item.description }}</p> -->
-                                            <div class="bg-gradient-to-r from-lemon to-green rounded-full w-full h-[4px]">
-                                            </div>
+                                            <p class="text-gray-800 dark:text-white h-auto text-sm">{{ item.description }}</p> 
+                                            <div class="bg-gradient-to-r from-lemon to-green rounded-full w-full h-[4px]"></div>
+
                                             <div class="card-actions justify-start">
                                                 <div class="flex flex-row  ">
                                                     <div class=" flex  flex-wrap   ">
