@@ -3,8 +3,6 @@ import Footer from "../Layouts/components/Footer.vue";
 import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
 import RecentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
 import MainCarousel from "../Layouts/components/MainCard.vue";
-import { onMounted } from 'vue'
-import { initFlowbite } from 'flowbite'
 
 export default {
     components: {
@@ -13,7 +11,6 @@ export default {
         RecentlyUpdated,
         MainCarousel,
     },
-    //example test data
 
 }
 </script>

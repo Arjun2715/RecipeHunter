@@ -2,9 +2,7 @@
 import Footer from "../Layouts/components/Footer.vue";
 import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
 import IngredientItem from "../Layouts/components/IngredientItem.vue";
-
 export default {
-
     props: {
         data: Object,
     },
@@ -12,7 +10,6 @@ export default {
         RecipeHunterLayout,
         Footer,
         IngredientItem,
-        
     },
     data() {
         return {
@@ -206,7 +203,7 @@ export default {
                                 <label for="rangeSlider" class="sliderValue"> Minutes: {{ valueM }} m </label>
                                 <input id="rangeSlider" type="range" class="form-range" v-model="valueH" min="0" max="23"
                                     step="" />
-                                <label for="rangeSlider" class="sliderValue"> Minutes: {{ valueH }} h </label>
+                                <label for="rangeSlider" class="sliderValue"> Hours: {{ valueH }} h </label>
 
                             </div>
                         </div>

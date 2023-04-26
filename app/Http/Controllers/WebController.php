@@ -66,6 +66,10 @@ class WebController extends Controller
             ]
         ]);
     }    
+
+    public function addRecipe(Request $request) { 
+        dd($request);
+        return Inertia::render('AddNewRecipe', [ ]);}
     
 
 }
