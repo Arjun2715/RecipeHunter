@@ -6,11 +6,14 @@ use App\Http\Requests\CreateRecipeRequest;
 use App\Http\Requests\StoreRecipeRequest;
 use App\Http\Requests\UpdateRecipeRequest;
 use App\Http\Resources\MostViewedResource;
+use App\Http\Resources\RandomRecipesResource;
+use App\Http\Resources\RecentlyUpdatedResource;
 use App\Models\Category;
 use App\Models\Cuisine;
 use App\Models\Recipe;
 use App\Models\RecipeIngredient;
 use App\Models\SavedRecipes;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
@@ -123,13 +126,10 @@ class RecipeController extends Controller
         if (!$recipes) {
             return false;
         }
-        return $recipes;
-    }
 
-    public function populateRecipes(){
         
+        return RandomRecipesResource::collection($recipes);
     }
-
 
     public static function processSpoonacularResponse($url)
     {
@@ -226,15 +226,17 @@ class RecipeController extends Controller
     {
         $apiKey = "f5750ea5b4604d01bbb15645a66fcf45";
         $url = "https://api.spoonacular.com/recipes/complexSearch?&number=6&apiKey=" . $apiKey . "&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&addRecipeNutrition=true";
-        $cuisine = $data['cuisine'];
-        $diet = $data['diet'];
+        $cuisines = $data['cuisines'];
+        $diets = $data['diets'];
         $ingredients = $data['ingredients'];
         $maxReadyTime = $data['maxReadyTime'];
         $sort = $data['sort'];
         $query = $data['query'];
-        if ($cuisine) {
+        if ($cuisines) {
             $url = $url . "&cuisine=";
-            $url .= $cuisine;
+            foreach ($cuisines as $cuisine) {
+                $url .= $cuisine . ",";
+            }
         }
         if ($ingredients) {
             $url = $url . "&ingredients=";
@@ -242,8 +244,11 @@ class RecipeController extends Controller
                 $url .= $ingredient . ",";
             }
         }
-        if ($diet) {
-            $url = $url . "&diet=" . $diet;
+        if ($diets) {
+            $url = $url . "&diet=";
+            foreach ($diets as $diet) {
+                $url .= $diet . ",";
+            }
         }
         if ($maxReadyTime) {
             $url = $url . "&maxReadyTime=" . $maxReadyTime;
@@ -256,4 +261,6 @@ class RecipeController extends Controller
         }
         return $url;
     }
+
+
 }

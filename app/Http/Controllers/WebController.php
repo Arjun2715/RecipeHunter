@@ -59,7 +59,7 @@ class WebController extends Controller
     }
     public function searchRand(Request $request){
         $randrecipes = Recipe::inRandomOrder()->limit(15)->get();
-        return $recipes = RandomRecipesResource::collection($randrecipes);
+        $recipes = RandomRecipesResource::collection($randrecipes);
         return Inertia::render('FilterSearch', [
             'data' => [
                 'recipes' => $randrecipes,

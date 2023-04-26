@@ -43,4 +43,4 @@ Route::middleware('auth:api')->group(function () {
 
 });
 
-Route::get('/test', [RecipeController::class,'storeSpoonacularRecipes'])->name('storeSpoonacularRecipes');
+Route::get('/test', [RecipeController::class,'getImageUrls'])->name('storeSpoonacularRecipes');
