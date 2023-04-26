@@ -123,12 +123,13 @@ class RecipeController extends Controller
     {
         $url = RecipeController::buildUrl($request->all());
         $recipes = RecipeController::processSpoonacularResponse($url);
+        
+
         if (!$recipes) {
             return false;
         }
-
-        
-        return RandomRecipesResource::collection($recipes);
+        // aqui hay que cojer los ids de cada receta, hacer un eloquent que me de toda las rectas Recipe::where id = 5,7,8 y luego hacer la collection
+        return $recipes;
     }
 
     public static function processSpoonacularResponse($url)
@@ -139,9 +140,7 @@ class RecipeController extends Controller
             $data = $response->json();
             foreach ($data['results'] as $data) {
                 $title = $data['title'];
-                $recipeExists = DB::table('recipes')
-                ->where('title', '=', $title)
-                ->first();
+                $recipeExists = Recipe::where('title', $title)->first();
                 if ($recipeExists) {
                     array_push($recipes, $recipeExists);
                 } else {

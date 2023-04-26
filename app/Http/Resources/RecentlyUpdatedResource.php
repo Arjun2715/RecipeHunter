@@ -18,7 +18,7 @@ class RecentlyUpdatedResource extends JsonResource
             'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
-            'tags' => $this->categories()->limit(3)->pluck('name')->toArray(),
+            'tags' => $this->tags,
             'image' => $this->image
         ];
     }
