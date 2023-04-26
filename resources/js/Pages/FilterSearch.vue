@@ -1,9 +1,7 @@
 <script scope>
 import Footer from "../Layouts/components/Footer.vue";
 import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
-import RecentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
 import IngredientItem from "../Layouts/components/IngredientItem.vue";
-import Sort from "../Layouts/components/Sort.vue";
 
 export default {
 
@@ -13,9 +11,7 @@ export default {
     components: {
         RecipeHunterLayout,
         Footer,
-        RecentlyUpdated,
         IngredientItem,
-        Sort,
         
     },
     data() {
@@ -24,7 +20,6 @@ export default {
             valueH: 0,
             valueM: 0,
             ingredients: [
-                "Pasta",
                 "Tomatoes",
                 "Basil",
                 "Garlic",

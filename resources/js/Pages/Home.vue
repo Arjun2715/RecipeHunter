@@ -10,14 +10,6 @@ import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
-
-
-
-// initialize components based on data attribute selectors
-// onMounted(() => {
-//     // initFlowbite();
-//     console.log(this.data);
-// })
 export default {
     props: {
         data: Object,
@@ -36,16 +28,8 @@ export default {
         CardHorizontal,
         SectionTitle,
     },
-    //props: {
-      //  recentlyUpdatedData: Array,
-       // recommended: Array,
-      //  mostViewed: Array
-    //},
     data() {
         return {
-            // recentlyUpdatedData: [],
-            // recommended: [],
-            // mostViewed: [],
             items: [
                 {
                     title: 'Tacos',
@@ -57,7 +41,7 @@ export default {
                 },
                 {
                     title: 'Hamburger',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                    description: 'Learn how to make succulent beef burgers with just four ingredients. An easy recipe for perfect homemade patties with beef mince.',
                     link: 'https://example.com/item1',
                     image1: 'assets/images/image-102.png',
                     image2: 'assets/images/mostviewed/image-3.png',
@@ -65,20 +49,20 @@ export default {
                     
                 },
                 {
-                    title: 'Pasta Carbonara',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                    title: 'Pappardelle',
+                    description: 'This easy pasta recipe uses minced lamb meat, onions, tomato, lots of Parmesan and the warmth of nutmeg.',
                     link: 'https://example.com/item1',
                     image1: 'assets/images/image-103.png',
-                    image2: 'assets/images/image-108.png',
+                    image2: 'assets/images/pasta-3.jpg',
                     tags: ['Pasta', 'Italian']
 
                 },
                 {
                     title: 'Soup',
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                    description: 'Kyselo is a hearty soup made with a sourdough starter. Sourdough, or fermented flour, thickens the soup and adds a slightly sour taste.',
                     link: 'https://example.com/item1',
                     image1: 'assets/images/image-104.png',
-                    image2: 'assets/images/recentlyupdated/image-23.png',
+                    image2: 'assets/images/soup-1.jpg',
                     tags: ['Bread', 'Eggs']
 
                 },
@@ -108,7 +92,7 @@ export default {
                                     <div class="hidden flex-row lg:flex">
                                         <div class="ml-6">
                                             <img class="rounded-lg mb-4 " :src="item.image2" alt=""
-                                                style="width: auto; height: 250px; ">
+                                                style="width: 200px; height: 280px; ">
                                         </div>
                                         <div class="flex-col justify-start text-white px-4">
                                             <div class="flex justify-start flex-row ">
@@ -180,7 +164,7 @@ export default {
                     </div>
                 </div>
 
-                <recentlyUpdatedCarousel />
+                <!-- <recentlyUpdatedCarousel /> -->
 
             </div>
             
