@@ -1,7 +1,7 @@
 <template>
     <li class="flex flex-row ">
-        <label class="containercheck">
-            <input :checked="isChecked" type="checkbox">
+        <label class="containercheck" >
+            <input :checked="isChecked" type="checkbox" >
             <div class="checkmark"></div>
         </label>
         <lable class="p-0" for="Item1">

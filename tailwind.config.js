@@ -35,8 +35,5 @@ module.exports = {
   daisyui: {
       themes: [],
   },
-  flowbite: {
-    themes: [],
-},
   
 };
