@@ -39,19 +39,28 @@ class WebController extends Controller
                 'categories' => $Categories,
             ]
         ]);
-    }    
+    }
 
 
 
     public function searchRecipes(Request $request){
-        $request['sort'] = $request['sort'][0];
         $request['maxReadyTime'] = $request['hour']*60 + $request['minute'];
-        return $recipes = RecipeController::search($request);
-        return Inertia::render('FilterSearch', [
-            'data' => [
-                'recipes' => $recipes,
-            ]
-        ]);
+        $recipes =RecipeController::search($request);
+
+        if ($recipes){
+            return Inertia::render('FilterSearch', [
+                'data' => [
+                    'recipes' => RandomRecipesResource::collection($recipes)
+                ]
+            ]);
+
+        }else{
+            return Inertia::render('FilterSearch', [
+                'data' => [
+                    'recipes' => $recipes,
+                ]
+            ]);
+        }
     }
     public function searchRand(Request $request){
         $randrecipes = Recipe::inRandomOrder()->limit(15)->get();
@@ -61,7 +70,7 @@ class WebController extends Controller
                 'recipes' => $recipes,
             ]
         ]);
-    }    
-    
+    }
+
 
 }

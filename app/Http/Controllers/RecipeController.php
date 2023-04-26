@@ -80,14 +80,14 @@ class RecipeController extends Controller
         $response = ['message' => 'You have been successfully deleted the recipe!'];
         return response($response, 200);
     }
-    
+
     public function storeSpoonacularRecipes()
     {
         $cuisine = "arabic";
 
         $apiKey = "f5750ea5b4604d01bbb15645a66fcf45";
         $url = "https://api.spoonacular.com/recipes/complexSearch?cuisine=" . $cuisine . "&number=100&apiKey=" . $apiKey . "&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&addRecipeNutrition=true";
-        
+
         $recipes = RecipeController::processSpoonacularResponse($url);
         return count($recipes);
     }
@@ -123,12 +123,18 @@ class RecipeController extends Controller
     {
         $url = RecipeController::buildUrl($request->all());
         $recipes = RecipeController::processSpoonacularResponse($url);
-        
+
 
         if (!$recipes) {
             return false;
         }
+        $idlist = [];
         // aqui hay que cojer los ids de cada receta, hacer un eloquent que me de toda las rectas Recipe::where id = 5,7,8 y luego hacer la collection
+        foreach($recipes as $recipe){
+            array_push($idlist, $recipe->id);
+        }
+        $recipes = Recipe::whereIn('id',$idlist)->get();
+
         return $recipes;
     }
 
