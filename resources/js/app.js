@@ -1,6 +1,7 @@
 import "./bootstrap";
 import "../css/app.css";
-import 'flowbite';
+// import 'flowbite';
+import 'daisyui'
 import { createInertiaApp, Head, Link } from '@inertiajs/inertia-vue3';
 import { createApp, h } from "vue";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
