@@ -38,7 +38,7 @@ export default {
                     <div class="lg:flex flex-row  mt-14  ">
 
                         <div class="flex-1  mx-4 ">
-                            <div class="flex flex-col ">
+                            <div class="flex flex-col ">{{ data.recipe.Imagepath }}
                                 <img :src="data.recipe.Imagepath" alt="">
                             </div>
 

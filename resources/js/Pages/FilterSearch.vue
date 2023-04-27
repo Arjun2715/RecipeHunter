@@ -115,7 +115,14 @@ export default {
                 this.selectedSort.push(item);
             }
         },
-
+        resetFilter(){
+            console.log(this.selectedIngredient = [],
+            this.selectedCuisines = [],
+            this.selectedDiet = [],
+            this.selectedSort = [],
+            this.valueH = 0,
+            this.valueM = 0,);
+        },
         filterd() {
             console.log(this.selectedIngredient);
             console.log(this.selectedCuisines);
@@ -314,6 +321,7 @@ export default {
                                 method="post"
                                 as="button"
                                 type="button"
+                                @click="resetFilter()"
                                 :data="{
                                     ingredients: this.selectedIngredient,
                                     cuisines: this.selectedCuisines,
@@ -333,11 +341,11 @@ export default {
                         <!--search info cards here -->
 
                         <div
-                            class="py-2 grid lg:grid-cols-3 lg:items-center md:grid md:grid-cols-2 md:items-center grid-cols-1 items-center w-full h-full"
+                            class="mb-20 py-2 grid lg:grid-cols-3 lg:items-center md:grid md:grid-cols-2 md:items-center grid-cols-1 items-center w-full h-full"
                         >
                             <div
                                 v-for="item in data.recipes.data"
-                                class="flex-1 m-2"
+                                class="flex-1 m-2 "
                             >
                                 <div
                                     class="w-full h-full rounded-[18px] bg-gradient-to-r from-lemon to-green p-1 shadow-md hover:shadow-xl"

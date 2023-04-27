@@ -160,7 +160,7 @@ export default {
                 <div class="flex flex-col   lg:mt-[50px] md:mt-[30px] mt-[20px]">
                     <SectionTitle title="Reciently Updated" />
                     <div v-for="rece in data.recentlyUpdated" 
-                    class="dark:text-white mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 flex-wrap">
+                    class="dark:text-white mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 flex-wrap mb-24">
                         <CardHorizontal :recipedata="rece"/>
                     </div>
                 </div>
