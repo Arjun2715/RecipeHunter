@@ -4,9 +4,9 @@
             <input :checked="isChecked" type="checkbox" >
             <div class="checkmark"></div>
         </label>
-        <lable class="p-0" for="Item1">
+        <label class="p-0" for="Item1">
             {{  Ingredient }}
-        </lable>
+        </label>
     </li>
 </template>
 <script>

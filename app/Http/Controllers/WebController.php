@@ -9,14 +9,17 @@ use App\Models\Recipe;
 use App\Models\RecipeCategory;
 use App\Models\Cuisine;
 use App\Models\RecipeIngredient;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+
 
 class WebController extends Controller
 {
 
 
     public function home(){
+
         $recipeController = new RecipeController();
         $recentlyUpdatedRecipes = RecentlyUpdatedResource::collection($recipeController->recentlyUpdatedRecipes());
         $recommendedRecipes = RecentlyUpdatedResource::collection($recipeController->recommendations());
@@ -43,6 +46,8 @@ class WebController extends Controller
 
 
     public function searchRecipes(Request $request){
+        Inertia::version('new'.Carbon::now());
+
         $request['maxReadyTime'] = $request['hour']*60 + $request['minute'];
         $recipes =RecipeController::search($request);
 
@@ -62,6 +67,8 @@ class WebController extends Controller
         }
     }
     public function searchRand(Request $request){
+        Inertia::version('new'.Carbon::now());
+
         $randrecipes = Recipe::inRandomOrder()->limit(15)->get();
         $recipes = RandomRecipesResource::collection($randrecipes);
         return Inertia::render('FilterSearch', [
