@@ -19,7 +19,7 @@ class RandomRecipesResource extends JsonResource
             'title' =>  Str::limit($this->title, 50, '...'),
             'description' => Str::limit($this->description, 90, '...'),
             'tags' => $this->tags,
-            'image' => $this->image
+            'image' => url($this->image)
         ];
     }
 }

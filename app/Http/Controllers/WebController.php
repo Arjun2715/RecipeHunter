@@ -35,6 +35,10 @@ class WebController extends Controller
 
     public function categories(){
         $Categories = Category::all();
+        foreach($Categories as $category){
+            $category->image = url($category->image);
+        }
+
         return Inertia::render('Categories', [
             'data' => [
                 'categories' => $Categories,
@@ -49,15 +53,13 @@ class WebController extends Controller
         Inertia::version('new'.Carbon::now());
 
         $request['maxReadyTime'] = $request['hour']*60 + $request['minute'];
-        $recipes =RecipeController::search($request);
-
+        $recipes = RecipeController::search($request);
         if ($recipes){
             return Inertia::render('FilterSearch', [
                 'data' => [
                     'recipes' => RandomRecipesResource::collection($recipes)
                 ]
             ]);
-
         }else{
             return Inertia::render('FilterSearch', [
                 'data' => [
