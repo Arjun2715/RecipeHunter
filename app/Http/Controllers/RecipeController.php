@@ -123,7 +123,7 @@ class RecipeController extends Controller
     {
         $url = RecipeController::buildUrl($request->all());
         $recipes = RecipeController::processSpoonacularResponse($url);
-
+        info($url);
 
         if (!$recipes) {
             return false;
@@ -134,7 +134,7 @@ class RecipeController extends Controller
             array_push($idlist, $recipe->id);
         }
         $recipes = Recipe::whereIn('id',$idlist)->get();
-
+        info($recipes);
         return $recipes;
     }
 
@@ -154,6 +154,7 @@ class RecipeController extends Controller
                     $description = str_replace(array('<b>', '</b>'), '', $description);
                     $author = $data['creditsText'];
                     $image = $data['image'];
+                    $image = str_replace('312x231', '556x370', $image);
                     $prepTime = $data['readyInMinutes'];
                     $cookTime = $data['cookingMinutes'];
                     $servings = $data['servings'];
@@ -231,7 +232,7 @@ class RecipeController extends Controller
     public static function buildUrl($data)
     {
         $apiKey = "f5750ea5b4604d01bbb15645a66fcf45";
-        $url = "https://api.spoonacular.com/recipes/complexSearch?&number=6&apiKey=" . $apiKey . "&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&addRecipeNutrition=true";
+        $url = "https://api.spoonacular.com/recipes/complexSearch?&number=12&apiKey=" . $apiKey . "&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&addRecipeNutrition=true";
         $cuisines = $data['cuisines'];
         $diets = $data['diets'];
         $ingredients = $data['ingredients'];

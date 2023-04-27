@@ -2,6 +2,8 @@
 import Footer from "../Layouts/components/Footer.vue";
 import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
 import IngredientItem from "../Layouts/components/IngredientItem.vue";
+import 'vue3-carousel/dist/carousel.css'
+import {InertiaProgress} from '@inertiajs/progress'
 export default {
     props: {
         data: Object,
@@ -127,6 +129,7 @@ export default {
         },
     },
 };
+InertiaProgress.init();
 </script>
 <template>
     <RecipeHunterLayout />

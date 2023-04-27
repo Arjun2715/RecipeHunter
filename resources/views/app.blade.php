@@ -9,7 +9,7 @@
     @inertiaHead
     <title inertia>{{ config('app.name', 'Laravel') }}</title>
     {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" /> --}}
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
     @vite('resources/js/app.js') @inertiaHead
 </head>
 

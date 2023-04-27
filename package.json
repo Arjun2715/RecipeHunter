@@ -16,9 +16,11 @@
     "dependencies": {
         "@inertiajs/inertia": "^0.11.1",
         "@inertiajs/inertia-vue3": "^0.6.0",
+        "@inertiajs/progress": "^0.2.7",
         "@inertiajs/vue3": "^1.0.2",
         "@vitejs/plugin-vue": "^4.1.0",
         "daisyui": "^2.51.5",
+        "nprogress": "^0.2.0",
         "vue": "^3.2.36",
         "vue3-carousel": "^0.3.0"
     }
