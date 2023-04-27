@@ -19,7 +19,7 @@ Route::get('/home', [WebController::class,'home'])->name('home');
 Route::get('/categories', [WebController::class,'categories'])->name('categories');
 
 Route::get('/filter', [WebController::class,'searchRand'])->name('filter');
-Route::post('/filter', [WebController::class,'searchRand'])->name('filtersearch');
+Route::post('/filter', [WebController::class,'searchRecipes'])->name('filtersearch');
 
 Route::get('/myrecipes', function () { return Inertia::render('MyRecipes', []);})->name('myrecipes');
 

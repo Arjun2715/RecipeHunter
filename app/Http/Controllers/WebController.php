@@ -50,13 +50,29 @@ class WebController extends Controller
     }
 
 
+
     public function searchRecipes(Request $request){
-        $recipes = RecipeController::search($request);
-        
+        $request['maxReadyTime'] = $request['hour']*60 + $request['minute'];
+        $recipes =RecipeController::search($request);
+
+        if ($recipes){
+            return Inertia::render('FilterSearch', [
+                'data' => [
+                    'recipes' => RandomRecipesResource::collection($recipes)
+                ]
+            ]);
+
+        }else{
+            return Inertia::render('FilterSearch', [
+                'data' => [
+                    'recipes' => $recipes,
+                ]
+            ]);
+        }
     }
     public function searchRand(Request $request){
         $randrecipes = Recipe::inRandomOrder()->limit(15)->get();
-         $recipes = RandomRecipesResource::collection($randrecipes);
+        $recipes = RandomRecipesResource::collection($randrecipes);
         return Inertia::render('FilterSearch', [
             'data' => [
                 'recipes' => $recipes,
@@ -72,6 +88,6 @@ class WebController extends Controller
                 'recipe' => json_decode($request->getContent(), true),
             ]
         ]);}
-    
+    }
 
 }
