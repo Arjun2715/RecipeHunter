@@ -88,4 +88,19 @@ class WebController extends Controller
                 'recipe' => json_decode($request->getContent(), true),
             ]
         ]);}
+
+        public function getCategory(Request $request){
+            $number = 12;
+            $categoryId = $request->category_id;
+
+            $recipes = Recipe::getCategory($categoryId, $number);
+            return Inertia::render('FilterSearch', [
+                'data' => [
+                    'recipes' => RandomRecipesResource::collection($recipes),
+                ]
+            ]);
+        }
     }
+
+
+

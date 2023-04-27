@@ -120,5 +120,12 @@ class Recipe extends Model
         $this->image = $newUrl;
         $this->save();
     }
-
+    public static function getCategory($category_id, $number)
+    {
+        $category = Category::find($category_id);
+             $recipes = Recipe::whereHas('categories', function ($query) use ($category) {
+                $query->where('category_id', $category->id);
+            })->limit($number)->get();
+            return $recipes;
+    }
 }
