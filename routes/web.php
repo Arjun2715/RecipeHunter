@@ -18,6 +18,9 @@ use Inertia\Inertia;
 Route::get('/home', [WebController::class,'home'])->name('home');
 Route::get('/categories', [WebController::class,'categories'])->name('categories');
 
+Route::get('/categories/{category_id}', [WebController::class,'getCategory'])->name('getCategory');
+
+
 Route::get('/filter', [WebController::class,'searchRand'])->name('filter');
 Route::post('/filter', [WebController::class,'searchRecipes'])->name('filtersearch');
 
