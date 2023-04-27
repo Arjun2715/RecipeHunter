@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class Recipe extends Model
 {
@@ -109,4 +111,14 @@ class Recipe extends Model
         }
         return $recipe;
     }
+
+    public function saveImageInDatabase(){
+        $response = Http::get($this->image);
+        $contents = $response->getBody();
+        Storage::put('public/images/recipes/'.$this->id.'/image.jpg', $contents);
+        $newUrl = '/storage/images/recipes/'.$this->id.'/image.jpg';
+        $this->image = $newUrl;
+        $this->save();
+    }
+
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\ApiAuthController;
+use App\Http\Controllers\CommonController;
 use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\SavedRecipesController;
 use App\Http\Controllers\RatingController;
@@ -40,7 +41,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/users/{user_id}/recommendations', [RecipeController::class, 'recommendations']);
 
     Route::post('/logout', [ApiAuthController::class,'logout'])->name('logout.api');
-
 });
 
 Route::get('/test', [RecipeController::class,'getImageUrls'])->name('storeSpoonacularRecipes');
+Route::get('/imagesUpdate', [CommonController::class,'saveImagesInDatabase']);

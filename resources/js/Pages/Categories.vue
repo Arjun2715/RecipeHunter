@@ -2,6 +2,8 @@
 import Footer from "../Layouts/components/Footer.vue";
 import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
 import RecentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
+import {InertiaProgress} from '@inertiajs/progress'
+
 export default {
     props: {
         data: Object,
@@ -19,6 +21,8 @@ export default {
         }
     }
 }
+InertiaProgress.init();
+
 </script>
 <template>
     <RecipeHunterLayout />
@@ -37,7 +41,7 @@ export default {
                                     <h2 class="card-title text-gray-800 dark:text-white justify-center ">{{ capitalizeFirstLetter(item.name) }}</h2>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>

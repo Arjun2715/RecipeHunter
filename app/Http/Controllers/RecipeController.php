@@ -134,7 +134,6 @@ class RecipeController extends Controller
             array_push($idlist, $recipe->id);
         }
         $recipes = Recipe::whereIn('id',$idlist)->get();
-        info($recipes);
         return $recipes;
     }
 
@@ -179,6 +178,7 @@ class RecipeController extends Controller
                                 'servings' => $servings,
                             ]
                         );
+                        $recipe->saveImageInDatabase();
                         array_push($recipes, $recipe);
                         foreach ($categories as $category) {
                             $category_id = Category::where('name', '=', $category)->first();
@@ -231,7 +231,7 @@ class RecipeController extends Controller
 
     public static function buildUrl($data)
     {
-        $apiKey = "f5750ea5b4604d01bbb15645a66fcf45";
+        $apiKey = "c15d413955f34a3b9912aa100b74435d";
         $url = "https://api.spoonacular.com/recipes/complexSearch?&number=12&apiKey=" . $apiKey . "&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&addRecipeNutrition=true";
         $cuisines = $data['cuisines'];
         $diets = $data['diets'];
@@ -268,7 +268,7 @@ class RecipeController extends Controller
             foreach ($sorts as $sort) {
                 $url .= $sort . ",";
             }
-            
+
         }
         return $url;
     }
