@@ -32,7 +32,7 @@ Route::post('/newrecipepost', [WebController::class,'addRecipe'])->name('newreci
 
 Route::get('/viewrecipe', function () { return Inertia::render('ViewRecipe', []);})->name('viewrecipe');
 
-
+/* hla */
 
 Route::get('/savedrecipes', function () {
     return Inertia::render('SavedRecipes', []);
