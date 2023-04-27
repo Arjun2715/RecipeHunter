@@ -1,5 +1,5 @@
 <template>
-    <div v-for="item in recipedata" class=" flex items-start justify-center ">
+    <div v-for="item in recipedata" class=" flex items-start justify-center">
         <div class="w-full h-full rounded-[18px] bg-gradient-to-r from-lemon to-green p-1 shadow-md hover:shadow-xl">
             <div class="card card-side bg-white dark:bg-gray-600 h-52 overflow-hidden">
                 <img class=" " :src="item.image" alt="Recipe Image here :(" style="width: 200px; height: 100%" />
