@@ -15,13 +15,6 @@ use Inertia\Inertia;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-// Route::get('/', function () {
-//     return Inertia::render('Index', [
-//         // 'articles' => Article::latest()->get()
-//     ]);
-// })->name('home');
-
 Route::get('/home', [WebController::class,'home'])->name('home');
 Route::get('/categories', [WebController::class,'categories'])->name('categories');
 

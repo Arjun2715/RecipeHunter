@@ -28,7 +28,7 @@ export default {
                                 <div class=" flex flex-col w-[350px] font-medium text-lg text-gray-600 dark:text-white">Name
 
                                     <input type="text"
-                                        class="  border-2 border-gray-300 text-gray-900 text-sm  
+                                        class="  border-2 outline-none border-gray-300 text-gray-900 text-sm  
                                                              focus:ring-green focus:border-green rounded-xl   p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                              dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  "
                                         placeholder="Enter your name" required>
@@ -39,7 +39,7 @@ export default {
                                     Email
 
                                     <input type="email"
-                                        class="  border-2 border-gray-300 text-gray-900 text-sm  
+                                        class="  border-2 outline-none border-gray-300 text-gray-900 text-sm  
                                                              focus:ring-green focus:border-green rounded-xl   p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                              dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  "
                                         placeholder="Enter your email" required>
@@ -50,7 +50,7 @@ export default {
                                     Comment
 
                                     <textarea type="text"
-                                        class="  border-2 border-gray-300 text-gray-900 text-sm  h-44
+                                        class="  border-2 outline-none border-gray-300 text-gray-900 text-sm  h-44
                                                          focus:ring-green focus:border-green rounded-xl   p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                          dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  "
                                         placeholder=""></textarea>

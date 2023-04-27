@@ -119,12 +119,12 @@ export default {
                                                     <p class="text-sm font-light text-gray-600 dark:text-white">Send me an email when someone leaves a review</p>
                                                 </div>
 
-                                                <Link href="#">
+                                                <Link href="">
                                                 <button type="submit"
-                                                    class="w-fit px-6 bg-gradient-to-r from-lemon to-green border-1 border-gray-300 text-gray-900 text-sm font-bold  
-                                                       focus:ring-green focus:border-green rounded-xl  p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                                       dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00">
-                                                    Save All</button>
+                                                    class="btn w-fit  px-6 bg-gradient-to-r from-lemon to-green border-none  outline-none border-gray-300 text-gray-900 text-sm font-bold  
+                                                   focus:ring-lemon  focus:border-lemon rounded-xl  p-2.5 dark:bg-gray-700 dark:border-gray-600 
+                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-lemon dark:text-gray-00">
+                                                   Save All</button>
                                                 </Link>
                                             </div>
                                         </form>

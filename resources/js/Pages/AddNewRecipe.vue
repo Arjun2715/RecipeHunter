@@ -19,31 +19,15 @@ export default {
             PrepTimeHours: 0,
             CookTimeMinutes: 0,
             CookTimeHours: 0,
-            imagePath: "",
+            ImagePath: "",
             Diet: "",
             Cuisine: "",
-            // recipe: [this.Name, this.Diet, this.Cuisine, this.Description, this.Ingredients, this.Instructions, this.PrepTimeMinutes, this.PrepTimHours, this.CookTimeHours,
-            // this.CookTimeMinutes, 'assets/images/' + this.imagePath,],
-
         }
     },
     methods: {
-        // recipeData() {
-        //     this.Name,
-        //         this.Description,
-        //         this.Ingredients,
-        //         this.Instructions,
-        //         this.PrepTimeMinutes,
-        //         this.PrepTimeHours,
-        //         this.CookTimeHours,
-        //         this.CookTimeMinutes,
-        //         'assets/images/' + this.imagePath,
-        //         this.Diet,
-        //         this.Cuisine
-        // },
         handleFileChange(event) {
             const file = event.target.files[0]; // Get the selected file name
-            this.imagePath = file.name;
+            this.ImagePath = file.name;
         },
     },
 }
@@ -69,7 +53,7 @@ export default {
                                 PrepTimeHours: PrepTimeHours,
                                 CookTimeHours: CookTimeHours,
                                 CookTimeMinutes: CookTimeMinutes,
-                                imagePath: imagePath,
+                                ImagePath: ImagePath,
                                 Diet: Diet,
                                 Cuisine: Cuisine}" method="post" as="button" type="button"
                                 class="lg:h-[50px]  md:h-[40px] h-[30px] w-auto font-medium  rounded-full bg-gradient-to-r from-lemon to-green border-none lg:text-xl px-4  cursor-pointer text-white dark:text-white hover:shadow-xl">
@@ -80,7 +64,7 @@ export default {
                     <div class="lg:flex flex-row  mt-14  ">
                         <div class="flex-1  mx-4 ">
                             <div class="flex flex-col ">
-                                <img class="h-auto max-w-full rounded-t-lg " src="assets/images/image-101.png"
+                                <img class="h-auto max-w-full rounded-t-lg" src="assets/images/image-101.png" style="filter: brightness(0.3) "
                                     alt="image description">
                             </div>
                             <div class="flex flex-col justify-center w-auto  ">
@@ -91,7 +75,7 @@ export default {
                                 </div>
 
                             </div>
-                            <div class=" mt-2 flex flex-row justify-between space-x-4  ">
+                            <!-- <div class=" mt-2 flex flex-row justify-between space-x-4  ">
                                 <div class="flex flex-col w-full  ">
                                     <div class=" font-medium text-lg text-gray-600 dark:text-white">Nutrition Facts
                                     </div>
@@ -110,11 +94,6 @@ export default {
                                                     style="background-color: transparent; width: 50px;">Calories</div>
                                         </div>
                                         <hr>
-                                        <!-- <div class="flex flex-row justify-between">
-                                            <label for="">Amount Per Serving:</label>
-                                            <div><input class="border-1 outline-none  text-right  border-b" type="number" min="1" max="50" name="" id="" 
-                                                 style="background-color: transparent; width: 50px;">Calories</div>
-                                        </div> -->
                                         <label for="Fat">Fat</label>
                                         <label for="Cholesterol">Cholesterol</label>
                                         <label for="Sodium">Sodium</label>
@@ -124,7 +103,7 @@ export default {
                                         <label for="Protein">Protein</label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="flex-1  ">
                             <div class="flex flex-col space-y-6  mx-4">
@@ -231,7 +210,7 @@ export default {
                                                     </div>
                                                     <input type="number" v-model="PrepTimeHours"
                                                         class="  border-2 border-gray-300 text-gray-900 text-sm  
-                                                                   focus:ring-green focus:border-green rounded-xl w-full pl-16  p-2.5 dark:bg-gray-700 dark:border-gray-600 
+                                                                   focus:ring-green focus:border-green rounded-xl w-full pl-16 outline-none p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                                    dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  "
                                                         placeholder="0">
                                                 </div>
@@ -244,7 +223,7 @@ export default {
                                                     </div>
                                                     <input type="number" v-model="PrepTimeMinutes"
                                                         class="  border-2 border-gray-300 text-gray-900 text-sm  
-                                                                   focus:ring-green focus:border-green rounded-xl w-full pl-20  p-2.5 dark:bg-gray-700 dark:border-gray-600 
+                                                                   focus:ring-green focus:border-green rounded-xl w-full pl-20 outline-none p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                                    dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  "
                                                         placeholder="0">
 
@@ -270,7 +249,7 @@ export default {
                                                     </div>
                                                     <input type="number" v-model="CookTimeHours"
                                                         class="  border-2 border-gray-300 text-gray-900 text-sm  
-                                                                   focus:ring-green focus:border-green rounded-xl w-full pl-16  p-2.5 dark:bg-gray-700 dark:border-gray-600 
+                                                                   focus:ring-green focus:border-green rounded-xl w-full pl-16 outline-none  p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                                    dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  "
                                                         placeholder="0">
                                                 </div>
@@ -283,7 +262,7 @@ export default {
                                                     </div>
                                                     <input type="number" v-model="CookTimeMinutes"
                                                         class="  border-2 border-gray-300 text-gray-900 text-sm  
-                                                                   focus:ring-green focus:border-green rounded-xl w-full pl-20  p-2.5 dark:bg-gray-700 dark:border-gray-600 
+                                                                   focus:ring-green focus:border-green rounded-xl w-full pl-20 outline-none p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                                    dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  "
                                                         placeholder="0">
 

@@ -21,7 +21,6 @@ class WebController extends Controller
         $recentlyUpdatedRecipes = RecentlyUpdatedResource::collection($recipeController->recentlyUpdatedRecipes());
         $recommendedRecipes = RecentlyUpdatedResource::collection($recipeController->recommendations());
         $mostViewed = $recipeController->mostViewed();
-        //  dd($recentlyUpdatedRecipes);
         return Inertia::render('Home', [
             'data' => [
                 'recentlyUpdated' => $recentlyUpdatedRecipes,
@@ -33,7 +32,6 @@ class WebController extends Controller
 
     public function categories(){
         $Categories = Category::all();
-        // dd($Categories);
         return Inertia::render('Categories', [
             'data' => [
                 'categories' => $Categories,
@@ -44,7 +42,6 @@ class WebController extends Controller
     public function search(){
         $cuisines = Cuisine::all()->pluck('name');
         return $ingredients = RecipeIngredient::nameDoesNotIncludeNumber()->count();
-
         return Inertia::render('FilterSearch', [
             'data' => [
                 
@@ -68,8 +65,13 @@ class WebController extends Controller
     }    
 
     public function addRecipe(Request $request) { 
-        dd($request);
-        return Inertia::render('AddNewRecipe', [ ]);}
+        // dd($request->getContent());
+        
+        return Inertia::render('ViewRecipe', [ 
+            'data' => [
+                'recipe' => json_decode($request->getContent(), true),
+            ]
+        ]);}
     
 
 }
