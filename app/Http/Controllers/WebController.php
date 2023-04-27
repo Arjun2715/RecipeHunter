@@ -26,7 +26,7 @@ class WebController extends Controller
                 'recentlyUpdated' => $recentlyUpdatedRecipes,
                 'recommended' => $recommendedRecipes,
                 'mostViewed' => $mostViewed
-            ]
+            ]/* hola */
         ]);
     }
 
@@ -37,7 +37,7 @@ class WebController extends Controller
                 'categories' => $Categories,
             ]
         ]);
-    }    
+    }
 
 
 
@@ -69,12 +69,12 @@ class WebController extends Controller
                 'recipes' => $recipes,
             ]
         ]);
-    }    
+    }
 
-    public function addRecipe(Request $request) { 
+    public function addRecipe(Request $request) {
         // dd($request->getContent());
-        
-        return Inertia::render('ViewRecipe', [ 
+
+        return Inertia::render('ViewRecipe', [
             'data' => [
                 'recipe' => json_decode($request->getContent(), true),
             ]
