@@ -29,7 +29,7 @@ class WebController extends Controller
                 'recentlyUpdated' => $recentlyUpdatedRecipes,
                 'recommended' => $recommendedRecipes,
                 'mostViewed' => $mostViewed
-            ]
+            ]/* hola */
         ]);
     }
 
