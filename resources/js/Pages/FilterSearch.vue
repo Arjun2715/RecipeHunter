@@ -178,7 +178,7 @@ InertiaProgress.init();
                                     type="text"
                                     id="voice-search"
                                     v-model="search"
-                                    class="bg-gradient-to-r from-lemon-20 to-green-20 border-2 border-gray-300 text-gray-900 text-sm rounded-full focus:ring-lemon focus:border-lemon w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-white dark:text-white dark:focus:ring-lemon"
+                                    class="bg-gradient-to-r from-lemon-20 outline-none to-green-20 border-2 border-gray-300 text-gray-900 text-sm rounded-full focus:ring-lemon focus:border-lemon w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-white dark:text-white dark:focus:ring-lemon"
                                     placeholder="Search... "
                                 />
                             </div>
