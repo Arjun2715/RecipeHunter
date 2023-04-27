@@ -116,7 +116,7 @@ class Recipe extends Model
         $response = Http::get($this->image);
         $contents = $response->getBody();
         Storage::put('public/images/recipes/'.$this->id.'/image.jpg', $contents);
-        $newUrl = '/storage/images/thiss/'.$this->id.'/image.jpg';
+        $newUrl = '/storage/images/recipes/'.$this->id.'/image.jpg';
         $this->image = $newUrl;
         $this->save();
     }

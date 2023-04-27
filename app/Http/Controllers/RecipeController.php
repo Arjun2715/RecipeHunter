@@ -231,7 +231,7 @@ class RecipeController extends Controller
 
     public static function buildUrl($data)
     {
-        $apiKey = "f5750ea5b4604d01bbb15645a66fcf45";
+        $apiKey = "c15d413955f34a3b9912aa100b74435d";
         $url = "https://api.spoonacular.com/recipes/complexSearch?&number=12&apiKey=" . $apiKey . "&instructionsRequired=true&fillIngredients=true&addRecipeInformation=true&addRecipeNutrition=true";
         $cuisines = $data['cuisines'];
         $diets = $data['diets'];
