@@ -39,15 +39,6 @@ class WebController extends Controller
         ]);
     }    
 
-    public function search(){
-        $cuisines = Cuisine::all()->pluck('name');
-        return $ingredients = RecipeIngredient::nameDoesNotIncludeNumber()->count();
-        return Inertia::render('FilterSearch', [
-            'data' => [
-                
-            ]
-        ]);
-    }
 
 
 
@@ -89,5 +80,3 @@ class WebController extends Controller
             ]
         ]);}
     }
-
-}
