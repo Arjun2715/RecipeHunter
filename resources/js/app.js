@@ -6,7 +6,6 @@ import 'daisyui'
 import { createInertiaApp, Head, Link } from '@inertiajs/inertia-vue3';
 import { createApp, h } from "vue";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
-
 // import AuthNav from '@/Layouts/components/AuthNav.vue';
 createInertiaApp({
   

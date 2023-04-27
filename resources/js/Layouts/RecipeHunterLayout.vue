@@ -37,7 +37,7 @@ export default {
                                     before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
                                     before:transition before:ease-in-out before:duration-300">
-                            <Link href="/myrecipes">Add Recipe</Link>
+                            <Link href="/myrecipes">My Recipes</Link>
                         </li>
                         <li class="text-gray dark:text-white p-0
                                     relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 

@@ -22,7 +22,7 @@ export default {
                         <div class="flex flex-row justify-between">
                             <div
                                 class="font-bold text-transparent lg:text-4xl md:text-xl bg-clip-text bg-gradient-to-r from-lemon to-green">
-                                Add new Recipe</div>
+                                My Recipes</div>
                             <div class="flex flex-row w-auto  ">
                             </div>
                         </div>
