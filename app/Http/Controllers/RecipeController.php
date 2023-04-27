@@ -151,6 +151,7 @@ class RecipeController extends Controller
                     array_push($recipes, $recipeExists);
                 } else {
                     $description = $data['summary'];
+                    $description = str_replace(array('<b>', '</b>'), '', $description);
                     $author = $data['creditsText'];
                     $image = $data['image'];
                     $prepTime = $data['readyInMinutes'];
@@ -235,7 +236,7 @@ class RecipeController extends Controller
         $diets = $data['diets'];
         $ingredients = $data['ingredients'];
         $maxReadyTime = $data['maxReadyTime'];
-        $sort = $data['sort'];
+        $sorts = $data['sort'];
         $query = $data['query'];
         if ($cuisines) {
             $url = $url . "&cuisine=";
@@ -261,8 +262,12 @@ class RecipeController extends Controller
         if ($query) {
             $url = $url . "&query=" . $query;
         }
-        if ($sort) {
-            $url = $url . "&sort=" . $sort;
+        if ($sorts) {
+            $url = $url . "&sort=";
+            foreach ($sorts as $sort) {
+                $url .= $sort . ",";
+            }
+            
         }
         return $url;
     }
