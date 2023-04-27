@@ -14,7 +14,7 @@ export default {
 </script>
 <template>
     <RecipeHunterLayout />
-    <div class="flex flex-col lg:mt-8">
+    <div class="flex flex-col lg:mt-8 dark:text-white">
         <div>
             <div class=" flex flex-col w-full ">
                 <div class="container mx-auto px-4 w-full h-full ">
@@ -30,11 +30,11 @@ export default {
                             <img src="assets/images/image-107.png" alt="">
 
                             <div class="flex flex-col items-center justify-center">
-                                <h2 class="font-bold">No items Here</h2>
-                                <p>On adding your created recipes will be saved here.</p>
+                                <h2 class="font-bold">Add New Recipes</h2>
+                                <p>On adding your created recipes will be saved in Saved Recipes.</p>
                                 <Link href="/newrecipe"
-                                    class="btn border-none bg-gradient-to-r from-lemon to-green rounded-full p-2 text-gray-600 dark:text-white shadow-md hover:shadow-xl">
-                                    Add Recipes Here
+                                    class="btn border-none mt-4 bg-gradient-to-r from-lemon to-green rounded-full p-2 text-gray-600 dark:text-white shadow-md hover:shadow-xl">
+                                    Add Recipes 
                             </Link>
                             </div>
                         </div>

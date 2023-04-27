@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Str;
 
 class RecentlyUpdatedResource extends JsonResource
 {
@@ -16,9 +17,9 @@ class RecentlyUpdatedResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title' => $this->title,
-            'description' => $this->description,
-            'tags' => $this->tags,
+            'title' => Str::limit($this->title, 40, '...'),
+            'description' => Str::limit($this->description, 90, '...'),
+            'tags' => $this->categories()->limit(3)->pluck('name')->toArray(),
             'image' => $this->image
         ];
     }

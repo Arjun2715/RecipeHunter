@@ -86,7 +86,7 @@ export default {
                         </div>
                     </div>
                     
-                    <div class="dropdown dropdown-end hidden lg:flex">
+                    <div class="dropdown dropdown-end flex">
                         
                         <label tabindex="0" class="btn btn-ghost btn-circle avatar outline-none border-none">
                             <div class="w-10 rounded-full ">
@@ -95,10 +95,47 @@ export default {
                             </div>
                         </label>
                         <ul tabindex="0"
-                            class="mt-12 p-2 shadow menu menu-compact dropdown-content rounded-box w-52 bg-white dark:bg-gray-800 text">
-                            <li class="text-gray-800 dark:text-white hover:bg-gray-300  hover:text-gray-800 rounded-full">
+                            class="mt-12 p-2 shadow menu menu-compact dropdown-content rounded-box w-52 bg-white dark:bg-gray-500 text">
+                            <li class="  text-gray-800 dark:text-white hover:bg-gray-300  hover:text-gray-800 rounded-full lg:hidden">
+                                <Link href="/home" class="justify-between ">
+                                Home
+                                <!-- <span class="badge bg-gray-800 dark:bg-white text-white dark:text-gray-800 border-none outline-none">New</span> -->
+                                </Link>
+                            </li>
+                            <li class="text-gray-800 dark:text-white hover:bg-gray-300  hover:text-gray-800 rounded-full lg:hidden">
+                                <Link href="/categories" class="justify-between ">
+                                    Categories
+                                <!-- <span class="badge bg-gray-800 dark:bg-white text-white dark:text-gray-800 border-none outline-none">New</span> -->
+                                </Link>
+                            </li>
+                            <li class="text-gray-800 dark:text-white hover:bg-gray-300  hover:text-gray-800 rounded-full lg:hidden">
+                                <Link href="/myrecipes" class="justify-between ">
+                                Add New Recipe
+                                <!-- <span class="badge bg-gray-800 dark:bg-white text-white dark:text-gray-800 border-none outline-none">New</span> -->
+                                </Link>
+                            </li>
+                            <li class="text-gray-800 dark:text-white hover:bg-gray-300  hover:text-gray-800 rounded-full lg:hidden">
+                                <Link href="/savedrecipes" class="justify-between ">
+                                    Saved Recipes
+                                <!-- <span class="badge bg-gray-800 dark:bg-white text-white dark:text-gray-800 border-none outline-none">New</span> -->
+                                </Link>
+                            </li>
+                            <li class="text-gray-800 dark:text-white hover:bg-gray-300  hover:text-gray-800 rounded-full lg:hidden">
+                                <Link href="/contactus" class="justify-between ">
+                                    Contact Us
+                                <!-- <span class="badge bg-gray-800 dark:bg-white text-white dark:text-gray-800 border-none outline-none">New</span> -->
+                                </Link>
+                            </li>
+
+                            <li class="text-gray-800 dark:text-white hover:bg-gray-300  hover:text-gray-800 rounded-full lg:hidden">
+                                <Link href="/aboutus" class="justify-between ">
+                                    About Us
+                                <!-- <span class="badge bg-gray-800 dark:bg-white text-white dark:text-gray-800 border-none outline-none">New</span> -->
+                                </Link>
+                            </li>
+                            <li class="text-gray-800 dark:text-white hover:bg-gray-300  hover:text-gray-800 rounded-full ">
                                 <Link href="/dashboard" class="justify-between ">
-                                Profile
+                                    Dashboard
                                 <!-- <span class="badge bg-gray-800 dark:bg-white text-white dark:text-gray-800 border-none outline-none">New</span> -->
                                 </Link>
                             </li>
@@ -112,12 +149,12 @@ export default {
                             </li>
                         </ul>
                     </div>
-                    <div class=" lg:hidden  md:flex sm:flex">
+                    <!-- <div class=" lg:hidden  md:flex sm:flex">
                         <Menu />
-                    </div>
+                    </div> -->
                 </div>
             </div>
-         <footer />
+         <!-- <footer /> -->
          
     </body>
     

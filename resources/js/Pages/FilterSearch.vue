@@ -1,10 +1,7 @@
 <script scope>
 import Footer from "../Layouts/components/Footer.vue";
 import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
-import RecentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
 import IngredientItem from "../Layouts/components/IngredientItem.vue";
-import Sort from "../Layouts/components/Sort.vue";
-
 export default {
     props: {
         data: Object,
@@ -12,7 +9,6 @@ export default {
     components: {
         RecipeHunterLayout,
         Footer,
-        RecentlyUpdated,
         IngredientItem,
         Sort,
     },
@@ -22,7 +18,6 @@ export default {
             valueH: 0,
             valueM: 0,
             ingredients: [
-                "Pasta",
                 "Tomatoes",
                 "Basil",
                 "Garlic",
@@ -264,9 +259,7 @@ export default {
                                 <span></span>
                                 Prep. Time
                             </label>
-                            <div
-                                class="dropdown-content menu p-2 shadow bg-white dark:bg-gray-600 dark:text-white rounded-box w-auto"
-                            >
+                            <div class="dropdown-content menu p-2 shadow bg-white dark:bg-gray-600 dark:text-white rounded-box w-auto">
                                 <input
                                     id="rangeSlider"
                                     type="range"

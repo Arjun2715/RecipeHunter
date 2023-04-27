@@ -61,13 +61,13 @@ export default {
                                         <div class=" mb-4 px-16 flex flex-row justify-between space-x-4">
                                             <div class="flex flex-col w-full  ">
                                                 <div class=" font-medium text-lg text-gray-600 dark:text-white">First Name </div>
-                                            <input type="text" class="  border-1 border-gray-300 text-gray-900 text-sm  
+                                            <input type="text" class="  border-2 outline-none border-gray-300 text-gray-900 text-sm  
                                                focus:ring-green focus:border-green rounded-xl w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  placeholder:Joan">
                                             </div>
                                             <div class="flex flex-col w-full">
                                                 <div class=" font-medium text-lg text-gray-600 dark:text-white">Last Name </div>
-                                            <input type="text" class="  border-1 border-gray-300 text-gray-900 text-sm  
+                                            <input type="text" class="  border-2 outline-none border-gray-300 text-gray-900 text-sm  
                                                focus:ring-green focus:border-green rounded-xl w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">
                                             </div>
@@ -75,13 +75,13 @@ export default {
                                         <div class="mt-8 mb-4 px-16 flex flex-row justify-between space-x-4">
                                             <div class="flex flex-col w-full  ">
                                                 <div class=" font-medium text-lg text-gray-600 dark:text-white">Email </div>
-                                            <input type="email" class="  border-1 border-gray-300 text-gray-900 text-sm  
+                                            <input type="email" class="  border-2 outline-none border-gray-300 text-gray-900 text-sm  
                                                focus:ring-green focus:border-green rounded-xl w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">
                                             </div>
                                             <div class="flex flex-col w-full">
                                                 <div class=" font-medium text-lg text-gray-600 dark:text-white">BirthDay </div>
-                                            <input type="Date" class=" border-1 border-gray-300 text-gray-900 text-sm  
+                                            <input type="Date" class=" border-2 outline-none border-gray-300 text-gray-900 text-sm  
                                                focus:ring-green focus:border-green rounded-xl w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">
                                             </div>
@@ -89,7 +89,14 @@ export default {
                                         
 
                                         <div class="px-16 py-4  ">
-
+                                            
+                                            <Link href="#">
+                                                <button type="submit"
+                                                    class="btn w-fit  px-6 bg-gradient-to-r from-lemon to-green border-none  outline-none border-gray-300 text-gray-900 text-sm font-bold  
+                                                   focus:ring-lemon  focus:border-lemon rounded-xl  p-2.5 dark:bg-gray-700 dark:border-gray-600 
+                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-lemon dark:text-gray-00">
+                                                   Save All</button>
+                                                </Link>
                                         </div>
                                     </div>
                                 </div>

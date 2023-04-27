@@ -15,22 +15,22 @@ use Inertia\Inertia;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-// Route::get('/', function () {
-//     return Inertia::render('Index', [
-//         // 'articles' => Article::latest()->get()
-//     ]);
-// })->name('home');
-
 Route::get('/home', [WebController::class,'home'])->name('home');
 Route::get('/categories', [WebController::class,'categories'])->name('categories');
 
 Route::get('/filter', [WebController::class,'searchRand'])->name('filter');
 Route::post('/filter', [WebController::class,'searchRecipes'])->name('filtersearch');
 
-Route::get('/myrecipes', function () {
-    return Inertia::render('MyRecipes', []);
-})->name('myrecipes');
+Route::get('/myrecipes', function () { return Inertia::render('MyRecipes', []);})->name('myrecipes');
+
+Route::get('/newrecipe',  function () { return Inertia::render('AddNewRecipe', []);})->name('newrecipe');
+
+Route::post('/newrecipepost', [WebController::class,'addRecipe'])->name('newrecipepost');
+
+Route::get('/viewrecipe', function () { return Inertia::render('ViewRecipe', []);})->name('viewrecipe');
+
+
+
 Route::get('/savedrecipes', function () {
     return Inertia::render('SavedRecipes', []);
 })->name('savedrecipes');
@@ -40,9 +40,7 @@ Route::get('/aboutus', function () {
 Route::get('/contactus', function () {
     return Inertia::render('ContactUs', []);
 })->name('contactus');
-Route::get('/newrecipe', function () {
-    return Inertia::render('AddNewRecipe', []);
-})->name('newrecipe');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard', []);
 })->name('dashboard');

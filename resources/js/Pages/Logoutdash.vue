@@ -33,8 +33,6 @@ export default {
                                 </div>
                                 <div class="flex flex-col w-full h-full">
                                     <div class="w-full mx-6 dark:bg-gray-700 my-4 rounded-2xl shadow-2xl">
-                                        <!-- 70% dashboard panel here -->
-                                        <!-- <Notifications /> -->
                                         <div id="bg-profile" name="bg-profile"
                                             class="flex flex-col   rounded-t-2xl  h-[200px] bg-gradient-to-r from-lemon-20 to-green-20">
                                             <div class="relative">
