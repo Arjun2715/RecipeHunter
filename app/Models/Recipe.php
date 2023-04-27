@@ -69,7 +69,10 @@ class Recipe extends Model
     public static function createRecipe($data){
 
         $recipe = Recipe::create($data);
-
+        $savedRecipe = SavedRecipes::create([
+            'recipe_id' => $recipe->id,
+            'user_id' => auth()->user()->id,
+        ]);
         foreach ($data['categories'] as $category) {
             $category_id = Category::where('name', '=', $category)->first();
             if (!$category_id) {
