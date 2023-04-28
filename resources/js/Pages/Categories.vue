@@ -2,7 +2,6 @@
 import Footer from "../Layouts/components/Footer.vue";
 import Header from "../Layouts/components/Header.vue";
 import RecentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
-import {InertiaProgress} from '@inertiajs/progress'
 
 export default {
     props: {
@@ -21,7 +20,6 @@ export default {
         }
     }
 }
-InertiaProgress.init();
 
 </script>
 <template>
