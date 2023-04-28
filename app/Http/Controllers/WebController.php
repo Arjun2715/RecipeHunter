@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\GetRecipeResource;
 use App\Http\Resources\RandomRecipesResource;
 use App\Http\Resources\RecentlyUpdatedResource;
 use App\Models\Category;
@@ -51,7 +52,7 @@ class WebController extends Controller
         $recipe = Recipe::find($recipe_id);
         return Inertia::render('ViewRecipe', [
             'data' => [
-                
+                'recipe' => GetRecipeResource::make($recipe),
             ]
         ]);
     }
