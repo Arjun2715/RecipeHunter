@@ -1,6 +1,6 @@
 <script scope>
 import Footer from "../Layouts/components/Footer.vue";
-import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
+import Header from "../Layouts/components/Header.vue";
 import IngredientItem from "../Layouts/components/IngredientItem.vue";
 import 'vue3-carousel/dist/carousel.css'
 import {InertiaProgress} from '@inertiajs/progress'
@@ -9,7 +9,7 @@ export default {
         data: Object,
     },
     components: {
-        RecipeHunterLayout,
+        Header,
         Footer,
         IngredientItem,
     },
@@ -139,7 +139,7 @@ export default {
 InertiaProgress.init();
 </script>
 <template>
-    <RecipeHunterLayout />
+    <Header />
     <div class="flex flex-col lg:mt-8">
         <div>
             <div class="flex flex-col w-full">

@@ -105,7 +105,8 @@
         </div>
 
     </div>
-    <div class="btm-nav bg-white lg:hidden md:hidden">
+
+    <div class="btm-nav bg-white dark:bg-gray-700 dark:text-white  lg:hidden md:hidden">
         <Link href="/home" class="text-success hover:text-lime-500">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5  " fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -114,8 +115,9 @@
         </Link>
         <Link href="/filter" class="text-success  hover:text-lime-500">
 
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5  " fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path d="M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z"
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path
+                d="M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
         </Link>
@@ -129,3 +131,46 @@
         </Link>
     </div>
 </template>
+<style>
+.btm-nav {
+    transition: transform 0.3s;
+}
+
+.btm-nav.hidden {
+    transform: translateY(100%);
+}
+</style>
+<script>
+export default {
+    data() {
+        return {
+            prevScrollPos: 0
+        };
+    },
+
+    mounted() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    methods: {
+        handleScroll() {
+            const btmNav = document.querySelector('.btm-nav');
+
+            if (window.pageYOffset > this.prevScrollPos) {
+                // Scrolling down
+                btmNav.style.transform = 'translateY(100%)';
+            } else {
+                // Scrolling up
+                btmNav.style.transform = 'translateY(0)';
+            }
+
+            this.prevScrollPos = window.pageYOffset;
+        }
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+
+
+}
+
+</script>

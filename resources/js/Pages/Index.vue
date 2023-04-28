@@ -1,5 +1,5 @@
 <script setup>
-import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
+import Header from "../Layouts/components/Header.vue";
   defineProps({
     articles: Object,
   });

@@ -6,7 +6,7 @@ import mostViewed from "../Layouts/components/MostViewed.vue";
 import recentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
 import recentlyUpdatedCarousel from "../Layouts/components/RecentlyUpdatedCarousel.vue";
 import Footer from "../Layouts/components/Footer.vue";
-import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
+import Header from "../Layouts/components/Header.vue";
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
@@ -15,7 +15,6 @@ export default {
         data: Object,
     },
     components: {
-        RecipeHunterLayout,
         mainCarousel,
         Footer,
         mostViewed,
@@ -27,6 +26,7 @@ export default {
         Navigation,
         CardHorizontal,
         SectionTitle,
+        Header,
     },
     data() {
         return {
@@ -75,10 +75,11 @@ export default {
 
 </script>
 <template>
-    <RecipeHunterLayout />
+    <Header />
+    <!-- <RecipeHunterLayout /> -->
     <div class="flex flex-col">
         <section class=" flex flex-col w-full  ">
-            <div class="container mx-auto px-4  mt-10 ">
+            <div class="container mx-auto px-4  mt-20 ">
                 <!-- <mainCarousel /> -->
                 <carousel :items-to-show="1" :pauseAutoplayOnHover="true" :wrap-around="true" :autoplay="5000" :transition="1200" class="  rounded-[30px] ">
                     <Slide v-for="(item, index) in items" :key="index" class="relative ">
@@ -160,7 +161,7 @@ export default {
                 <div class="flex flex-col   lg:mt-[50px] md:mt-[30px] mt-[20px]">
                     <SectionTitle title="Reciently Updated" />
                     <div v-for="rece in data.recentlyUpdated" 
-                    class="dark:text-white mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 flex-wrap mb-24">
+                    class="dark:text-white mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 flex-wrap mb-6">
                         <CardHorizontal :recipedata="rece"/>
                     </div>
                 </div>
@@ -170,10 +171,7 @@ export default {
             </div>
             
         </section>
-
     </div>
-
-
     <Footer />
 </template>
 <style>

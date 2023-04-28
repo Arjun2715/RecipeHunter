@@ -1,6 +1,6 @@
 <script scope>
 import Footer from "../Layouts/components/Footer.vue";
-import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
+import Header from "../Layouts/components/Header.vue";
 import RecentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
 import Notifications from "../Layouts/components/Notifications.vue";
 import DashNavVertical from "../Layouts/components/DashNavVertical.vue";
@@ -8,7 +8,7 @@ import DashNavVertical from "../Layouts/components/DashNavVertical.vue";
 
 export default {
     components: {
-        RecipeHunterLayout,
+        Header,
         Footer,
         RecentlyUpdated,
         Notifications,
@@ -18,7 +18,7 @@ export default {
 }
 </script>
 <template>
-    <RecipeHunterLayout />
+    <Header />
     <div class="flex flex-col lg:mt-8">
         <div>
             <div class=" flex flex-col w-full ">
@@ -26,13 +26,12 @@ export default {
                     <div class="">
                         <div class="h-full">
                             <!-- dashboard here -->
-                            <div class="lg:flex flex-cols justify-between hidden  ">
-                                <div class="mx-6 my-4">
-                                    <!-- 20% dashboard nav here -->
+                            <div class="flex flex-cols justify-center   ">
+                                <div class="hidden lg:flex mr-6 my-4">
                                     <DashNavVertical />
                                 </div>
                                 <div class="flex flex-col ">
-                                    <div class="w-full mx-6 dark:bg-gray-700 my-4 rounded-2xl shadow-2xl">
+                                    <div class="w-full  dark:bg-gray-700 my-4 rounded-2xl shadow-2xl">
                                         <!-- 70% dashboard panel here -->
                                         <!-- <Notifications /> -->
                                         <div id="bg-profile" name="bg-profile"
