@@ -19,7 +19,8 @@ export default {
 </script>
 <template>
     <Header />
-    <div class="flex flex-col lg:mt-8">
+    <div class="flex flex-col lg:mt-20
+">
         <div>
             <div class=" flex flex-col w-full ">
                 <div class="container mx-auto px-4 w-full h-full ">
@@ -72,7 +73,8 @@ export default {
                                                dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">
                                             </div>
                                         </div>
-                                        <div class="mt-8 mb-4 px-16 flex flex-row justify-between space-x-4">
+                                        <div class="mt-20
+ mb-4 px-16 flex flex-row justify-between space-x-4">
                                             <div class="flex flex-col w-full  ">
                                                 <div class=" font-medium text-lg text-gray-600 dark:text-white">Email </div>
                                             <input type="email" class="  border-2 outline-none border-gray-300 text-gray-900 text-sm  

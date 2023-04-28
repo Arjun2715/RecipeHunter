@@ -14,7 +14,8 @@ export default {
 </script>
 <template>
     <Header />
-    <div class="flex flex-col mt-8">
+    <div class="flex flex-col mt-20
+">
             <div class=" flex flex-col w-full ">
                 <div class="container mx-auto px-4 w-full h-full ">
                     <div class="h-auto">

@@ -19,7 +19,8 @@ export default {
 </script>
 <template>
     <Header />
-    <div class="flex flex-col lg:mt-8">
+    <div class="flex flex-col lg:mt-20
+">
         <div>
             <div class=" flex flex-col w-full ">
                 <div class="container mx-auto px-4 w-full h-full ">
