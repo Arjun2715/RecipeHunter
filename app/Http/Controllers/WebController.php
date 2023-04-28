@@ -89,6 +89,7 @@ class WebController extends Controller
             ]
         ]);}
 
+        
         public function getCategory(Request $request){
             $number = 12;
             $categoryId = $request->category_id;
