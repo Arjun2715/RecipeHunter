@@ -1,10 +1,10 @@
 <script scope>
 import Footer from "../Layouts/components/Footer.vue";
-import RecipeHunterLayout from "../Layouts/RecipeHunterLayout.vue";
+import Header from "../Layouts/components/Header.vue";
 import RecentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
 export default {
     components: {
-        RecipeHunterLayout,
+        Header,
         Footer,
         RecentlyUpdated,
     },
@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <template>
-    <RecipeHunterLayout />
+    <Header />
     <div class="flex flex-col lg:mt-8">
         <div>
             <div class=" flex flex-col w-full ">
