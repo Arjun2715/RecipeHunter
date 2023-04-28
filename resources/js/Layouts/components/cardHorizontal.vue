@@ -1,8 +1,11 @@
 <template>
-    <div v-for="item in recipedata" class=" flex items-start justify-center ">
+    <Link v-for="item in recipedata" class=" flex items-start justify-center ">
         <div class="w-full h-full rounded-[18px] bg-gradient-to-r from-lemon to-green p-1 shadow-md hover:shadow-xl">
             <div class="card card-side bg-white dark:bg-gray-600 h-52 overflow-hidden">
-                <img class=" " :src="item.image" alt="Recipe Image here :(" style="width: 200px; height: 100%" />
+                <Link href="/viewrecipe" meathod="get" as="button" type="button" :data="{recipeId: item.id}" >
+                <img  class=" " :src="item.image" alt="Recipe Image here :(" style="width: 200px; height: 100%" />
+                
+                </Link>
                 <div class="card-body p-2 overflow-visible ">
                     <h2 class="card-title text-gray-800 dark:text-white text-lg ">
                         {{ item.title }}
@@ -29,7 +32,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </Link>
 </template>
 <script>
 export default {
