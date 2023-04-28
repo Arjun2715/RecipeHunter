@@ -43,9 +43,14 @@ class Recipe extends Model
     }
 
 
-    public function cuisines()
+    public function recipeCuisines()
     {
         return $this->hasMany(RecipeCuisine::class);
+    }
+
+    public function cuisines()
+    {
+        return $this->belongsToMany(Cuisine::class, 'recipe_cuisines');
     }
 
 

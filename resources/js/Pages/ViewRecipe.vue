@@ -14,9 +14,19 @@ export default {
         RecentlyUpdated,
         MainCarousel,
     },
-
+    methods: {
+        displayData(){
+            console.log(this.data.recipe.data);
+        }
+    },
+    mounted() {
+        this.displayData()
+    },
+    
 }
 </script>
+
+
 <template>
     <Header />
     <div class="flex flex-col mt-20
@@ -39,8 +49,8 @@ export default {
                     <div class="lg:flex flex-row  mt-14  ">
 
                         <div class="flex-1  mx-4 ">
-                            <div class="flex flex-col ">{{ data.recipe.Imagepath }}
-                                <img :src="data.recipe.Imagepath" alt="">
+                            <div class="flex flex-col ">
+                                <img :src="data.recipe.data.image" alt="">
                             </div>
 
                             <!-- <div class=" mt-2 flex flex-row justify-between space-x-4  ">
@@ -77,31 +87,22 @@ export default {
                                             class="  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
                                                                    focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                                    dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">{{
-                                                                       data.recipe.Name }}</label>
+                                                                      this.data.recipe.data.title }}</label>
                                     </div>
                                 </div>
                                 <div class=" mb-4  flex flex-row justify-between space-x-4">
                                     <div class="flex flex-col w-full  ">
                                         <div class=" font-medium text-lg text-gray-600 dark:text-white">Recipe Cuisine
                                         </div>
+                                       
                                         <label
                                             class="  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
                                                                    focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                                    dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">{{
-                                                                       data.recipe.Cuisine }}</label>
+                                                                       this.data.recipe.data.cuisines[0].name }}</label>
                                     </div>
                                 </div>
-                                <div class=" mb-4  flex flex-row justify-between space-x-4">
-                                    <div class="flex flex-col w-full  ">
-                                        <div class=" font-medium text-lg text-gray-600 dark:text-white">Recipe Diet
-                                        </div>
-                                        <label
-                                            class="  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
-                                                                   focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">{{
-                                                                       data.recipe.Diet }}</label>
-                                    </div>
-                                </div>
+                               
                                 <div class=" mb-4  flex flex-row justify-between space-x-4">
                                     <div class="flex flex-col w-full  ">
                                         <div class=" font-medium text-lg text-gray-600 dark:text-white">Description
@@ -110,7 +111,7 @@ export default {
                                             class="  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
                                                                    focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
                                                                    dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">{{
-                                                                       data.recipe.Description }}</label>
+                                                                       data.recipe.data.description }}</label>
 
                                     </div>
                                 </div>
@@ -121,8 +122,8 @@ export default {
                                         <label
                                             class="  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
                                                                    focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">{{
-                                                                       data.recipe.Ingredients }}</label>
+                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">· {{
+                                                                       data.recipe.data.ingredients[0].name }}</label>
 
                                     </div>
                                 </div>
@@ -134,8 +135,8 @@ export default {
                                         <label
                                             class="  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
                                                                    focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">{{
-                                                                       data.recipe.Instructions }}</label>
+                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">1. {{
+                                                                        data.recipe.data.steps[0].description }}</label>
 
                                     </div>
                                 </div>
