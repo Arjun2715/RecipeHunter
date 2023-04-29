@@ -1,38 +1,30 @@
 <template>
-    <div v-for="item in recipedata" class=" flex items-start justify-center ">
-        <Link href="/viewrecipe" meathod="get" as="button" type="button" :data="{recipeId: item.id}" >
+    <div v-for="item in recipedata" class=" flex items-start justify-start ">
+        <Link href="/viewrecipe" meathod="get" as="button" type="button" :data="{ recipeId: item.id }">
 
-        <div class="w-full h-full rounded-[18px] bg-gradient-to-r from-lemon to-green p-1 shadow-md hover:shadow-xl">
+        <div class="w-full h-full rounded-[18px] shadow-md hover:shadow-xl">
             <div class="card card-side bg-white dark:bg-gray-600 h-52 overflow-hidden">
-                <img  class=" " :src="item.image" alt="Recipe Image here :(" style="width: 200px; height: 100%" />
-                
+                <img class=" " :src="item.image" alt="Recipe Image here :(" style="width: 200px; height: 100%" />
+
                 <div class="card-body p-2 overflow-visible ">
-                    <h2 class="card-title text-gray-800 dark:text-white text-lg ">
+                    <h2 class="card-title text-gray-800 dark:text-white text-xl text-start ">
                         {{ item.title }}
                     </h2>
-                    <p id="desc" class="text-gray-800 dark:text-white h-auto text-sm">{{ item.description }} </p>
-                    <div class="bg-gradient-to-r from-lemon to-green rounded-full w-full h-[4px]">
-                    </div>
+                    <label id="desc" class="text-gray-800 dark:text-white h-auto text-sm text-start">{{ item.description }} </label>
 
                     <div class="card-actions justify-start">
-                        <div class="flex flex-row  ">
-                            <div class=" flex  flex-wrap   ">
-                                <div v-for="tag in item.tags"
-                                    class="p-1 mt-1 ml-1 bg-gradient-to-r from-lemon to-green rounded-full ">
-                                    <div
-                                        class=" cursor-pointer px-1 bg-white rounded-full items-center justify-center text-gray-600 hover:bg-base-100 hover:text-white">
-                                        <div class="whitespace-nowrap">{{ tag }}</div>
-                                    </div>
+                        <div class="flex flex-row ">
+                            <div v-for="tag in item.tags" class="flex flex-wrap justify-around">
+                                <div class="whitespace-nowrap ml-2">
+                                    {{ tag }}
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </Link>
+        </Link>
 
     </div>
 </template>

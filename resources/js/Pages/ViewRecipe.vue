@@ -1,4 +1,4 @@
-<script scope>
+<script>
 import Footer from "../Layouts/components/Footer.vue";
 import Header from "../Layouts/components/Header.vue";
 import RecentlyUpdated from "../Layouts/components/RecentlyUpdated.vue";
@@ -15,208 +15,93 @@ export default {
         MainCarousel,
     },
     methods: {
-        displayData(){
-            console.log(this.data.recipe.data);
-        }
+        displayData() {
+            console.log(this.data.recipe.data.nutrition_facts);
+        },
     },
     mounted() {
         this.displayData()
     },
-    
+    nutritionList() {
+    return this.data.recipe.data.nutrition_facts.split(' ');
+  }
+
 }
 </script>
 
-
 <template>
-    <Header />
-    <div class="flex flex-col mt-20
-">
-        <div class=" flex flex-col w-full ">
-            <div class="container mx-auto px-4 w-full h-full ">
-                <div class="h-auto">
-                    <div class="flex flex-row justify-between">
-                        <div
-                            class="font-bold text-transparent text-xl lg:text-4xl md:text-xl bg-clip-text bg-gradient-to-r from-lemon to-green">
-                            Recipe Details</div>
-                        <div class="flex flex-row w-auto  ">
-                            <Link href="/editrecipe"
-                                class="lg:h-[50px]  md:h-[40px] h-[30px] w-auto font-medium  rounded-full bg-gradient-to-r from-lemon to-green border-none lg:text-xl px-4  cursor-pointer text-white dark:text-white hover:shadow-xl">
-                            edit Recipe
-                            </Link>
+<Header />
+<div class="flex flex-col mt-20">
+    <h1 class="dark:text-white">{{ data.recipe.data }}</h1>
+
+    <div class=" flex flex-col w-full ">
+        <div class="container mx-auto px-4 w-full h-full ">
+            <div class="h-auto">
+                <div class="flex flex-row justify-between">
+                    <div class="font-bold text-transparent text-xl lg:text-4xl md:text-xl bg-clip-text bg-gradient-to-r from-lemon to-green">
+                        Recipe Details</div>
+                </div>
+                <div class="lg:flex flex-row  mt-14 dark:text-white ">
+
+                    <div class="flex-1  mx-4 ">
+                        <div class="flex flex-col ">
+                            <img class="object-cover w-full h-auto" :src="data.recipe.data.image" alt="">
+                            <label for="">
+                                {{ data.recipe.data.nutrition_facts }}
+                            </label>
                         </div>
                     </div>
-                    <p></p>
-                    <div class="lg:flex flex-row  mt-14  ">
-
-                        <div class="flex-1  mx-4 ">
-                            <div class="flex flex-col ">
-                                <img :src="data.recipe.data.image" alt="">
-                            </div>
-
-                            <!-- <div class=" mt-2 flex flex-row justify-between space-x-4  ">
+                    <div class="flex-1  ">
+                        <div class="flex flex-col space-y-4  mx-4">
+                            <div class="   flex flex-row justify-between ">
                                 <div class="flex flex-col w-full  ">
-                                    <div class=" font-medium text-lg text-gray-600 dark:text-white">Nutrition Facts
+                                    <div class=" text-4xl font-extrabold text-gray-600 dark:text-white">{{
+                                            this.data.recipe.data.title }}
                                     </div>
-                                    <label class=" text-base flex-wrap   border-2 rounded-lg border-gray-300 p-4 text-gray-400 
-                                                                    dark:text-white dark:bg-gray-700">Nutrition
-                                        Facts<br>
-                                        Serving Size: 1 Serving<br>
-                                        Amount Per Serving: 840Calories<br>
-                                        <br>
-                                        <hr><br>
-                                        Total Fat <br>
-                                        Saturated Fat <br>
-                                        Trans Fat <br>
-                                        Cholesterol <br>
-                                        Sodium <br>
-                                        Total Carbohydrates <br>
-                                        Dietary Fiber <br>
-                                        Sugars <br>
-                                        Protein
-                                    </label>
-                                </div>
-                            </div> -->
-                        </div>
-                        <div class="flex-1  ">
-                            <div class="flex flex-col space-y-6  mx-4">
-                                <div class="   flex flex-row justify-between ">
-                                    <div class="flex flex-col w-full  ">
-                                        <div class=" font-medium text-lg text-gray-600 dark:text-white">Recipe Name
-                                        </div>
-                                        <label
-                                            class="  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
-                                                                   focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">{{
-                                                                      this.data.recipe.data.title }}</label>
-                                    </div>
-                                </div>
-                                <div class=" mb-4  flex flex-row justify-between space-x-4">
-                                    <div class="flex flex-col w-full  ">
-                                        <div class=" font-medium text-lg text-gray-600 dark:text-white">Recipe Cuisine
-                                        </div>
-                                       
-                                        <label
-                                            class="  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
-                                                                   focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">{{
-                                                                       this.data.recipe.data.cuisines[0].name }}</label>
-                                    </div>
-                                </div>
-                               
-                                <div class=" mb-4  flex flex-row justify-between space-x-4">
-                                    <div class="flex flex-col w-full  ">
-                                        <div class=" font-medium text-lg text-gray-600 dark:text-white">Description
-                                        </div>
-                                        <label
-                                            class="  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
-                                                                   focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">{{
-                                                                       data.recipe.data.description }}</label>
 
-                                    </div>
-                                </div>
-                                <div class=" mb-4  flex flex-row justify-between space-x-4">
-                                    <div class="flex flex-col w-full  ">
-                                        <div class=" font-medium text-lg text-gray-600 dark:text-white">Ingredients
-                                        </div>
-                                        <label
-                                            class="  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
-                                                                   focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">· {{
-                                                                       data.recipe.data.ingredients[0].name }}</label>
-
-                                    </div>
-                                </div>
-                                <div class=" mb-4  flex flex-row justify-between space-x-4">
-                                    <div class="flex flex-col w-full  ">
-                                        <div class=" font-medium text-lg text-gray-600 dark:text-white">
-                                            Instructions(steps)
-                                        </div>
-                                        <label
-                                            class="  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
-                                                                   focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">1. {{
-                                                                        data.recipe.data.steps[0].description }}</label>
-
-                                    </div>
                                 </div>
 
-                                <div class=" mb-12  flex flex-row justify-between space-x-4">
-                                    <div class="flex flex-col w-full  text-gray-600 dark:text-white">
-                                        <div class=" font-medium text-lg ">Prep. Time
-                                            <p class="font-thin text-sm mb-2">How long does it take to prepare this recipe?
-                                            </p>
-                                        </div>
-                                        <div class="flex justify-between ">
-                                            <div class="flex-1 mr-4 ">
-                                                <div class="relative ">
-                                                    <div class="absolute right-0 top-4">
-                                                        Hours
-
-                                                    </div>
-                                                    <label
-                                                        class=" absolute border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
-                                                                   focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">{{
-                                                                       data.recipe.PrepTimeHours }}</label>
-                                                </div>
-                                            </div>
-                                            <div class="flex-1">
-                                                <div class="relative ">
-                                                    <div class="absolute right-0 top-4">
-                                                        Minutes
-
-                                                    </div>
-                                                    <label
-                                                        class="absolute  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
-                                                                   focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">{{
-                                                                       data.recipe.PrepTimeMinutes }}</label>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
+                            </div>
+                            <div class="rating rating-md align-bottom">
+                                <input type="radio" name="rating-7" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-7" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-7" class="mask mask-star-2 bg-orange-400" />
+                                <input type="radio" name="rating-7" class="mask mask-star-2 bg-orange-400" checked />
+                                <input type="radio" name="rating-7" class="mask mask-star-2 bg-orange-400" />
+                            </div>
+                            <label class="text-gray-700 dark:text-white">{{ data.recipe.data.description }} </label>
+                            <div class=" font-medium text-2xl text-gray-600 dark:text-white">Recipe Cuisine:
+                                <label v-for="(item, index) in this.data.recipe.data.cuisines" :key="index">
+                                    <label class="text-gray-700 text-base dark:text-white p-2">{{ item.name }}</label>
+                                </label>
+                            </div>
+                            <div class=" mb-4  flex flex-row justify-between space-x-4">
+                                <div class="flex flex-col w-full  ">
+                                    <div class=" font-medium text-2xl text-gray-600 dark:text-white mb-2 ">Ingredients
                                     </div>
+                                    <hr style="border: none;height: 1px;background-color: #00a15e;">
+
+                                    <ul  class="text-gray-700 text-lg dark:text-white " v-for="(item, index) in data.recipe.data.ingredients" :key="index">
+                                        <li>{{ item.name }}</li>
+                                    </ul>
                                 </div>
-                                <div class=" mb-4   flex flex-row justify-between space-x-4">
-                                    <div class="flex flex-col w-full  text-gray-600 dark:text-white">
-                                        <div class=" font-medium text-lg mt-10">Cook Time
-                                            <p class="font-thin text-sm ">How long does it take to cook this recipe?
-                                            </p>
-                                        </div>
-                                        <div class="flex justify-between">
-                                            <div class="flex-1 mr-4">
-                                                <div class="relative ">
-                                                    <div class="absolute right-0 top-4">
-                                                        Hours
-
-                                                    </div>
-                                                    <label
-                                                        class="absolute  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
-                                                                   focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">{{
-                                                                       data.recipe.CookTimeHours }}</label>
-                                                </div>
-                                            </div>
-                                            <div class="flex-1 mb-8">
-                                                <div class="relative ">
-                                                    <div class="absolute right-0 top-4">
-                                                        Minutes
-
-                                                    </div>
-                                                    <label
-                                                        class=" absolute  border-b-2 border-gray-300 text-gray-900 text-base flex-wrap  
-                                                                   focus:ring-green focus:border-green  w-full  p-2.5 dark:bg-gray-700 dark:border-gray-600 
-                                                                   dark:placeholder-gray-200 dark:text-white dark:focus:ring-green dark:text-gray-00  ">{{
-                                                                       data.recipe.CookTimeMinutes }}</label>
-
-                                                </div>
-                                            </div>
-
-
-                                        </div>
+                            </div>
+                            <div class=" mb-4  flex flex-row justify-between space-x-4">
+                                <div class="flex flex-col w-full   ">
+                                    <div class=" font-medium text-2xl text-gray-600 dark:text-white mb-2">Instructions(steps)
+                                        <hr style="border: none;height: 1px;background-color: #00a15e;">
                                     </div>
+                                    <ul class="text-gray-700 dark:text-white pl-4" v-for="(item, index) in data.recipe.data.steps" :key="index">
+                                        <div class="flex flex-row items-start-start mb-2"><label class=" mr-2 text-emerald-600 text-xl align-top">{{ index+1 }}.</label> <label for="">{{ item.description }}</label></div>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class=" mb-12  flex flex-row justify-between space-x-4">
+                                <div class="flex flex-col w-full text-gray-600 dark:text-white">
+                                    <label v-if="data.recipe.data.prep_time != -1" class="text-gray-700 text-base dark:text-white"><label class="font-medium text-2xl">Prep. Time:</label> {{ data.recipe.data.prep_time }}Minutes</label>
+                                </div>
+                                <div class="flex flex-col w-full text-gray-600 dark:text-white">
+                                    <label v-if="data.recipe.data.cook_time != -1" class="text-gray-700 text-base dark:text-white"><label class="font-medium text-2xl">Cook Time:</label> {{ data.recipe.data.cook_time }}Minutes</label>
                                 </div>
                             </div>
                         </div>
@@ -225,5 +110,10 @@ export default {
             </div>
         </div>
     </div>
-    <Footer />
+</div>
+<Footer />
 </template>
+
+<style>
+
+</style>
