@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\GetRecipeResource;
 use App\Http\Resources\RandomRecipesResource;
 use App\Http\Resources\RecentlyUpdatedResource;
 use App\Models\Category;
@@ -46,7 +47,15 @@ class WebController extends Controller
         ]);
     }
 
-
+    public function getRecipe(Request $request){
+        $recipe_id = $request->recipeId;
+        $recipe = Recipe::find($recipe_id);
+        return Inertia::render('ViewRecipe', [
+            'data' => [
+                'recipe' => GetRecipeResource::make($recipe),
+            ]
+        ]);
+    }
 
 
     public function searchRecipes(Request $request){
@@ -95,6 +104,8 @@ class WebController extends Controller
             $categoryId = $request->category_id;
 
             $recipes = Recipe::getCategory($categoryId, $number);
+            Inertia::version('new'.Carbon::now());
+
             return Inertia::render('FilterSearch', [
                 'data' => [
                     'recipes' => RandomRecipesResource::collection($recipes),

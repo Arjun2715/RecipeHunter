@@ -2,8 +2,8 @@
 import Footer from "../Layouts/components/Footer.vue";
 import Header from "../Layouts/components/Header.vue";
 import IngredientItem from "../Layouts/components/IngredientItem.vue";
-import 'vue3-carousel/dist/carousel.css'
-import {InertiaProgress} from '@inertiajs/progress'
+import "vue3-carousel/dist/carousel.css";
+import { InertiaProgress } from "@inertiajs/progress";
 export default {
     props: {
         data: Object,
@@ -117,13 +117,15 @@ export default {
                 this.selectedSort.push(item);
             }
         },
-        resetFilter(){
-            console.log(this.selectedIngredient = [],
-            this.selectedCuisines = [],
-            this.selectedDiet = [],
-            this.selectedSort = [],
-            this.valueH = 0,
-            this.valueM = 0,);
+        resetFilter() {
+            console.log(
+                (this.selectedIngredient = []),
+                (this.selectedCuisines = []),
+                (this.selectedDiet = []),
+                (this.selectedSort = []),
+                (this.valueH = 0),
+                (this.valueM = 0)
+            );
         },
         filterd() {
             console.log(this.selectedIngredient);
@@ -140,8 +142,7 @@ InertiaProgress.init();
 </script>
 <template>
     <Header />
-    <div class="flex flex-col mt-20
-">
+    <div class="flex flex-col mt-20">
         <div>
             <div class="flex flex-col w-full">
                 <div class="container mx-auto px-4 w-full h-full">
@@ -269,7 +270,9 @@ InertiaProgress.init();
                                 <span></span>
                                 Prep. Time
                             </label>
-                            <div class="dropdown-content menu p-2 shadow bg-white dark:bg-gray-600 dark:text-white rounded-box w-auto">
+                            <div
+                                class="dropdown-content menu p-2 shadow bg-white dark:bg-gray-600 dark:text-white rounded-box w-auto"
+                            >
                                 <input
                                     id="rangeSlider"
                                     type="range"
@@ -335,7 +338,6 @@ InertiaProgress.init();
                                     minute: this.valueM,
                                     query: this.search,
                                 }"
-                    
                                 >Filter
                             </Link>
                         </div>
@@ -349,55 +351,56 @@ InertiaProgress.init();
                         >
                             <div
                                 v-for="item in data.recipes.data"
-                                class="flex-1 m-2 "
+                                class="flex-1 m-2"
                             >
-                                <div
-                                    class="w-full h-full rounded-[18px] bg-gradient-to-r from-lemon to-green p-1 shadow-md hover:shadow-xl"
+                                <Link
+                                    href="/viewrecipe"
+                                    meathod="get"
+                                    as="button"
+                                    type="button"
+                                    :data="{ recipeId: item.id }"
                                 >
                                     <div
-                                        class="card card-side bg-white dark:bg-gray-600 h-52 overflow-hidden"
+                                        class="w-full h-full rounded-[18px] shadow-md hover:shadow-xl"
                                     >
-                                        <img
-                                            class=" "
-                                            :src="item.image"
-                                            alt="Recipe Image here :("
-                                            style="width: 200px; height: 100%"
-                                        />
                                         <div
-                                            class="card-body p-2 overflow-visible"
+                                            class="card card-side bg-white dark:bg-gray-600 h-52 overflow-hidden"
                                         >
-                                            <h2
-                                                class="card-title text-gray-800 dark:text-white text-lg"
-                                            >
-                                                {{ item.title }}
-                                            </h2>
-                                            <p
-                                                id="desc"
-                                                class="text-gray-800 dark:text-white h-auto text-sm"
-                                            >
-                                                {{ item.description }}
-                                            </p>
+                                            <img
+                                                class=" "
+                                                :src="item.image"
+                                                alt="Recipe Image here :("
+                                                style="
+                                                    width: 200px;
+                                                    height: 100%;
+                                                "
+                                            />
                                             <div
-                                                class="bg-gradient-to-r from-lemon to-green rounded-full w-full h-[4px]"
-                                            ></div>
+                                                class="card-body p-2 overflow-visible"
+                                            >
+                                                <h2
+                                                    class="card-title text-gray-800 dark:text-white text-lg"
+                                                >
+                                                    {{ item.title }}
+                                                </h2>
+                                                <label
+                                                    class="text-gray-800 dark:text-white h-fit text-sm"
+                                                >
+                                                    {{ item.description }}
+                                                </label>
 
-                                            <div
-                                                class="card-actions justify-start"
-                                            >
-                                                <div class="flex flex-row">
-                                                    <div class="flex flex-wrap">
+                                                <div
+                                                    class="card-actions justify-start"
+                                                >
+                                                    <div class="flex flex-row">
                                                         <div
                                                             v-for="tag in item.tags"
-                                                            class="p-1 mt-1 ml-1 bg-gradient-to-r from-lemon to-green rounded-full"
+                                                            class="flex flex-wrap justify-around"
                                                         >
                                                             <div
-                                                                class="cursor-pointer px-1 bg-white rounded-full items-center justify-center text-gray-600 hover:bg-base-100 hover:text-white"
+                                                                class="whitespace-nowrap ml-2"
                                                             >
-                                                                <div
-                                                                    class="whitespace-nowrap"
-                                                                >
-                                                                    {{ tag }}
-                                                                </div>
+                                                                {{ tag }}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -405,7 +408,7 @@ InertiaProgress.init();
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             </div>
                         </div>
                     </div>

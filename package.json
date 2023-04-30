@@ -22,6 +22,7 @@
         "daisyui": "^2.51.5",
         "nprogress": "^0.2.0",
         "vue": "^3.2.36",
+        "vue-disqus": "^5.1.0",
         "vue3-carousel": "^0.3.0"
     }
 }
