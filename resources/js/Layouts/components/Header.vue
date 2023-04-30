@@ -69,47 +69,46 @@ export default {
             <!--windowed-->
             <div class="navbar-center hidden lg:flex px-4">
                 <ul class="menu menu-horizontal">
-                    <li class="text-gray dark:text-white p-0 mb-6
-                                    relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
+                    <li class="text-gray dark:text-white p-0 mb-6">
+                        <Link class="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
                                     before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
-                                    before:transition before:ease-in-out before:duration-300">
-                        <Link href="/home">Home</Link>
+                                    before:transition before:ease-in-out before:duration-300"  href="/home">Home</Link>
                     </li>
                     <li class="text-gray dark:text-white p-0 mb-6
-                                    relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
+                                    ">
+                        <Link class="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
                                     before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
-                                    before:transition before:ease-in-out before:duration-300">
-                        <Link href="/categories">Categories</Link>
+                                    before:transition before:ease-in-out before:duration-300" href="/categories">Categories</Link>
                     </li>
                     <li class="text-gray dark:text-white p-0 mb-6
-                                    relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
+                                    ">
+                        <Link class="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
                                     before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
-                                    before:transition before:ease-in-out before:duration-300">
-                        <Link href="/myrecipes">Add Recipe</Link>
+                                    before:transition before:ease-in-out before:duration-300" href="/myrecipes">Add Recipe</Link>
                     </li>
                     <li class="text-gray dark:text-white p-0 mb-6
-                                    relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
+                                    ">
+                        <Link class="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
                                     before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
-                                    before:transition before:ease-in-out before:duration-300">
-                        <Link href="/savedrecipes">Saved Recipes</Link>
+                                    before:transition before:ease-in-out before:duration-300" href="/savedrecipes">Saved Recipes</Link>
                     </li>
                     <li class="text-gray dark:text-white p-0 mb-6
-                                    relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
+                                    ">
+                        <Link class="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
                                     before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
-                                    before:transition before:ease-in-out before:duration-300">
-                        <Link href="/contactus">Contact Us</Link>
+                                    before:transition before:ease-in-out before:duration-300" href="/contactus">Contact Us</Link>
                     </li>
                     <li class="text-gray dark:text-white p-0 mb-6
-                                    relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
+                                    ">
+                        <Link class="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] 
                                     before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer
                                     before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
-                                    before:transition before:ease-in-out before:duration-300">
-                        <Link href="/aboutus">About Us</Link>
+                                    before:transition before:ease-in-out before:duration-300" href="/aboutus">About Us</Link>
                     </li>
                 </ul>
             </div>
