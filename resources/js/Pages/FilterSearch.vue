@@ -52,7 +52,13 @@ export default {
             ],
         };
     },
-
+    computed: {
+        capitalizeFirstLetter() {
+            return function (string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            };
+        },
+    },
     methods: {
         addIngredient() {
             if (this.newIngredient) {
@@ -164,7 +170,7 @@ InertiaProgress.init();
                                 >
                                     <svg
                                         aria-hidden="true"
-                                        class="w-5 h-5 text-gray-800 dark:text-gray-400 hover:text-gray-800"
+                                        class="w-5 h-5 text-gray-800 focus:text-lemon dark:text-gray-400 hover:text-gray-800"
                                         fill="currentColor"
                                         viewBox="0 0 20 20"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -351,7 +357,7 @@ InertiaProgress.init();
                         >
                             <div
                                 v-for="item in data.recipes.data"
-                                class="flex-1 m-2"
+                                class="flex-1 m-2 dark:text-white"
                             >
                                 <Link
                                     href="/viewrecipe"
@@ -379,12 +385,12 @@ InertiaProgress.init();
                                                 class="card-body p-2 overflow-visible"
                                             >
                                                 <h2
-                                                    class="card-title text-gray-800 dark:text-white text-lg"
+                                                    class="card-title text-gray-800 dark:text-white text-lg text-left"
                                                 >
                                                     {{ item.title }}
                                                 </h2>
                                                 <label
-                                                    class="text-gray-800 dark:text-white h-fit text-sm"
+                                                    class="text-gray-800 dark:text-white h-fit text-sm text-left"
                                                 >
                                                     {{ item.description }}
                                                 </label>
@@ -398,9 +404,17 @@ InertiaProgress.init();
                                                             class="flex flex-wrap justify-around"
                                                         >
                                                             <div
-                                                                class="whitespace-nowrap ml-2"
+                                                                class="whitespace-nowrap mr-2"
                                                             >
-                                                                {{ tag }}
+                                                                <label
+                                                                    class="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer before:hover:scale-x-100 before:scale-x-0 before:origin-top-left before:transition before:ease-in-out before:duration-300"
+                                                                >
+                                                                    {{
+                                                                        capitalizeFirstLetter(
+                                                                            tag
+                                                                        )
+                                                                    }}</label
+                                                                >
                                                             </div>
                                                         </div>
                                                     </div>
@@ -410,7 +424,91 @@ InertiaProgress.init();
                                     </div>
                                 </Link>
                             </div>
+                            
                         </div>
+                        <!-- {{ this.data.recipes.links }} -->
+                        <div class="">
+                                <div class="flex flex-row justify-center pagination w-full">
+                                <div class="btn-group">
+                                    <button  class="btn">
+                                        <a
+                                            v-if="this.data.recipes.links.first"
+                                            :href="
+                                                this.data.recipes.links.first
+                                            "
+                                            @click.prevent="
+                                                this.$inertia.visit(
+                                                    this.data.recipes.links
+                                                        .first
+                                                )
+                                            "
+                                            class="pagination-link"
+                                        >
+                                        First
+                                        </a>
+                                    </button>
+                                    <button v-if="this.data.recipes.links.prev != null" class="btn">
+                                        <a
+                                            v-if="this.data.recipes.links.prev"
+                                            :href="
+                                                this.data.recipes.links.prev
+                                            "
+                                            @click.prevent="
+                                                this.$inertia.visit(
+                                                    this.data.recipes.links
+                                                        .prev
+                                                )
+                                            "
+                                            class="pagination-link"
+                                        >
+                                        «
+                                        </a>
+                                    </button>
+                                    <button class="btn disabled">
+                                        <span class="pagination-current"
+                                            >
+                                            {{
+                                                this.data.recipes.meta
+                                                    .current_page
+                                            }}</span
+                                        >
+                                    </button>
+                                    <button v-if="this.data.recipes.links.next != null" class="btn">
+                                        <a
+                                            v-if="this.data.recipes.links.next"
+                                            :href="
+                                                this.data.recipes.links.next
+                                            "
+                                            @click.prevent="
+                                                this.$inertia.visit(
+                                                    this.data.recipes.links
+                                                        .next
+                                                )
+                                            "
+                                            class="pagination-link"
+                                        >
+                                        » 
+                                        </a></button>
+                                        <button v-if="this.data.recipes.links.last" class="btn">
+                                        <a
+                                            v-if="this.data.recipes.links.last"
+                                            :href="
+                                                this.data.recipes.links.last
+                                            "
+                                            @click.prevent="
+                                                this.$inertia.visit(
+                                                    this.data.recipes.links
+                                                        .last
+                                                )
+                                            "
+                                            class="pagination-link"
+                                        >
+                                        Last
+                                        </a>
+                                    </button>
+                                </div>
+                            </div>
+                            </div>
                     </div>
                 </div>
             </div>

@@ -79,8 +79,7 @@ class WebController extends Controller
     }
     public function searchRand(Request $request){
         Inertia::version('new'.Carbon::now());
-
-        $randrecipes = Recipe::inRandomOrder()->limit(15)->get();
+        $randrecipes = Recipe::inRandomOrder()->paginate(15);
         $recipes = RandomRecipesResource::collection($randrecipes);
         return Inertia::render('FilterSearch', [
             'data' => [

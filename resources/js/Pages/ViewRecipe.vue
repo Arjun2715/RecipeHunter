@@ -124,11 +124,11 @@ export default {
                                 <label class="text-gray-700 dark:text-white"
                                     >{{ data.recipe.data.description }}
                                 </label>
-                                <div
-                                    class="font-medium text-2xl text-gray-600 dark:text-white"
+                                <div v-if="this.data.recipe.data.categories != 0"
+                                    class="font-medium text-2xl text-gray-600 dark:text-white flex flex-wrap "
                                 >
                                     Tags:
-                                    <label
+                                    <label 
                                         v-for="(item, index) in this.data.recipe
                                             .data.categories"
                                         :key="index"
@@ -139,8 +139,8 @@ export default {
                                         >
                                     </label>
                                 </div>
-                                <div
-                                    class="font-medium text-2xl text-gray-600 dark:text-white"
+                                <div v-if="this.data.recipe.data.cuisines != 0"
+                                    class="font-medium text-2xl text-gray-600 dark:text-white flex flex-wrap"
                                 >
                                     Recipe Cuisine:
                                     <label
