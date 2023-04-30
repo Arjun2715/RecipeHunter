@@ -42,8 +42,6 @@ export default {
 <template>
     <Header />
     <div class="flex flex-col mt-20">
-        <!-- <h1 class="dark:text-white">{{ data.recipe.data }}</h1> -->
-
         <div class="flex flex-col w-full">
             <div class="container mx-auto px-4 w-full h-full">
                 <div class="h-auto">
@@ -76,8 +74,6 @@ export default {
                                             >(per serving)</label
                                         >
                                     </div>
-                                    
-                                    <!--   -->
                                     <div v-for="(item, index) in this.nutritionData" :key="index"   class="mt-4 p-2">
                                         <label for="">
                                             {{ item }}
