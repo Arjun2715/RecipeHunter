@@ -37,13 +37,17 @@ export default {
     },
     computed: {
         processedDescription() {
+            const descriptionWithoutTags = this.data.recipe.data.description.replace(/<a\b[^>]*>(.*?)<\/a>/gi, '');
+
             const endIndex = this.data.recipe.data.description.indexOf(
                 "If you like this recipe"
             );
             if (endIndex !== -1) {
                 return this.data.recipe.data.description.slice(0, endIndex);
             } else {
-                return this.data.recipe.data.description;
+      
+                // Return the processed description
+            return descriptionWithoutTags;
             }
         },
     },
