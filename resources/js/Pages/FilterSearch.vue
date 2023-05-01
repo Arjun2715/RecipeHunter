@@ -170,7 +170,7 @@ InertiaProgress.init();
                                 >
                                     <svg
                                         aria-hidden="true"
-                                        class="w-5 h-5 text-gray-800 focus:text-lemon dark:text-gray-400 hover:text-gray-800"
+                                        class="w-5 h-5 text-gray-800 focus:text-lemon dark:text-gray-200 hover:text-gray-800"
                                         fill="currentColor"
                                         viewBox="0 0 20 20"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +186,7 @@ InertiaProgress.init();
                                     type="text"
                                     id="voice-search"
                                     v-model="search"
-                                    class="bg-gradient-to-r from-lemon-20 outline-none to-green-20 border-2 border-gray-300 text-gray-900 text-sm rounded-full focus:ring-lemon focus:border-lemon w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-white dark:text-white dark:focus:ring-lemon"
+                                    class="bg-gradient-to-r from-lemon-40 outline-none to-green-40 border-2 border-gray-300 text-gray-900 text-sm rounded-full focus:ring-lemon focus:border-lemon w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-white dark:text-white dark:focus:ring-lemon"
                                     placeholder="Search... "
                                 />
                             </div>
@@ -196,13 +196,16 @@ InertiaProgress.init();
                                 v-model="newIngredient"
                                 input="text"
                                 tabindex="0"
-                                class="btn w-full inline-flex text-left pl-5 py-2.5 px-3 text-sm font-medium bg-green border-none rounded-full bo border-lemon hover:bg-green-80"
+                                class="btn w-full inline-flex placeholder-black text-center pl-5 py-2.5 px-3 text-sm font-medium bg-green border-none rounded-full bo border-lemon hover:bg-green-80"
                                 placeholder="Ingredients"
                             />
-                            <a
-                                class="absolute right-0 bg-gradient-to-r from-lemon border-none to-green rounded-full text-gray-800 btn btn-primary"
+
+                            <a  
+                                class="absolute right-0 text-2xl  outline-none border-none rounded-full text-gray-100 dark:text-gray-100 btn btn-primary"
                                 @click="addIngredient"
-                                >Add</a
+                                >
+                                +
+                                </a
                             >
 
                             <ul
@@ -222,13 +225,13 @@ InertiaProgress.init();
                                 v-model="newCuisines"
                                 input="text"
                                 tabindex="0"
-                                class="btn w-full inline-flex text-left pl-5 py-2.5 px-3 text-sm font-medium text-gray-800 dark:text-white bg-green border-none rounded-full bo border-lemon hover:bg-green-80"
+                                class="btn w-full inline-flex placeholder-black text-center pl-5 py-2.5 px-3 text-sm font-medium text-gray-800 dark:text-white bg-green border-none rounded-full bo border-lemon hover:bg-green-80"
                                 placeholder="Cuisine"
                             />
                             <a
-                                class="absolute right-0 bg-gradient-to-r from-lemon border-none to-green rounded-full btn btn-primary text-gray-800"
+                                class="absolute right-0  text-2xl outline-none border-none rounded-full btn btn-primary text-gray-100 dark:text-gray-100"
                                 @click="addCuisines"
-                                >Add</a
+                                >+</a
                             >
                             <ul
                                 tabindex="0"
@@ -247,13 +250,13 @@ InertiaProgress.init();
                                 v-model="newDiet"
                                 input="text"
                                 tabindex="0"
-                                class="btn w-full inline-flex text-left pl-5 py-2.5 px-3 text-sm font-medium text-gray-800 dark:text-white bg-green border-none rounded-full bo border-lemon hover:bg-green-80"
+                                class="btn w-full inline-flex placeholder-black text-center pl-5 py-2.5 px-3 text-sm font-medium text-gray-800 dark:text-white bg-green border-none rounded-full bo border-lemon hover:bg-green-80"
                                 placeholder="Diet"
                             />
                             <a
-                                class="absolute right-0 bg-gradient-to-r from-lemon border-none to-green rounded-full btn btn-primary text-gray-800"
+                                class="absolute right-0 border-none outline-none rounded-full btn btn-primary text-2xl text-gray-100 dark:text-gray-100"
                                 @click="addDiet"
-                                >Add</a
+                                >+</a
                             >
                             <ul
                                 tabindex="0"
@@ -271,7 +274,7 @@ InertiaProgress.init();
                         <div class="grow flex-1 dropdown dropdown-end py-1">
                             <label
                                 tabindex="0"
-                                class="btn w-full inline-flex items-center py-2.5 px-3 text-sm font-medium text-gray-400 hover:text-gray-800 bg-green border-none rounded-full bo border-lemon hover:bg-green-80"
+                                class="btn w-full inline-flex items-center py-2.5 px-3 text-sm font-medium text-gray-900 bg-green border-none rounded-full  border-lemon hover:bg-green-80"
                             >
                                 <span></span>
                                 Prep. Time
@@ -301,14 +304,14 @@ InertiaProgress.init();
                                     step=""
                                 />
                                 <label for="rangeSlider" class="sliderValue">
-                                    Minutes: {{ valueH }} h
+                                    Hours: {{ valueH }} h
                                 </label>
                             </div>
                         </div>
                         <div class="grow flex-1 dropdown dropdown-end py-1">
                             <label
                                 tabindex="0"
-                                class="btn w-full inline-flex text-center py-2.5 px-3 text-sm font-medium text-gray-400 hover:text-gray-800 bg-green border-none rounded-full bo border-lemon hover:bg-green-80"
+                                class="btn w-full inline-flex text-center py-2.5 px-3 text-sm font-medium text-gray-900 bg-green border-none rounded-full border-lemon hover:bg-green-80"
                                 placeholder=""
                                 >Sort</label
                             >
@@ -349,10 +352,21 @@ InertiaProgress.init();
                         </div>
                     </div>
                     <!-- </form> -->
-                    <div class="h-auto">
+                    <div class="h-auto ">
                         <!--search info cards here -->
+                        <div class="flex flex-row justify-center  " v-if="data.recipes.data == null">
+                            <div class="text-center items-center p-20" >
+                                <div class="flex flex-row justify-center ">
+                                    <img class="w-auto h-20" src="assets/images/search.png" alt="">
 
-                        <div
+                                </div>
+                                <label class="font-bold text-xl text-gray-800 dark:text-white">No Result's Found</label> 
+                                <p class="text-gray-700 dark:text-white">We're sorry what you were looking for. Please <br> try another way</p>
+                            </div>
+
+                            
+                        </div>
+                        <div v-else
                             class="mb-20 py-2 grid lg:grid-cols-3 lg:items-center md:grid md:grid-cols-2 md:items-center grid-cols-1 items-center w-full h-full"
                         >
                             <div
