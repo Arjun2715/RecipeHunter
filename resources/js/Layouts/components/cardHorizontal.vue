@@ -24,11 +24,7 @@
                         >
                             {{ item.title }}
                         </h2>
-                        <label
-                            id="desc"
-                            class="text-gray-800 dark:text-white h-auto text-sm text-start"
-                            >{{ item.description }}
-                        </label>
+                        
                         <div class="rating rating-sm align-bottom">
                             <input
                                 type="radio"
@@ -85,6 +81,11 @@
                                 </div>
                             </div>
                         </div>
+                        <label
+                            id="desc"
+                            class="text-gray-800 dark:text-white h-auto text-sm text-start overflow-y-scroll"
+                            >{{ item.description }}
+                        </label>
                     </div>
                 </div>
             </div>

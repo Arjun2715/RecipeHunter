@@ -18,7 +18,7 @@ class RecentlyUpdatedResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => Str::limit($this->title, 40, '...'),
-            'description' => Str::limit($this->description, 90, '...'),
+            'description' => Str::limit($this->description, 140, '...'),
             'tags' => $this->categories()->limit(3)->pluck('name')->toArray(),
             'image' => $this->image
         ];
