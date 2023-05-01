@@ -6,10 +6,11 @@ import 'daisyui'
 import { createInertiaApp, Head, Link } from '@inertiajs/inertia-vue3';
 import { createApp, h } from "vue";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
+import { InertiaProgress } from '@inertiajs/progress';
 
 // import AuthNav from '@/Layouts/components/AuthNav.vue';
 createInertiaApp({
-  
+
   progress: false,
   title: (title) => `${title} - ${appName}`,
   resolve: (name) =>
@@ -24,4 +25,8 @@ createInertiaApp({
       .component("Head", Head)
       .mount(el);
   },
+});
+
+InertiaProgress.init({
+    showSpinner: true,
 });
