@@ -9,7 +9,7 @@ export default {
         return {
             nutrition: [],
             nutritionData: [],
-        }
+        };
     },
     props: {
         data: Object,
@@ -25,17 +25,28 @@ export default {
             // console.log(this.data.recipe.data.nutrition_facts);
         },
         nutritionList() {
-            this.nutrition = this.data.recipe.data.nutrition_facts.split(' '),
-            console.log(this.nutrition);
-        
-        // console.log(this.nutrition);
-    },
+            (this.nutrition = this.data.recipe.data.nutrition_facts.split(" ")),
+                console.log(this.nutrition);
+
+            // console.log(this.nutrition);
+        },
     },
     mounted() {
         this.displayData();
         this.nutritionList();
     },
-    
+    computed: {
+        processedDescription() {
+            const endIndex = this.data.recipe.data.description.indexOf(
+                "If you like this recipe"
+            );
+            if (endIndex !== -1) {
+                return this.data.recipe.data.description.slice(0, endIndex);
+            } else {
+                return this.data.recipe.data.description;
+            }
+        },
+    },
 };
 </script>
 
@@ -74,7 +85,12 @@ export default {
                                             >(per serving)</label
                                         >
                                     </div>
-                                    <div v-for="(item, index) in this.nutritionData" :key="index"   class="mt-4 p-2">
+                                    <div
+                                        v-for="(item, index) in this
+                                            .nutritionData"
+                                        :key="index"
+                                        class="mt-4 p-2"
+                                    >
                                         <label for="">
                                             {{ item }}
                                         </label>
@@ -122,13 +138,14 @@ export default {
                                     />
                                 </div>
                                 <label class="text-gray-700 dark:text-white"
-                                    >{{ data.recipe.data.description }}
+                                    >{{ processedDescription }}
                                 </label>
-                                <div v-if="this.data.recipe.data.categories != 0"
-                                    class="font-medium text-2xl text-gray-600 dark:text-white flex flex-wrap "
+                                <div
+                                    v-if="this.data.recipe.data.categories != 0"
+                                    class="font-medium text-2xl text-gray-600 dark:text-white flex flex-wrap"
                                 >
                                     Tags:
-                                    <label 
+                                    <label
                                         v-for="(item, index) in this.data.recipe
                                             .data.categories"
                                         :key="index"
@@ -139,7 +156,8 @@ export default {
                                         >
                                     </label>
                                 </div>
-                                <div v-if="this.data.recipe.data.cuisines != 0"
+                                <div
+                                    v-if="this.data.recipe.data.cuisines != 0"
                                     class="font-medium text-2xl text-gray-600 dark:text-white flex flex-wrap"
                                 >
                                     Recipe Cuisine:
