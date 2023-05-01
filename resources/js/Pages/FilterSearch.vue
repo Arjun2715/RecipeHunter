@@ -217,6 +217,7 @@ InertiaProgress.init();
                                     :key="index"
                                     @click="selectIngredient(ingredient, index)"
                                     :Ingredient="ingredient"
+                                    :checkBox="true"
                                 />
                             </ul>
                         </div>
@@ -242,6 +243,7 @@ InertiaProgress.init();
                                     :key="index"
                                     @click="selectCuisines(ingredient, index)"
                                     :Ingredient="ingredient"
+                                    :checkBox="true"
                                 />
                             </ul>
                         </div>
@@ -267,6 +269,7 @@ InertiaProgress.init();
                                     :key="index"
                                     @click="selectDiet(ingredient, index)"
                                     :Ingredient="ingredient"
+                                    :checkBox="true"
                                 />
                             </ul>
                         </div>
@@ -327,6 +330,7 @@ InertiaProgress.init();
                                     :key="index"
                                     :Ingredient="ingredient"
                                     @click="selectSort(ingredient, index)"
+                                    :checkBox="true"
                                 />
                             </ul>
                         </div>
