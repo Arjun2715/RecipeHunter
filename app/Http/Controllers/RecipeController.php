@@ -200,7 +200,7 @@ class RecipeController extends Controller
                                 ]);
                             }
 
-                            $recipe->cuisines()->create([
+                            $recipe->recipeCuisines()->create([
                                 'cuisine_id' => $cuisine_id->id,
                             ]);
                         }

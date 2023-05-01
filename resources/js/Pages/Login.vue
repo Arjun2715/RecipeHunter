@@ -1,10 +1,12 @@
 <script scope>
 import { Link } from "@inertiajs/vue3";
 import { router } from "@inertiajs/vue3";
+
 router.on("invalid", (event) => {
     event.preventDefault();
     console.log(event.detail.response.data);
 });
+
 export default {
     components: {},
     data() {
@@ -12,11 +14,14 @@ export default {
             emailValue: "",
             passwordValue: "",
             errors: Object,
+            loading: false,
         };
     },
+
 };
 </script>
 <template>
+            <InertiaProgressBar />
     <!-- <navbar /> -->
     <nav class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3">
         <div class="container px-4 mx-auto flex items-center justify-between">

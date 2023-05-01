@@ -424,10 +424,12 @@ InertiaProgress.init();
                                     </div>
                                 </Link>
                             </div>
-                            
+
                         </div>
                         <!-- {{ this.data.recipes.links }} -->
+
                                 <!-- <div class="flex flex-row justify-center pagination w-full">
+
                                 <div class="btn-group">
                                     <button  class="btn">
                                         <a
@@ -486,7 +488,7 @@ InertiaProgress.init();
                                             "
                                             class="pagination-link"
                                         >
-                                        » 
+                                        »
                                         </a></button>
                                         <button v-if="this.data.recipes.links.last" class="btn">
                                         <a
@@ -506,7 +508,9 @@ InertiaProgress.init();
                                         </a>
                                     </button>
                                 </div>
+
                             </div> -->
+
                     </div>
                 </div>
             </div>

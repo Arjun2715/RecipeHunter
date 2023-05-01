@@ -70,6 +70,7 @@ class WebController extends Controller
                 ]
             ]);
         }else{
+
             return Inertia::render('FilterSearch', [
                 'data' => [
                     'recipes' => $recipes,
@@ -97,7 +98,7 @@ class WebController extends Controller
             ]
         ]);}
 
-        
+
         public function getCategory(Request $request){
             $number = 12;
             $categoryId = $request->category_id;
