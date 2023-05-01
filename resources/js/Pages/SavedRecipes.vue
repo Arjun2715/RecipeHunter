@@ -9,7 +9,7 @@ export default {
         RecentlyUpdated,
     },
     //example test data
-    
+
 }
 </script>
 <template>

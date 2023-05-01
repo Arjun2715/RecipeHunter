@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\WebController;
 use App\Models\Article;
 use Illuminate\Support\Facades\Route;
@@ -78,3 +79,7 @@ Route::group(['middleware' => ['auth']], function () {
         return redirect()->to('home');
     });
 });
+
+
+Route::get('/auth', [RecipeController::class,'authenticate']);
+Route::get('/callback', [RecipeController::class,'callback']);
