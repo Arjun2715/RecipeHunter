@@ -101,7 +101,7 @@ class RecipeController extends Controller
 
     public function recentlyUpdatedRecipes()
     {
-        $recipes = Recipe::inRandomOrder()->limit(6)->get();
+        $recipes = Recipe::inRandomOrder()->limit(9)->get();
         return $recipes;
     }
 
