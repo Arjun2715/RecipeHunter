@@ -145,7 +145,7 @@ class WebController extends Controller
         $request = new Request(['recipeId' => $recipe->id]);
         return WebController::getRecipe($request);
     }
-    /* 
+    /*
     name: Name,
     description: Description,
     ingredients: Ingredients,
