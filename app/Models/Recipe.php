@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
+use App\GoogleImages;
+use Google\Service\CustomSearchAPI;
+use Google_Client;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
@@ -71,7 +75,8 @@ class Recipe extends Model
 
 
 
-    public static function createRecipe($data){
+    public static function createRecipe($data)
+    {
 
         $recipe = Recipe::create($data);
         $savedRecipe = SavedRecipes::create([
@@ -120,20 +125,21 @@ class Recipe extends Model
         return $recipe;
     }
 
-    public function saveImageInDatabase(){
+    public function saveImageInDatabase()
+    {
         $response = Http::get($this->image);
         $contents = $response->getBody();
-        Storage::put('public/images/recipes/'.$this->id.'/image.jpg', $contents);
-        $newUrl = '/storage/images/recipes/'.$this->id.'/image.jpg';
+        Storage::put('public/images/recipes/' . $this->id . '/image.jpg', $contents);
+        $newUrl = '/storage/images/recipes/' . $this->id . '/image.jpg';
         $this->image = $newUrl;
         $this->save();
     }
     public static function getCategory($category_id, $number)
     {
         $category = Category::find($category_id);
-             $recipes = Recipe::whereHas('categories', function ($query) use ($category) {
-                $query->where('category_id', $category->id);
-            })->limit($number)->get();
-            return $recipes;
+        $recipes = Recipe::whereHas('categories', function ($query) use ($category) {
+            $query->where('category_id', $category->id);
+        })->limit($number)->get();
+        return $recipes;
     }
 }

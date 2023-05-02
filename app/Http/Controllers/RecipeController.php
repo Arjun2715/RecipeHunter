@@ -8,15 +8,20 @@ use App\Http\Requests\UpdateRecipeRequest;
 use App\Http\Resources\MostViewedResource;
 use App\Http\Resources\RandomRecipesResource;
 use App\Http\Resources\RecentlyUpdatedResource;
+use Google\Service\Customsearch;
 use App\Models\Category;
 use App\Models\Cuisine;
 use App\Models\Recipe;
 use App\Models\RecipeIngredient;
 use App\Models\SavedRecipes;
+use Google\Service\CustomSearchAPI;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Google_Client;
+use Google_Service_Customsearch;
+
 
 class RecipeController extends Controller
 {
@@ -273,5 +278,72 @@ class RecipeController extends Controller
         return $url;
     }
 
+    // ...
+
+    public function authenticate()
+    {
+        $client = new Google_Client();
+        $client->setClientId('1057574010832-vv1km4dr5nghu4b9ec4e3gg3jcp9f4qo.apps.googleusercontent.com');
+        $client->setClientSecret('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');
+        $client->setRedirectUri('http://localhost:8000/callback');
+        $client->setAccessType('offline');
+        $client->setScopes(['https://www.googleapis.com/auth/cse']);
+        if (isset($_GET['code'])) {
+            $client->fetchAccessTokenWithAuthCode($_GET['code']);
+            $accessToken = $client->getAccessToken();
+            session(['access_token' => $accessToken]);
+        } else {
+            $authUrl = $client->createAuthUrl();
+            return redirect()->to($authUrl);
+        }
+    }
+
+    public function callback()
+    {
+        $client = new Google_Client();
+        $client->setClientId('1057574010832-vv1km4dr5nghu4b9ec4e3gg3jcp9f4qo.apps.googleusercontent.com');
+        $client->setClientSecret('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');
+        $client->setRedirectUri('http://localhost:8000/callback');
+        return $client->fetchAccessTokenWithAuthCode($_GET['code']);
+        $accessToken = $client->getAccessToken();
+        session(['access_token' => $accessToken]);
+    }
+    public function updateImages()
+    {
+        // Get the access token from the session
+        // Create a Google_Client instance and set the access token
+        $client = new Google_Client();
+        $client->setAccessToken("ya29.a0AWY7CkmeDdn1qv1X0LrojZVN8GkEBpauYqmLMRh8Phegqavrb4mNRyY0yapx2bZ4oiskYT6xeRUCdTnUNRfy1zvouSL2Ye7V447ZteGsMGN1f9Rqzr3h0Fk50SDOFPXLMmtAxRfwuhWdhnmzzqRBU0Wf8h_OaCgYKASwSARISFQG1tDrphHJxKUlD_f3Ft9xjZWbLrQ0163"); // Set the access token you saved earlier
+
+        // Create a Google_Service_Customsearch instance
+        $customSearch = new CustomSearchAPI($client);
+
+        // Get all recipes from the database
+        $recipes = Recipe::where('id', '>=', 1378)
+        ->get();
+        // Loop through each recipe and update its image
+        foreach ($recipes as $recipe) {
+            $query = $recipe->title; // Use the recipe title as the search query
+            $params = [
+                'q' => $query,
+                'searchType' => 'image',
+                'imgSize' => 'xlarge',
+                'num' => 1,
+                'cx' => 'f1f1ed734a8f641ee'
+            ];
+            $results = $customSearch->cse->listCse($params);
+
+            // Check if there are any search results
+            if (count($results->getItems()) > 0) {
+                // Get the first search result and save its image URL to the recipe
+                $imageUrl = $results->getItems()[0]->getLink();
+                $recipe->image = $imageUrl;
+                $recipe->save();
+            }
+        }
+
+        // Return a response indicating that the images have been updated
+        return response()->json(['message' => 'Recipe images have been updated.']);
+    }
 
 }
