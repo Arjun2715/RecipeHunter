@@ -12,10 +12,10 @@
                     class="card card-side bg-white dark:bg-gray-600 h-52 overflow-hidden"
                 >
                     <img
-                        class=" "
+                        class="object-cover"
                         :src="item.image"
                         alt="Recipe Image here :("
-                        style="width: 200px; height: 100%"
+                        style="width: 200px; "
                     />
 
                     <div class="card-body p-2 overflow-visible">
@@ -59,15 +59,6 @@
                                     v-for="tag in item.tags"
                                     class="flex flex-wrap justify-around"
                                 >
-                                    <!-- <Link
-                                        href="/category"
-                                        method="get"
-                                        as="button"
-                                        type="button"
-                                        :data="{
-                                            category_id: tag.id,
-                                        }"
-                                        > -->
                                     <div class="whitespace-nowrap mr-2">
                                         <label
                                             class="relative before:content-[''] before:absolute before:block before:w-full before:h-[2px] before:bottom-0 before:left-0 before:bg-gradient-to-r from-lemon to-green cursor-pointer before:hover:scale-x-100 before:scale-x-0 before:origin-top-left before:transition before:ease-in-out before:duration-300"

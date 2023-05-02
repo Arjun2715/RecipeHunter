@@ -251,6 +251,6 @@ export default {
         </section>
     </div>
     <Footer />
-    <h1>{{ data.mostViewed.day }}</h1>
+    <!-- <h1>{{ data.mostViewed.day }}</h1> -->
 </template>
 <style></style>
