@@ -10,8 +10,10 @@ use App\Models\Recipe;
 use App\Models\RecipeCategory;
 use App\Models\Cuisine;
 use App\Models\RecipeIngredient;
+use App\Models\SavedRecipes;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 
@@ -19,7 +21,8 @@ class WebController extends Controller
 {
 
 
-    public function home(){
+    public function home()
+    {
 
         $recipeController = new RecipeController();
         $recentlyUpdatedRecipes = RecentlyUpdatedResource::collection($recipeController->recentlyUpdatedRecipes());
@@ -34,9 +37,10 @@ class WebController extends Controller
         ]);
     }
 
-    public function categories(){
+    public function categories()
+    {
         $Categories = Category::all();
-        foreach($Categories as $category){
+        foreach ($Categories as $category) {
             $category->image = url($category->image);
         }
 
@@ -47,8 +51,9 @@ class WebController extends Controller
         ]);
     }
 
-    public static function getRecipe(Request $request){
-        Inertia::version('new'.Carbon::now());
+    public static function getRecipe(Request $request)
+    {
+        Inertia::version('new' . Carbon::now());
         $recipe_id = $request->recipeId;
         $recipe = Recipe::find($recipe_id);
         return Inertia::render('ViewRecipe', [
@@ -59,18 +64,19 @@ class WebController extends Controller
     }
 
 
-    public function searchRecipes(Request $request){
-        Inertia::version('new'.Carbon::now());
+    public function searchRecipes(Request $request)
+    {
+        Inertia::version('new' . Carbon::now());
 
-        $request['maxReadyTime'] = $request['hour']*60 + $request['minute'];
+        $request['maxReadyTime'] = $request['hour'] * 60 + $request['minute'];
         $recipes = RecipeController::search($request);
-        if ($recipes){
+        if ($recipes) {
             return Inertia::render('FilterSearch', [
                 'data' => [
                     'recipes' => RandomRecipesResource::collection($recipes)
                 ]
             ]);
-        }else{
+        } else {
 
             return Inertia::render('FilterSearch', [
                 'data' => [
@@ -79,8 +85,9 @@ class WebController extends Controller
             ]);
         }
     }
-    public function searchRand(Request $request){
-        Inertia::version('new'.Carbon::now());
+    public function searchRand(Request $request)
+    {
+        Inertia::version('new' . Carbon::now());
         $randrecipes = Recipe::inRandomOrder()->paginate(15);
         $recipes = RandomRecipesResource::collection($randrecipes);
         return Inertia::render('FilterSearch', [
@@ -90,33 +97,35 @@ class WebController extends Controller
         ]);
     }
 
-    public function renderAddRecipe() {
+    public function renderAddRecipe()
+    {
         // dd($request->getContent());
         return Inertia::render('AddNewRecipe', []);
     }
 
-    public function addRecipe(Request $request) {
+    public function addRecipe(Request $request)
+    {
         $data = $request->all();
         $prepTime = $data['prepTimeMinutes'] + 60 * $data['prepTimeHours'];
-        $cookTime = $data['cookTimeMinutes'] + 60*$data['cookTimeHours'];
+        $cookTime = $data['cookTimeMinutes'] + 60 * $data['cookTimeHours'];
         $instructions = $data['instructions'];
         $ingredients = $data['ingredients'];
 
-        foreach($ingredients as $key=>$ingredient){
+        foreach ($ingredients as $key => $ingredient) {
             $ingredients[$key] = [
                 "name" => $ingredient,
                 "quantity" => 0,
             ];
         }
 
-        foreach($instructions as $key=>$instruction){
+        foreach ($instructions as $key => $instruction) {
             $instructions[$key] = [
                 "description" => $instruction,
-                "order_step" => $key+1,
+                "order_step" => $key + 1,
             ];
         }
-        
-        
+
+
         $recipeData = [
             'user_id' => auth()->user()->id,
             'author' => auth()->user()->name,
@@ -136,7 +145,7 @@ class WebController extends Controller
         $request = new Request(['recipeId' => $recipe->id]);
         return WebController::getRecipe($request);
     }
-   /* 
+    /* 
     name: Name,
     description: Description,
     ingredients: Ingredients,
@@ -149,23 +158,40 @@ class WebController extends Controller
     diet: Diet,
     cuisine: Cuisine,
 */
-        public function getCategory(Request $request){
-            $number = 12;
-            $categoryId = $request->category_id;
+    public function getCategory(Request $request)
+    {
+        $number = 12;
+        $categoryId = $request->category_id;
 
-            $recipes = Recipe::getCategory($categoryId, $number);
-            Inertia::version('new'.Carbon::now());
+        $recipes = Recipe::getCategory($categoryId, $number);
+        Inertia::version('new' . Carbon::now());
 
-            return Inertia::render('FilterSearch', [
-                'data' => [
-                    'recipes' => RandomRecipesResource::collection($recipes),
-                ]
-            ]);
-        }
-
-
-
+        return Inertia::render('FilterSearch', [
+            'data' => [
+                'recipes' => RandomRecipesResource::collection($recipes),
+            ]
+        ]);
     }
 
 
+    public function savedRecipes()
+    {
+        $user = Auth::user();
+        $savedRecipes = SavedRecipes::where('user_id', $user->id)->get();
+        // Next, create an empty array to hold the recipe models
+        $recipes = [];
 
+        // Loop through the saved recipes and add the corresponding recipe model to the array
+        foreach ($savedRecipes as $savedRecipe) {
+            $recipe = Recipe::find($savedRecipe->recipe_id);
+            $recipes[] = $recipe;
+        }
+        $collection = collect($recipes);
+        $recipes = RandomRecipesResource::collection($collection);
+        return Inertia::render('SavedRecipes', [
+            'data' => [
+                'recipes' => $recipes,
+            ]
+        ]);
+    }
+}
