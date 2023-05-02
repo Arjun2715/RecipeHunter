@@ -4,6 +4,8 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Str;
+
 
 class MostViewedResource extends JsonResource
 {
@@ -16,7 +18,7 @@ class MostViewedResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title' => $this->title,
+            'title' => Str::limit($this->title, 30, '...'),
             'image' => $this->image
         ];
     }
