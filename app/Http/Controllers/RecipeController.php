@@ -305,8 +305,6 @@ class RecipeController extends Controller
         $client->setClientSecret('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');
         $client->setRedirectUri('http://localhost:8000/callback');
         return $client->fetchAccessTokenWithAuthCode($_GET['code']);
-        $accessToken = $client->getAccessToken();
-        session(['access_token' => $accessToken]);
     }
     public function updateImages()
     {
@@ -319,7 +317,8 @@ class RecipeController extends Controller
         $customSearch = new CustomSearchAPI($client);
 
         // Get all recipes from the database
-        $recipes = Recipe::where('id', '>=', 1378)
+        $idStart = 1378;
+        $recipes = Recipe::where('id', '>=', $idStart)
         ->get();
         // Loop through each recipe and update its image
         foreach ($recipes as $recipe) {

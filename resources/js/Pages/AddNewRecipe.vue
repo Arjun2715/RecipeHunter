@@ -62,18 +62,18 @@ export default {
                         </div>
                         <div class="flex flex-row w-auto">
                             <!-- @click="recipeData()" -->
-                            <Link href="/newrecipepost" :data="{
-                                Name: Name,
-                                Description: Description,
-                                Ingredients: Ingredients,
-                                Instructions: Instructions,
-                                PrepTimeMinutes: PrepTimeMinutes,
-                                PrepTimeHours: PrepTimeHours,
-                                CookTimeHours: CookTimeHours,
-                                CookTimeMinutes: CookTimeMinutes,
-                                ImagePath: ImagePath,
-                                Diet: Diet,
-                                Cuisine: Cuisine,
+                            <Link href="/newrecipe" :data="{
+                                name: Name,
+                                description: Description,
+                                ingredients: Ingredients,
+                                instructions: Instructions,
+                                prepTimeMinutes: PrepTimeMinutes,
+                                prepTimeHours: PrepTimeHours,
+                                cookTimeHours: CookTimeHours,
+                                cookTimeMinutes: CookTimeMinutes,
+                                imagePath: ImagePath,
+                                diet: Diet,
+                                cuisine: Cuisine,
                             }" method="post" as="button" type="button"
                                 class="lg:h-[50px] md:h-[40px] h-[30px] w-auto font-medium rounded-full bg-gradient-to-r from-lemon to-green border-none lg:text-xl px-4 cursor-pointer text-white dark:text-white hover:shadow-xl">
                             Save Recipe
