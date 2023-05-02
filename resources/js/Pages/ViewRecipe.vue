@@ -37,7 +37,7 @@ export default {
     },
     computed: {
         processedDescription() {
-            const descriptionWithoutTags = this.data.recipe.data.description.replace(/<a\b[^>]*>(.*?)<\/a>/gi, '');
+            const descriptionWithoutTags = this.data.recipe.data.description.replace(/<(a|b)\b[^>]*>(.*?)<\/(a|b)>/gi, '');
 
             const endIndex = this.data.recipe.data.description.indexOf(
                 "If you like this recipe"
@@ -52,6 +52,7 @@ export default {
         },
     },
 };
+
 </script>
 
 <template>
@@ -266,7 +267,7 @@ export default {
                                             >
                                             {{
                                                 data.recipe.data.prep_time
-                                            }}Minutes</label
+                                            }}&nbsp;Minutes</label
                                         >
                                     </div>
                                     <div
@@ -282,7 +283,7 @@ export default {
                                             >
                                             {{
                                                 data.recipe.data.cook_time
-                                            }}Minutes</label
+                                            }}&nbsp;Minutes</label
                                         >
                                     </div>
                                 </div>

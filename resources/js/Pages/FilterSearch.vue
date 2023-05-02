@@ -391,13 +391,13 @@ InertiaProgress.init();
                                             class="card card-side bg-white dark:bg-gray-600 h-52 overflow-hidden"
                                         >
                                             <img
-                                                class=" "
+                                                class="object-cover"
                                                 :src="item.image"
                                                 alt="Recipe Image here :("
                                                 style="
                                                     width: 200px;
-                                                    height: 100%;
                                                 "
+                                                
                                             />
                                             <div
                                                 class="card-body p-2 overflow-visible"
@@ -446,7 +446,7 @@ InertiaProgress.init();
                         </div>
                         <!-- {{ this.data.recipes.links }} -->
 
-                                <!-- <div class="flex flex-row justify-center pagination w-full">
+                                <div class="flex flex-row justify-center pagination w-full">
 
                                 <div class="btn-group">
                                     <button  class="btn">
@@ -527,7 +527,7 @@ InertiaProgress.init();
                                     </button>
                                 </div>
 
-                            </div> -->
+                            </div>
 
                     </div>
                 </div>
