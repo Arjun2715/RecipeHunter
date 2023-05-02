@@ -16,10 +16,15 @@ class GetRecipeResource extends JsonResource
     {
         $nutrition_facts_array = [];
         $nutrition_facts_lines = explode("\n", $this->nutrition_facts);
-        foreach ($nutrition_facts_lines as $line) {
-            $parts = explode(": ", $line);
-            $nutrition_facts_array[$parts[0]] = $parts[1];
+        if(!$this->nutrition_facts){
+            $nutrition_facts_array = null;
+        }else{
+            foreach ($nutrition_facts_lines as $line) {
+                $parts = explode(": ", $line);
+                $nutrition_facts_array[$parts[0]] = $parts[1];
+            }
         }
+
 
         return [
             'id' => $this->id,
