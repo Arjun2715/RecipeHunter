@@ -31,18 +31,16 @@ Route::get('/newrecipe',  [WebController::class,'renderAddRecipe'] )->name('newr
 Route::post('/newrecipe',  [WebController::class,'addRecipe']);
 
 
+
 Route::post('/newrecipepost', [WebController::class,'addRecipe'])->name('newrecipepost');
 
 Route::get('/viewrecipe',[WebController::class, 'getRecipe'])->name('viewrecipe');
 
 /* hla */
 
-Route::get('/savedrecipes', function () {
-    return Inertia::render('SavedRecipes', []);
-})->name('savedrecipes');
-Route::get('/aboutus', function () {
-    return Inertia::render('AboutUs', []);
-})->name('aboutus');
+Route::get('/savedrecipes',[WebController::class,'savedRecipes']);
+
+Route::get('/aboutus', );
 Route::get('/contactus', function () {
     return Inertia::render('ContactUs', []);
 })->name('contactus');
