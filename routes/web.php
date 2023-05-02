@@ -40,7 +40,9 @@ Route::get('/viewrecipe',[WebController::class, 'getRecipe'])->name('viewrecipe'
 
 Route::get('/savedrecipes',[WebController::class,'savedRecipes']);
 
-Route::get('/aboutus', );
+Route::get('/aboutus',function () {
+    return Inertia::render('AboutUs', []);
+});
 Route::get('/contactus', function () {
     return Inertia::render('ContactUs', []);
 })->name('contactus');
