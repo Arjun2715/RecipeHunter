@@ -27,7 +27,9 @@ Route::post('/filter', [WebController::class,'searchRecipes'])->name('filtersear
 
 Route::get('/myrecipes', function () { return Inertia::render('MyRecipes', []);})->name('myrecipes');
 
-Route::get('/newrecipe',  function () { return Inertia::render('AddNewRecipe', []);})->name('newrecipe');
+Route::get('/newrecipe',  [WebController::class,'renderAddRecipe'] )->name('newrecipe');
+Route::post('/newrecipe',  [WebController::class,'addRecipe']);
+
 
 Route::post('/newrecipepost', [WebController::class,'addRecipe'])->name('newrecipepost');
 

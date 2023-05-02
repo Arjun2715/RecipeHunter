@@ -103,7 +103,7 @@ class Recipe extends Model
                 ]);
             }
 
-            $recipe->cuisines()->create([
+            $recipe->recipeCuisines()->create([
                 'cuisine_id' => $cuisine_id->id,
             ]);
         }
