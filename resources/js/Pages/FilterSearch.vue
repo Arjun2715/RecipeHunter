@@ -445,7 +445,7 @@ InertiaProgress.init();
 
                         </div>
                         <!-- {{ this.data.recipes.links }} -->
-
+<!-- 
                                 <div class="flex flex-row justify-center pagination w-full">
 
                                 <div class="btn-group">
@@ -525,7 +525,7 @@ InertiaProgress.init();
                                         Last
                                         </a>
                                     </button>
-                                </div>
+                                </div> -->
 
                             </div>
 
@@ -533,7 +533,7 @@ InertiaProgress.init();
                 </div>
             </div>
         </div>
-    </div>
+
     <Footer />
 </template>
 <style>
