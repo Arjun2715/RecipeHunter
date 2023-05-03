@@ -16,7 +16,22 @@ use Inertia\Inertia;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/home', [WebController::class,'home'])->name('home');
+
+Route::get('/login', function () {
+    return Inertia::render('Login', []);
+})->name('login');
+
+Route::get('/register', function () {
+    return Inertia::render('Register', []);
+})->name('register');
+
+
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', function () {
+        return redirect()->to('home');
+    });
+    Route::get('/home', [WebController::class,'home'])->name('home');
 Route::get('/categories', [WebController::class,'categories'])->name('categories');
 
 Route::get('/category', [WebController::class,'getCategory'])->name('getCategory');
@@ -66,20 +81,6 @@ Route::get('/logoutdash', function () {
     return Inertia::render('Logoutdash', []);
 })->name('logoutdash');
 
-Route::get('/login', function () {
-    return Inertia::render('Login', []);
-})->name('login');
-
-Route::get('/register', function () {
-    return Inertia::render('Register', []);
-})->name('register');
-
-
-
-Route::group(['middleware' => ['auth']], function () {
-    Route::get('/', function () {
-        return redirect()->to('home');
-    });
 });
 
 
