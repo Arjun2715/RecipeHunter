@@ -37,11 +37,8 @@
                         type="button"
                         :data="{ recipeId: item.id }"
                     >
-                        <div
-                            v-if="item.title.length >= 30"
-                            class="w-0 h-0 p-0 m-0"
-                        ></div>
-                        <div v-else class="card bg-white dark:bg-gray-600">
+                        
+                        <div  class="card bg-white dark:bg-gray-600">
                             <div id="cards" class="container">
                                 <img
                                     :src="item.image"
