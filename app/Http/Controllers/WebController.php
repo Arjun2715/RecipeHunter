@@ -56,6 +56,11 @@ class WebController extends Controller
         Inertia::version('new' . Carbon::now());
         $recipe_id = $request->recipeId;
         $recipe = Recipe::find($recipe_id);
+        if (!$recipe) {
+            return Inertia::render('Home', [
+
+            ]);
+        }
         return Inertia::render('ViewRecipe', [
             'data' => [
                 'recipe' => GetRecipeResource::make($recipe),

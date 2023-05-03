@@ -32,40 +32,43 @@ export default {
         return {
             items: [
                 {   
-                    id: 1066,
-                    title: "Tacos",
+                    id: 1083,
+                    title: "Cilantro Lime Fish Tacos",
                     description:
                         "Tacos are crunchy, messy and great fun to eat, so it’s no wonder they’re a big hit with the kids. They’re also easy to make – more of an assembly job than a recipe. ",
                     link: "https://example.com/item1",
                     image1: "assets/images/image-101.png",
-                    image2: "assets/images/taco.png",
+                    image2: "https://www.onelovelylife.com/wp-content/uploads/2018/07/fish-tacos2SM.jpg",
                     tags: ["Beef", "Mexican"],
                 },
                 {
-                    title: "Hamburger",
+                    id:1230,
+                    title: "Blue Cheese Burgers",
                     description:
                         "Learn how to make succulent beef burgers with just four ingredients. An easy recipe for perfect homemade patties with beef mince.",
                     link: "https://example.com/item1",
                     image1: "assets/images/image-102.png",
-                    image2: "assets/images/mostviewed/image-3.png",
+                    image2: "https://www.favfamilyrecipes.com/wp-content/uploads/2018/10/Red-Robins-Bacon-and-Blue-Cheese-Burgers.jpg",
                     tags: ["German", "Beef", "Bread"],
                 },
                 {
+                    id:1454,
                     title: "Pappardelle",
                     description:
                         "This easy pasta recipe uses minced lamb meat, onions, tomato, lots of Parmesan and the warmth of nutmeg.",
                     link: "https://example.com/item1",
                     image1: "assets/images/image-103.png",
-                    image2: "assets/images/pasta-3.jpg",
+                    image2: "https://skinnyspatula.com/wp-content/uploads/2022/01/Pappardelle_Ragu_Mushrooms1-.jpg",
                     tags: ["Pasta", "Italian"],
                 },
                 {
+                    id:1019,
                     title: "Soup",
                     description:
                         "Kyselo is a hearty soup made with a sourdough starter. Sourdough, or fermented flour, thickens the soup and adds a slightly sour taste.",
                     link: "https://example.com/item1",
                     image1: "assets/images/image-104.png",
-                    image2: "assets/images/soup-1.jpg",
+                    image2: "https://whitekitchenredwine.com/wp-content/uploads/2021/02/MisoSoup-7-min-683x1024.jpg",
                     tags: ["Bread", "Eggs"],
                 },
             ],
