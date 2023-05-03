@@ -18,7 +18,7 @@ class MostViewedResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title' => Str::limit($this->title, 30, '...'),
+            'title' => Str::limit($this->title, 40, '...'),
             'image' => $this->image
         ];
     }
