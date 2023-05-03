@@ -57,7 +57,7 @@ export default {
                             <div class="flex flex-col">
                                 <img class="object-cover w-full h-auto rounded-xl" :src="data.recipe.data.image" alt="" />
 
-                                <div class="border-2 rounded-lg border-cyan-800 h-auto mt-8">
+                                <div v-if="this.data.recipe.data.nutrition_facts != null"  class="border-2 rounded-lg border-cyan-800 h-auto mt-8">
                                     <div class="relative">
                                         <label
                                             class="absolute top-[-15px] text-xl font-bold text-cyan-800 ml-4 pl-2 pr-4 dark:text-white bg-white dark:bg-slate-800">Nutrition
@@ -70,19 +70,19 @@ export default {
                                         class="mt-4 p-2">
 
                                         <div class="flex flex-row justify-around flex-wrap">
-                                            <div class="h-16 w-fit bg-gray-200 rounded-lg justify-center text-center text-sm p-2"><label class="font-extrabold">Calories</label><br>
+                                            <div class="h-16 w-fit bg-gray-200 dark:bg-slate-600 rounded-lg justify-center text-center text-sm p-2"><label class="font-extrabold">Calories</label><br>
                                                 {{ this.data.recipe.data.nutrition_facts.Calories }}
                                             </div>
-                                            <div class="h-16 w-fit bg-gray-200 rounded-lg justify-center text-center text-sm p-2"><label class="font-extrabold">Fat</label><br>
+                                            <div class="h-16 w-fit bg-gray-200 dark:bg-slate-600 rounded-lg justify-center text-center text-sm p-2"><label class="font-extrabold">Fat</label><br>
                                                 {{ this.data.recipe.data.nutrition_facts.Fat }}
                                             </div>
-                                            <div class="h-16 w-fit bg-gray-200 rounded-lg justify-center text-center text-sm p-2"><label class="font-extrabold">Carbohydrates</label><br>
+                                            <div class="h-16 w-fit bg-gray-200 dark:bg-slate-600 rounded-lg justify-center text-center text-sm p-2"><label class="font-extrabold">Carbohydrates</label><br>
                                                 {{ this.data.recipe.data.nutrition_facts.Carbohydrates }}
                                             </div>
-                                            <div class="h-16 w-fit bg-gray-200 rounded-lg justify-center text-center text-sm p-2"><label class="font-extrabold">Sugar</label><br>
+                                            <div class="h-16 w-fit bg-gray-200 dark:bg-slate-600 rounded-lg justify-center text-center text-sm p-2"><label class="font-extrabold">Sugar</label><br>
                                                 {{ this.data.recipe.data.nutrition_facts.Sugar }}
                                             </div>
-                                            <div class="h-16 w-fit bg-gray-200 rounded-lg justify-center text-center text-sm p-2"><label class="font-extrabold">Protein</label><br>
+                                            <div class="h-16 w-fit bg-gray-200 dark:bg-slate-600 rounded-lg justify-center text-center text-sm p-2"><label class="font-extrabold">Protein</label><br>
                                                 {{ this.data.recipe.data.nutrition_facts.Protein }}
                                             </div>
                                         </div>

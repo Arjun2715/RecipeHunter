@@ -38,14 +38,14 @@
                         :data="{ recipeId: item.id }"
                     >
                         
-                        <div  class="card bg-white dark:bg-gray-600">
+                        <div v-if="item.title.length < 34" class="card bg-white dark:bg-gray-600">
                             <div id="cards" class="container">
                                 <img
                                     :src="item.image"
                                     class="rounded-t-2xl object-cover w-60 h-72"
                                 />
                             </div>
-                            <div
+                            <div 
                                 class="bg-green dark:bg-gray-600 rounded-b-2xl py-2"
                             >
                                 <h2
