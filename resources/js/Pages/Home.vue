@@ -104,7 +104,7 @@ export default {
                                     class="flex flex-row lg:justify-between md:justify-end px-8 pt-20 pb-6 bg-gradient-to-t from-slate-900 to-transparent"
                                 >
                                     <h1
-                                        class="lg:hidden md:hidden flex justify-start text-white text-4xl font-semibold"
+                                        class="lg:hidden md:hidden flex justify-start text-white lg:text-4xl text-2xl  sm:text-xl font-semibold"
                                     >
                                         {{ item.title }}
                                     </h1>
