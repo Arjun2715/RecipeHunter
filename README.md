@@ -7,6 +7,7 @@
 <sup>npm install</sup>
 
 **set up .env file**
+
 copy env.example an paste as .env 
 
 **generate app key**
