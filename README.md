@@ -11,7 +11,6 @@
 ![image](https://github.com/Arjun2715/RecipeHunter/assets/91607595/f8088079-b8c6-422b-8740-6d8a6b5227cf)
 ![image](https://github.com/Arjun2715/RecipeHunter/assets/91607595/8be1d13b-6d38-439c-9020-20e07bc1b441)
 ![image](https://github.com/Arjun2715/RecipeHunter/assets/91607595/17496f98-14d0-4df7-9838-250136c49883)
-![image](https://github.com/Arjun2715/RecipeHunter/assets/91607595/ffe59318-5979-4fa3-93f6-a99c7765d68e)
 ![image](https://github.com/Arjun2715/RecipeHunter/assets/91607595/ad364d6c-8271-4b15-aa03-b0a031d9697c)
 ![image](https://github.com/Arjun2715/RecipeHunter/assets/91607595/0ef28109-9fa8-4219-9025-f99588efa447)
 ![image](https://github.com/Arjun2715/RecipeHunter/assets/91607595/701135fc-0b1d-4157-acde-ad597f9a79db)
