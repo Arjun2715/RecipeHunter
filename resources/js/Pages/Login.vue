@@ -59,6 +59,7 @@ export default {
                                 <div v-if="errors.email">
                                     {{ errors.email }}
                                 </div>
+
                                 <div class="relative w-full mb-3">
                                     <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
                                         for="grid-password">Password</label><input v-model="passwordValue" type="password"

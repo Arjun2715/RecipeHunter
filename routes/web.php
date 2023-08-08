@@ -27,35 +27,37 @@ Route::get('/register', function () {
 
 
 
-Route::group(['middleware' => ['auth']], function () {
-    Route::get('/', function () {
-        return redirect()->to('home');
-    });
-    Route::get('/home', [WebController::class,'home'])->name('home');
-Route::get('/categories', [WebController::class,'categories'])->name('categories');
+// Route::group(['middleware' => ['auth']], function () {
+Route::get('/', function () {
+    return redirect()->to('home');
+});
+Route::get('/home', [WebController::class, 'home'])->name('home');
+Route::get('/categories', [WebController::class, 'categories'])->name('categories');
 
-Route::get('/category', [WebController::class,'getCategory'])->name('getCategory');
-
-
-Route::get('/filter', [WebController::class,'searchRand'])->name('filter');
-Route::post('/filter', [WebController::class,'searchRecipes'])->name('filtersearch');
-
-Route::get('/myrecipes', function () { return Inertia::render('MyRecipes', []);})->name('myrecipes');
-
-Route::get('/newrecipe',  [WebController::class,'renderAddRecipe'] )->name('newrecipe');
-Route::post('/newrecipe',  [WebController::class,'addRecipe']);
+Route::get('/category', [WebController::class, 'getCategory'])->name('getCategory');
 
 
+Route::get('/filter', [WebController::class, 'searchRand'])->name('filter');
+Route::post('/filter', [WebController::class, 'searchRecipes'])->name('filtersearch');
 
-Route::post('/newrecipepost', [WebController::class,'addRecipe'])->name('newrecipepost');
+Route::get('/myrecipes', function () {
+    return Inertia::render('MyRecipes', []);
+})->name('myrecipes');
 
-Route::get('/viewrecipe',[WebController::class, 'getRecipe'])->name('viewrecipe');
+Route::get('/newrecipe',  [WebController::class, 'renderAddRecipe'])->name('newrecipe');
+Route::post('/newrecipe',  [WebController::class, 'addRecipe']);
+
+
+
+Route::post('/newrecipepost', [WebController::class, 'addRecipe'])->name('newrecipepost');
+
+Route::get('/viewrecipe', [WebController::class, 'getRecipe'])->name('viewrecipe');
 
 /* hla */
 
-Route::get('/savedrecipes',[WebController::class,'savedRecipes']);
+Route::get('/savedrecipes', [WebController::class, 'savedRecipes']);
 
-Route::get('/aboutus',function () {
+Route::get('/aboutus', function () {
     return Inertia::render('AboutUs', []);
 });
 Route::get('/contactus', function () {
@@ -81,8 +83,8 @@ Route::get('/logoutdash', function () {
     return Inertia::render('Logoutdash', []);
 })->name('logoutdash');
 
-});
+// });
 
 
-Route::get('/auth', [RecipeController::class,'authenticate']);
-Route::get('/callback', [RecipeController::class,'callback']);
+Route::get('/auth', [RecipeController::class, 'authenticate']);
+Route::get('/callback', [RecipeController::class, 'callback']);

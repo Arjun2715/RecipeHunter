@@ -182,7 +182,7 @@ class WebController extends Controller
     public function savedRecipes()
     {
         $user = Auth::user();
-        $savedRecipes = SavedRecipes::where('user_id', $user->id)->get();
+        $savedRecipes = SavedRecipes::where(12)->get(); // <<<<<<'user_id', $user->id >>>>>>
         // Next, create an empty array to hold the recipe models
         $recipes = [];
 
